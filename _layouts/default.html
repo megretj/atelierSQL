@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!--link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" -->
     <!-- thanks to https://favicon.io/ -->
     <link rel="stylesheet" href='css/codemirror.css'>
     <link rel="stylesheet" href='css/neat.css'>
@@ -13,43 +17,26 @@
     <script src="scripts/codemirrorsql.js"></script>
     <script src="scripts/autorefresh.js"></script>
     <script src="scripts/main.js"></script>
-    <script>
-      window.onload = () => loadData('{{ page.dbFile }}');
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46601509-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-46601509-2');
+    <script defer> 
+    loadData('{{ page.dbFile }}');
+    sayHello();
     </script>
     <title>{{ page.title }}</title>
-
-    <!-- add meta tag for translated version -->
-    {% assign current_page = page.url | replace:'/','' | replace:'..','' %}
-    {% for hebrew_page in site.data.he_sitemap.contents %}
-      {% assign hebrew_page_source_url = hebrew_page.english_url | replace:'/','' | replace:'..','' %}
-      {% if current_page == hebrew_page_source_url %}
-    <link rel="alternate" hreflang="en" href="{{ page.url }}">
-    <link rel="alternate" hreflang="he" href="/he/{{ hebrew_page.url  }}">
-      {% endif %}
-    {% endfor %}
 
   </head>
 
   <body>
     <div id="column">
       <div class="header">
-        <a href="/"><img class="logo" src="imgs/favicon-256.png"></a>
-        <a href="/"><div class="title">Select Star SQL</div></a>
+        <a href="/"><img class="logo" src="imgs/logoCC.jpg"></a>
+        <a href="/"><div class="title">Coding Club des filles</div></a>
       </div>
       <div class="content">
         {{content}}
       </div>
       <div class="footer">
-        Prose for <a href="/">SelectStarSql.com</a> is licensed by <a href="https://kaomorphism.com/">Zi Chong Kao</a> under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA 4.0 License</a>. The <a href="/he/">Hebrew translation</a> is by <a href="https://thepitz.io/">Noam Castel</a> and the <a href="/nl/">Dutch translation</a> is by Jowan Vogel. Code and data are released into the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 License</a>.
-      </div>
+        Prose is licensed by <a rel="author" href="https://www.epfl.ch/education/education-and-science-outreach/fr/promotion-des-sciences/">SPS EPFL</a> under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA 4.0 License</a>. Code and data are released into the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 License</a>.
+    </div>
     </div>
   </body>
 </html>
