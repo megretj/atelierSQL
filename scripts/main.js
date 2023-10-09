@@ -1,7 +1,7 @@
 function loadData(dbFile) {
   if (!dbFile) { return; }
   console.log('starting DB init');
-  window.worker = new Worker("/scripts/worker.sql.js");
+  window.worker = new Worker("./scripts/worker.sql.js");
   var xhr = new XMLHttpRequest();
   xhr.open('GET', dbFile, true);
   xhr.responseType = 'arraybuffer';
