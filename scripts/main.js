@@ -1,8 +1,3 @@
-// Set up DB
-function sayHello(){
-  console.log('HELLO!')
-}
-
 function loadData(dbFile) {
   if (!dbFile) { return; }
   console.log('starting DB init');
