@@ -22,7 +22,7 @@ title: atelierSQL
 email: jean.megret@epfl.ch
 description: >- # this means to ignore newlines until "baseurl:"
   Cet atelier pour apprendre le SQL a été développé par le service de promotion des sciences de l'EPFL pour le coding club des filles.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "atelierSQL" # the subpath of your site, e.g. /blog
 url: https://megretj.github.io # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
