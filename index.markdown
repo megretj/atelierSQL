@@ -4,3 +4,12 @@
 
 layout: tutorial
 ---
+Ceci est la page index.html
+
+Voici un exercise sql:
+<sql-exercise
+  data-question="Ceci est un bloc de code interactif, vous pouvez éditer le code dessous."
+  data-comment="(Pour les pros: Shift+Enter est un raccourci de clavier pour exécuter la commande.)"
+  data-default-text="SELECT *
+FROM executions
+LIMIT 3"></sql-exercise>
