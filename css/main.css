@@ -124,7 +124,7 @@ body #column {
 
 /* hyperlinks */
 a {
-    color: #07a;
+    color: #f7265b;
     text-decoration: none;
 }
 
@@ -183,14 +183,14 @@ a:hover {
     margin: 1em 0em;
     padding-left: 1em;
     font-size: 0.9em;
-    border-left: 2px solid grey;
+    border-left: 2px solid #bfd444;
 }
 
 /* datatable */
 .datatable {
     border: solid 1px grey;
     border-collapse: collapse;
-    font-size: 12px;
+    /*font-size: 12px;*/
 }
 .datatable thead, td {
     padding: 5px;

@@ -4,3 +4,4 @@ _site
 .jekyll-metadata
 vendor
 config.yml
+atelier_sql_todo.md
