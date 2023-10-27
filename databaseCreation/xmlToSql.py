@@ -2,7 +2,7 @@ import re
 
 def getAttribute(attribute, target):
     try:
-        result = re.search(f'\|{attribute}=([\w\ 0-9,]*?)\W.*?\s\|', target).group(1)
+        result = re.search(f'\|{attribute}=([\w\ ,]*?)\W.*?\s\|', target).group(1)
         if result == "":
             return "Inconnu"
     except:

@@ -6,3 +6,4 @@ vendor
 config.yml
 atelier_sql_todo.md
 databaseCreation/frharrypotter_pages_current.xml
+.conda

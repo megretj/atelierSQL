@@ -1,7 +1,7 @@
 ---
 title: Atelier SQL
 layout: default
-dbFile: data/hotel.db
+dbFile: data/harrypotter.db
 ---
 <h1>Introduction</h1>
 
