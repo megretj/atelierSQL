@@ -8,9 +8,9 @@ Bienvenue dans le monde magique de Harry Potter! Tu t'apprêtes à faire ton pre
 
 * Les personnages 
 * Les créatures
-* Les organisations ()
+* Les relations familiales entre les personnages
 
-Ta cheffe, Professeure McGonagall te montre comment fonctionne le système. Tu as accès à la base de donnée via une ligne de commande dans un bloc de code interactif comme celui ci. Il faut rentrer une commande valide et cliquer sur RUN pour voir le résultat. Comme c'est la première fois que tu utilise ce système Professeure McGonagall te montre un exemple.
+Ta cheffe, Professeure McGonagall, te montre comment fonctionne le système. Tu as accès à la base de donnée via une ligne de commande dans un bloc de code comme ci-dessous. Il suffit de rentrer une commande valide et cliquer sur RUN pour voir le résultat. Comme c'est la première fois que tu utilise ce système Professeure McGonagall te montre un exemple.
 
 <sql-exercise
   data-question="Voici un exemple pour chercher le nom et le prénom de 3 magiciens dans la base de données."
@@ -23,9 +23,9 @@ LIMIT 3"></sql-exercise>
 <div class="sideNote">
 <h3>Ta première requête SQL</h3>
 <p>Tu peux voir qu'une commande SQL se lit un peu comme une phrase. Les mots en majuscules sont des mots clés en anglais et les mots en minuscules spécifient ce que tu veux chercher. <code>SELECT</code> veut dire Sélectionne, <code>FROM</code> veut dire de ou depuis et <code>LIMIT</code> veur dire limite. Donc si on traduit la ligne de code on trouve: "<code>SELECTIONNE</code> prénom, nom <code>DE</code> personnages <code>LIMITE</code> 3".</p>
-</div>
+</div> 
 
-Intéressant! Mais si tu veux chercher une personne en particulier... par exemple les personnages féminins avec des cheveux noirs. Ca serait embêtant de devoir lire toutes les lignes une à une. Il nous faut donc une commande qui dit: 
+Intéressant! Mais si tu veux chercher une personne avec des attributs en particulier... par exemple les personnages féminins avec des cheveux noirs. Ca serait embêtant de devoir lire toutes les lignes une à une. Il nous faut donc une commande qui dit: 
 
 _Selectionne le nom des personnages qui sont des femmes et qui ont les cheveux noirs_
  
@@ -44,7 +44,7 @@ Maintenant, tu aimerais savoir toutes les informations disponible concernant cha
 
 <sql-exercise
   data-question="Voici un exemple pour chercher le nom et le prénom de 3 magiciens dans la base de données."
-  data-comment="Essaies de modifier le nombre de personnages qui sont cherchés à 5"
+  data-comment="Si tu n'arrives pas, tu peux cliquer sur 'SOLUTION' et la solution apparaitra... magiquement!"
   data-default-text="SELECT ..."
   data-solution="
   SELECT *
@@ -52,3 +52,5 @@ Maintenant, tu aimerais savoir toutes les informations disponible concernant cha
   WHERE genre='Femme' AND cheveux='noirs'"
   ></sql-exercise>
 
+
+En fait, combien y'a-t-il de magiciens dans la base de données? 
