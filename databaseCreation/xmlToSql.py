@@ -1,55 +1,30 @@
 import re
 
+def preprocessing(target):
+    target = re.sub(r'\n(?!\|)', ', ', target)
+    return target.replace('*','').replace('[', '').replace(']', '')
+
 def getAttribute(attribute, target):
-    try:
-        result = re.search(f'\|{attribute}=([\w\ ,]*?)\W.*?\s\|', target).group(1)
-        if result == "":
-            return "Inconnu"
-    except:
-        return "Inconnu"
+    target = preprocessing(target)
+    matchingString = f'\|{attribute}=([^\n\{{\}}<>]*)[^\n]*\n\|'
+    result="?"
+    if attribute == "Mort" or attribute == "Naissance":
+        try:
+            result = re.search('\|{}=.*?(\d{4}).*?\s\|',target).group(1)
+        except:
+            return "0"
+    else:
+        #if attribute == "Sang":
+            #matchingString = "\|Sang=\[\[([^]]+)\]\]"
+        #if attribute == "Localisation":
+            #matchingString = "\|Localisation=.*?\[\[([^]]+)\]\]"
+        #if attribute == "Statut":
+            #matchingString = "\|Statut=([^\{\}\n]*).*\n\|"
+        try:
+            result = re.search(matchingString, target).group(1)
+            if result == "":
+                result="?"
+        except:
+            return "?"
+    result = result.replace("'","('')")
     return result
-
-def getNom(target):
-    try:
-        result = re.search('\|Nom=(.*?)\s\|', target).group(1)
-    except:
-        return ""
-    return result
-
-def getGenre(target):
-    try:
-        result = re.search('\|Genre=\ ?([A-Za-z0-9â]*?)\s\|', target).group(1)
-    except:
-        return ""
-    return result
-
-def getCheveux(target):
-    try:
-        result = re.search('\|Cheveux=([A-Za-z0-9]*?)\s\|', target).group(1)
-        if result == "":
-            return "Inconnu"
-    except:
-        return "Inconnu"
-    return result
-
-def getNaissance(target):
-    try:
-        result = re.search('\|Naissance=(.*?)\s\|', target).group(1)
-        if result == "":
-            return "Inconnu"
-    except:
-        return "Inconnu"
-    return result
-
-def getMort(target):
-    try:
-        result = re.search('\|Mort=(.*?)\s\|', target).group(1)
-        if result == "":
-            return "Inconnu"
-    except:
-        return "Inconnu"
-    return result
-
-def getMort(target):
-    return ""
-
