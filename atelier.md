@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Le ministère de la magie
-dbFile: data/harrypotter.db
+dbFile: data/harrypotter_fr.db
 ---
 
 Bienvenue dans le monde magique de Harry Potter! Tu t'apprêtes à faire ton premier jour en tant que détective dans le grand ministère de la magie. Pour t'aider dans tes tâches quotidiennes, tu as accès au registre des magiciens, une base de données qui répertorie toutes les informations connues à propos du monde des sorciers. En particulier:
