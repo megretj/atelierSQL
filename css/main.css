@@ -187,6 +187,14 @@ a:hover {
     border-left: 2px solid #bfd444;
 }
 
+.warning {
+    margin: 1em 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 0.9em;
+    border: 2px solid #f7265b;
+}
+
 /* datatable */
 .datatable {
     border: solid 1px grey;
