@@ -4,13 +4,16 @@ def preprocessing(target):
     target = re.sub(r'\n(?!\|)', ', ', target)
     return target.replace('*','').replace('[', '').replace(']', '')
 
-def getAttribute(attribute, target):
+def getAttribute(attribute, page):
+    if page.comment is not None:
+        page.comment.extract() #Remove comment
+    target = page.text
     target = preprocessing(target)
     matchingString = f'\|{attribute}=([^\n\{{\}}<>]*)[^\n]*\n\|'
     result="?"
     if attribute == "Mort" or attribute == "Naissance":
         try:
-            result = re.search('\|{}=.*?(\d{4}).*?\s\|',target).group(1)
+            result = re.search(f'\|{attribute}=.*?(\d{{4}}).*?\s\|',target).group(1)
         except:
             return "0"
     else:

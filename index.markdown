@@ -26,6 +26,9 @@ Généralement il faut installer des programmes pour pouvoir utiliser SQL mais c
 FROM personnages
 LIMIT 3"></sql-exercise>
 
-Dès que tu es prête, il suffit de cliquer sur <a href="atelier.html">ce lien</a> pour commencer l'atelier.
+Dès que tu es prête, tu peux commencer l'atelier:
+
+<a href="atelier.html" class="button-link"> Commencer l'atelier </a>
 
 Si tu ne te souviens plus d'une commande que tu as utilisé, tu peux te référer au <a href="commandes_sql.html">résumé des principales commandes sql</a>.
+

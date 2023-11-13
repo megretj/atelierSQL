@@ -89,6 +89,29 @@ function setdiff(a, b) { // https://stackoverflow.com/a/36504668
   return res
 }
 
+/* class sqlQuizInputArea extends HTMLElement{
+  constructor(){
+    super();
+  }
+
+  connectedCallback(){
+    var dataCorrect = this.getAttribute('data-solution') || '';
+    var quizInput = `
+    <div class='sqlInput'>
+      <label>
+        <input type=textareabox name="input"
+            data-correct=${dataCorrect}
+            value=${value} />
+          <div class="optionText">
+            ${statement}
+          </div>
+      </label>
+    </div>`
+    this.parentNode.querySelector('.sqlQuizInputs').insertAdjacentHTML("beforeend", quizoption);
+  }
+
+} */
+
 class sqlQuizOption extends HTMLElement {
   constructor() {
     super();
@@ -305,7 +328,7 @@ class sqlExercise extends HTMLElement {
       var solutionButton = document.createElement('input');
       solutionButton.name = 'solution';
       solutionButton.type = 'button';
-      solutionButton.value = 'Show Solution';
+      solutionButton.value = 'SOLUTION';
       solutionButton.onclick = (e) => {
         var existingCode = editor.getValue();
         editor.setValue(existingCode + "\n/* " + solution);
