@@ -17,5 +17,11 @@ contents:
   sections:
   - name: Les témoins
     url: "#témoins"
+  - name: Le combattant
+    url: "#combattant"
+  - name: Le/la coupable
+    url: "#coupable"
+- title: Défi supplémentaire
+  url: défi_supplémentaire.html
 - title: Résumé des commandes
   url: commanges_sql.html

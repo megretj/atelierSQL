@@ -79,6 +79,82 @@ function datatable (data) {
 
 
 //////////////////////////
+// SQL Verify Component
+//////////////////////////
+
+class InputFeedback extends HTMLElement {
+  constructor() {
+    super();
+  }
+  
+  connectedCallback(){
+    var titletext = this.getAttribute('data-title') || '';
+    // Create a shadow DOM
+    /* this.attachShadow({ mode: 'open' }); */
+
+    // Create a container div
+    const container = document.createElement('div');
+    container.className = 'sqlQuizHomeDiv';
+
+    // Create a title element
+    /* const title = document.createElement('div');
+    title.className='sqlQuizTitle'; */
+    if (titletext) {
+      var caption = `<div class="sqlQuizTitle">${titletext}</div>`;
+      container.insertAdjacentHTML("beforeend", caption);
+    }
+    
+    // Create an input element
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Rentre ta réponse...';
+
+    // Create a button to submit the answer
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Vérifier';
+    submitButton.className = 'verify-button';
+    submitButton.addEventListener('click', () => this.checkAnswer());
+
+    // Create a div to display the feedback message
+    const feedbackMessage = document.createElement('div');
+    feedbackMessage.className = 'feedback-message';
+
+    // Append elements to the container
+   /*  container.appendChild(title); */
+    container.appendChild(input);
+    container.appendChild(submitButton);
+    container.appendChild(feedbackMessage);
+    // Append the container to the shadow DOM
+    this.appendChild(container);
+  }
+
+  checkAnswer() {
+    // Get solution
+    var dataSolution = this.getAttribute('data-solution') || '';
+    var successMessage = this.getAttribute('success-message') || 'Correcte!';
+    var failureMessage = this.getAttribute('failure-message') || 'Incorrecte, essaies à nouveau!';
+    // Get the user's input
+    const userInput = this.querySelector('input').value.trim();
+
+    // Perform some logic to determine the feedback message
+    let feedback = '';
+    if (userInput.toLowerCase() === dataSolution) {
+      feedback = successMessage;
+    } else {
+      feedback = failureMessage;
+    }
+
+    // Display the feedback message
+    this.querySelector('.feedback-message').textContent = feedback;
+  }
+}
+
+// Define the custom element
+customElements.define('input-feedback', InputFeedback);
+
+
+
+//////////////////////////
 // SQL Quiz Component
 //////////////////////////
 
@@ -89,36 +165,13 @@ function setdiff(a, b) { // https://stackoverflow.com/a/36504668
   return res
 }
 
-/* class sqlQuizInputArea extends HTMLElement{
-  constructor(){
-    super();
-  }
-
-  connectedCallback(){
-    var dataCorrect = this.getAttribute('data-solution') || '';
-    var quizInput = `
-    <div class='sqlInput'>
-      <label>
-        <input type=textareabox name="input"
-            data-correct=${dataCorrect}
-            value=${value} />
-          <div class="optionText">
-            ${statement}
-          </div>
-      </label>
-    </div>`
-    this.parentNode.querySelector('.sqlQuizInputs').insertAdjacentHTML("beforeend", quizoption);
-  }
-
-} */
-
 class sqlQuizOption extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
-    var value = this.getAttribute('data-value') || ''
+    var value = this.getAttribute('data-value') || '';
     var statement = this.getAttribute('data-statement') || '';
     var dataCorrect = this.getAttribute('data-correct') || false;
     var hint = this.getAttribute('data-hint') || '';
@@ -233,6 +286,7 @@ class sqlExercise extends HTMLElement {
     var question = this.getAttribute('data-question') || '';
     var comment = this.getAttribute('data-comment') || '';
     var defaultText = this.getAttribute('data-default-text') || '';
+    var hint = this. getAttribute('data-hint') || '';
     var solution = this.getAttribute('data-solution') || '';
     var orderSensitive = this.getAttribute('data-orderSensitive') || false;
 
@@ -335,6 +389,18 @@ class sqlExercise extends HTMLElement {
       };
       inputArea.appendChild(solutionButton);
     };
+
+    if (hint) {
+      var hintButton = document.createElement('input');
+      hintButton.name = 'hint';
+      hintButton.type = 'button';
+      hintButton.value = 'Indice';
+      hintButton.onclick = (e) => {
+        var existingCode = editor.getValue();
+        editor.setValue("/*" + hint + "\n"+ existingCode + "*/");
+      };
+      inputArea.appendChild(hintButton);
+    }
 
     var resetButton = document.createElement('input');
     resetButton.type = 'button';

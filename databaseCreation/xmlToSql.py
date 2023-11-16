@@ -1,4 +1,18 @@
 import re
+import random
+
+
+def randomly_attribute(attribute):
+    couleurs_cheveux = ['Noirs','Bruns','Roux','Blonds','Gris','Blancs']
+    couleurs_cheveux_weights= [42, 30, 10, 10, 5, 3]
+    couleurs_yeux = ['Bruns','Bleus','Gris','Verts','Noirs','Violets']
+    couleurs_yeux_weights= [42, 30, 10, 10, 5, 3]
+    if attribute=="Cheveux":
+        return random.choices(couleurs_cheveux)[0]
+    elif attribute=="Yeux":
+        return random.choices(couleurs_yeux)[0]
+    else:
+        return "?"
 
 def preprocessing(target):
     target = re.sub(r'\n(?!\|)', ', ', target)
@@ -17,16 +31,10 @@ def getAttribute(attribute, page):
         except:
             return "0"
     else:
-        #if attribute == "Sang":
-            #matchingString = "\|Sang=\[\[([^]]+)\]\]"
-        #if attribute == "Localisation":
-            #matchingString = "\|Localisation=.*?\[\[([^]]+)\]\]"
-        #if attribute == "Statut":
-            #matchingString = "\|Statut=([^\{\}\n]*).*\n\|"
         try:
             result = re.search(matchingString, target).group(1)
             if result == "":
-                result="?"
+                result=randomly_attribute(attribute)
         except:
             return "?"
     result = result.replace("'","('')")
