@@ -130,8 +130,9 @@ body #column {
 
 .button-link {
     height: 45px;
+    max-width: fit-content;
     border: 0;
-    border-radius: 0 4px 4px 0;
+    border-radius: 8px;
     padding: 20px 20px;
     background: hwb(345 15% 3%);
     font-size: 14px;
@@ -144,6 +145,11 @@ body #column {
     text-align: center;
 }
 
+.is-centered{
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
 
 /* hyperlinks */
 a {
@@ -211,11 +217,19 @@ a:hover {
     background-color: rgb(249, 255, 215);
 }
 
+.supplementary {
+    margin: 1em 0em;
+    padding-left: 1em;
+    font-size: 0.95em;
+    border-left: 3px solid #4452d4;
+    background-color: rgb(215, 219, 255)
+}
+
 .warning {
     margin: 1em 1em;
     padding-left: 1em;
     padding-right: 1em;
-    font-size: 0.9em;
+    font-size: 0.95em;
     border: 2px solid #f7265b;
     background-color: #ffe2e9;
 }

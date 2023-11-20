@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+{% for tutorial in site.data.sitemap.contents_fr %}
+  {% if tutorial.title == page.title %}
+    {% assign tutorial_index = forloop.index0 %}
+    {% assign content_length = forloop.length %}
+    {% assign previous = tutorial_index | minus: 1 %}
+    {% assign next = tutorial_index | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+<div class="section-nav">
+  <a href="/">Home</a>
+  {% if previous >= 0 %}
+    {% assign previous_tutorial = site.data.sitemap.contents_fr[previous] %}
+    <div class="section-sib">
+      &#x21b3; <a href="{{ previous_tutorial.url }}">{{ previous_tutorial.title }}</a>
+    </div>
+  {% endif %}
+
+  <div class="section-sib">&#x21b3; <div class="cur-text">{{ page.title }}</div></div>
+
+  {% for tutorial in site.data.sitemap.contents_fr %}
+    {% if tutorial.title == page.title %}
+      {% for section in tutorial.sections %}
+        {% unless section.sidenote %}
+          <div class="childlinks">
+            &#x21b3; <a href="{{ section.url }}">{{ section.name }}</a>
+          </div>
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  {% if site.data.sitemap.contents_fr[next].title %}
+    {% assign next_tutorial = site.data.sitemap.contents_fr[next] %}
+    <div class="section-sib">
+      &#x21b3; <a href="{{ next_tutorial.url }}">{{ next_tutorial.title }}</a>
+    </div>
+  {% endif %}
+</div>
+
+{{content}}
+
+<div class="tutorial-nav">
+  {% if previous >= 0 %}
+    {% assign previous_tutorial = site.data.sitemap.contents_fr[previous] %}
+    <div class="previous">Previous: <a href="{{ previous_tutorial.url }}">
+    {{ previous_tutorial.title }}</a></div>
+  {% endif %}
+
+  {% if site.data.sitemap.contents_fr[next].title %}
+    {% assign next_tutorial = site.data.sitemap.contents_fr[next] %}
+    <div class="next">Next: <a href="{{ next_tutorial.url }}">
+    {{ next_tutorial.title }}</a></div>
+  {% endif %}
+</div>
+
+<div class="footer">
+  Prose et code sont licensés par <a rel="author" href="https://www.epfl.ch/education/education-and-science-outreach/fr/promotion-des-sciences/">SPS EPFL</a> sous <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr">CC BY-NC-ND 4.0 License</a>. Code et concept inspiré par <a href="https://selectstarsql.com/">SelectStarSQL</a>. Hébergé sur <a href="https://github.com/megretj/atelierSQL">Github Pages</a>.
+  <!-- under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA 4.0 License</a>. Code and data are released into the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 License</a>. -->
+</div>

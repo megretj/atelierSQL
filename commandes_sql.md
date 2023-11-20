@@ -1,5 +1,5 @@
 ---
-layout: tutorial
+layout: tutorial_fr
 title: Commandes SQL
 dbFile: data/potter.db
 ---

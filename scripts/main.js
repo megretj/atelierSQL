@@ -397,7 +397,7 @@ class sqlExercise extends HTMLElement {
       hintButton.value = 'Indice';
       hintButton.onclick = (e) => {
         var existingCode = editor.getValue();
-        editor.setValue("/*" + hint + "\n"+ existingCode + "*/");
+        editor.setValue("/*" + hint + "*/\n"+ existingCode );
       };
       inputArea.appendChild(hintButton);
     }

@@ -1,16 +1,12 @@
 ---
-layout: tutorial
+layout: tutorial_fr
 title: Le ministère de la magie
 dbFile: data/harrypotter_fr.db
 ---
 
 # Le ministère de la magie 
 
-Bienvenue dans le monde magique de Harry Potter! Tu as été employée en tant que détective et spécialiste informatique dans le grand ministère de la magie, car la coupe de feu a été volée et tu dois essayer de trouver le ou la voleuse. Pour t'aider dans cette tâche, tu as accès au registre des magiciens, une base de données qui répertorie toutes les informations connues à propos du monde des sorciers. En particulier:
-
-* Les personnages 
-* Les relations familiales entre les personnages
-* Les créatures magiques
+Bienvenue dans le monde magique de Harry Potter! Tu as été employée en tant que détective et spécialiste informatique dans le grand ministère de la magie, car la coupe de feu a été volée et tu dois essayer de trouver le ou la voleuse. Pour t'aider dans cette tâche, tu as accès au registre des magiciens, une base de données qui répertorie toutes les informations connues à propos du monde des sorciers. Pour l'instant, concentrons nous sur les personnages.
 
 <a name="base"></a>
 
@@ -157,12 +153,49 @@ WHERE genre='Femme'"
 ### Les différents tableaux
 
 Bravo! Avant de te lancer dans la recherche de qui a volé la coupe de feu, Professeure McGonagall te dit qu'il y a deux autres tableaux dans la base de données qui te seront utiles: 
-* _famille_ qui répertorie tous les liens de parenté entre les personnages
-* _créatures_ qui répertorie toutes les créatures magiques
+* _famille_ qui répertorie tous les liens de parenté entre les personnage.
+* _créatures_ qui répertorie toutes les créatures magiques. 
+
+Il toujours pratique d'avoir un apperçu de la base de donnée du ministère de la magie sous forme de schéma:
+<figure>
+<img src="imgs/HarryPotterDB_fr.png"><figcaption>Structure de la base de données</figcaption>
+</figure>
+
+Pour le tableau _famille_, _premier\_nom_ est le/la _relation_ de _second\_nom_. Par exemple dans le tableau suivant:
+
+<table class="datatable">
+<thead>
+  <tr>
+    <th class="tg-0pky">premier_nom</th>
+    <th class="tg-0pky">second_nom</th>
+    <th class="tg-0pky">relation</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Lily Potter</td>
+    <td class="tg-0pky">Harry Potter</td>
+    <td class="tg-0pky">père</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Harry Potter</td>
+    <td class="tg-0pky">Ginevra Weasley</td>
+    <td class="tg-0pky">époux</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">...</td>
+    <td class="tg-0pky">...</td>
+    <td class="tg-0pky">...</td>
+  </tr>
+</tbody>
+</table>
+
+Lily est la mère de Harry et Harry et l'époux de Ginevra (Gini). 
+
 
 <sql-exercise
-  data-question="Commence par explorer les deux tableaux. D'abord en affichant tous les attribus des deux tableau, puis en cherchant des informations particulières."
-  data-comment="Par exemple, essaie te trouver le nombre de créatures répertoriées. Aussi tu peux chercher le nombre de personnages qui ont un frère"
+  data-question="Explore les deux tableaux."
+  data-comment="Par exemple en affichant tous les attribus des deux tableau, puis en cherchant des informations particulières: essaie te trouver le nombre de créatures répertoriées. Aussi tu peux chercher le nombre de personnages qui ont un frère"
   data-default-text=""
   data-solution="Pour trouver le nombre de créatures répertoriées:
 SELECT COUNT(*)
@@ -173,9 +206,81 @@ FROM famille
 WHERE relation = 'frère'"
   ></sql-exercise>
 
- La base de donnée du ministère de la magie ressemble à ceci:
-<img src="imgs/harrypotter_fr.png">
+Ces tableaux supplémentaires te permettent d'accéder à de nouvelles informations. Pour un sondage il faudrait que tu ressences toutes les créatures qui ont des poils. En d'autres termes, il faut trouver les créatures où la colone _poils\_créature_ n'est pas _?_. 
 
+<div class="sideNote">Pour filtrer quelque chose qu'on ne veut pas, on peut utiliser la négation: <code class="keyword">NOT</code> ("pas" en français)avant la condition.</div>
+
+<sql-exercise
+  data-question="Quels sont les créatures qui ont des poils?"
+  data-comment="En français la requête ressemblerait à 'Sélectionne le nom des créatures depuis le tableau créatures où '"
+  data-default-text="SELECT ...
+FROM ...
+WHERE ..."
+  data-hint="SELECT nom_créature
+FROM créatures
+WHERE NOT ...=..."
+  data-solution="SELECT nom_créature 
+FROM créatures 
+WHERE NOT poils_créature='?'"
+  ></sql-exercise>
+
+Finalement, grâce à ces nouveaux tableaux, tu peux aussi croiser les informations. Par exemple, si tu veux savoir quels sorcier.ères qui ont une fille et ont les yeux bleus, tu as besoin d'informations dans deux tableaux différents. Il faudrait donc réussir à lier les deux tableaux. Voyons déjà comment trouver les deux informations séparément. 
+
+* D'abord trouver le noms des sorcier.ères qui ont une fille, on sélectionne le tableau _famille_ et on filtre les résultats lorsque la relation est égal à "fille".
+
+<sql-exercise
+  data-question="le nom des sorcier.ères qui ont une fille"
+  data-comment="Tu peux essayer toute seule mais n'hésite pas à clique sur solution pour révéler la solution"
+  data-default-text=""
+  data-hint="Remplis les trous
+  SELECT ...
+  FROM ...
+  WHERE ...='fille'"
+  data-solution="SELECT premier_nom 
+FROM famille 
+WHERE relation='fille'"
+  ></sql-exercise>
+
+* Ensuite, on veut trouver le nom des socier.ères qui ont les yeux bleus.
+
+<sql-exercise
+  data-question="le noms des sorcier.ères qui ont les yeux bleus"
+  data-comment="Tu peux essayer toute seule mais n'hésite pas à clique sur solution pour révéler la solution"
+  data-default-text=""
+  data-hint="Remplis les trous
+  SELECT nom
+  FROM personnages
+  WHERE yeux = ..."
+  data-solution="SELECT nom 
+FROM personnages
+WHERE yeux='Bleus'"
+  ></sql-exercise>
+
+* On met les deux conditions ensemble. Pour cela, il faut combiner les réponses précédentes dans une seule commande.
+
+<sql-exercise
+  data-question="Le noms des sorcier.ères qui ont les yeux bleus et une fille"
+  data-comment=""
+  data-default-text="SELECT nom
+FROM personnages
+WHERE nom IN (/*Le nom des socier.ères qui ont une fille*/)
+AND /*les yeux sont bleus*/"
+  data-hint="Indice: Il faut utiliser ce qu'on a vu auparavant
+1. Le nom des socières qui ont une fille:
+  SELECT premier_nom 
+  FROM famille 
+  WHERE relation='fille'
+2. Les sorcières qui ont les yeux bleus:
+  WHERE yeux = 'Bleus'"
+  data-solution="SELECT nom
+FROM personnages
+WHERE nom IN (SELECT premier_nom 
+              FROM famille 
+              WHERE relation='fille')
+AND yeux = 'Bleus'"
+  ></sql-exercise>
+
+Tu peux donc utiliser plusieurs commandes SQL les unes à l'intérieur des autres!
 
 ### Le vol de la coupe de feu
 

@@ -1,5 +1,5 @@
 ---
-layout: tutorial
+layout: tutorial_fr
 title: Défi supplémentaire
 dbFile: data/harrypotter_fr.db
 ---

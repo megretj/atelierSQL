@@ -1,8 +1,11 @@
 ---
-layout: tutorial
+layout: tutorial_fr
 title: Le vol de la coupe de feu
 dbFile: data/harrypotter_fr.db
 ---
+<figure>
+<img src="imgs/HarryPotterDB_fr.png"><figcaption>Rappel de la structure de la base de données</figcaption>
+</figure>
 
 # Le vol de la coupe de feu 
 
@@ -19,9 +22,9 @@ La personne témoin est l'époux d'une personne nommée Narcissa Malefoy... qui 
   data-comment="Essaies de ne pas utiliser la solution et demandes à un/e assistant/e pour de l'aide si tu en as besoin."
   data-default-text="SELECT ..."
   data-solution="
-  SELECT second 
+  SELECT second_nom 
   FROM famille 
-  WHERE relation = 'époux' AND premier = 'Narcissa Malefoy' "
+  WHERE relation = 'époux' AND premier_nom = 'Narcissa Malefoy' "
   ></sql-exercise>
 
 
@@ -67,12 +70,12 @@ failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-fe
   mais voici une manière de trouver la coupable en une seule commande.*/
   SELECT nom 
   FROM personnages 
-  WHERE nom IN (SELECT premier 
+  WHERE nom IN (SELECT premier_nom 
                 FROM famille
-                WHERE second='Drago Malefoy' 
-                AND premier IN (SELECT premier
+                WHERE second_nom='Drago Malefoy' 
+                AND premier_nom IN (SELECT premier_nom
                                 FROM famille
-                                WHERE second='Sirius Black'))
+                                WHERE second_nom='Sirius Black'))
   AND genre='Femme' AND cheveux='Noirs' AND naissance < 1955 "
   ></sql-exercise>
 

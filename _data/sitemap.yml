@@ -1,5 +1,13 @@
-contents:
-- title: Ministère de la magie
+contents_de:
+- title: Einfuerung workshop SQL
+  url: einfuerung.html
+  blurb: "Einfuerung an der workshop SQL"
+
+contents_fr:
+- title: Introduction atelier SQL
+  url: introduction.html
+  blurb: "Introduction à l'atelier SQL"
+- title: Le ministère de la magie
   url: atelier.html
   blurb: "Introduction à l'utilisation d'une base de données SQL."
   sections:
@@ -23,5 +31,5 @@ contents:
     url: "#coupable"
 - title: Défi supplémentaire
   url: défi_supplémentaire.html
-- title: Résumé des commandes
-  url: commanges_sql.html
+- title: Commandes SQL
+  url: commandes_sql.html
