@@ -382,7 +382,7 @@ class sqlExercise extends HTMLElement {
       var solutionButton = document.createElement('input');
       solutionButton.name = 'solution';
       solutionButton.type = 'button';
-      solutionButton.value = 'SOLUTION';
+      solutionButton.value = 'Solution';
       solutionButton.onclick = (e) => {
         var existingCode = editor.getValue();
         editor.setValue(existingCode + "\n/* " + solution);

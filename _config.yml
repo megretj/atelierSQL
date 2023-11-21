@@ -22,11 +22,11 @@ title: atelierSQL
 email: jean.megret@epfl.ch
 description: >- # this means to ignore newlines until "baseurl:"
   Cet atelier pour apprendre le SQL a été développé par le service de promotion des sciences de l'EPFL pour le coding club des filles.
-baseurl: "atelierSQL" # the subpath of your site, e.g. /blog
-url: https://megretj.github.io # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: "atelierSQL" # the subpath of your site, e.g. /blog
+# url: https://megretj.github.io # the base hostname & protocol for your site, e.g. http://example.com
 # When publishing on github, need to include this. locally, this makes stuff weird for the 
-# baseurl: "" # the subpath of your site, e.g. /blog
-# url: 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: 
 
 # Build settings
 theme: minima

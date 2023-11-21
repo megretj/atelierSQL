@@ -29,7 +29,9 @@ h4 {
 p {
     margin: 0.5em 0 0.5em 0;
     line-height: 170%;
-    font-family: 'Libre Baskerville', serif;
+    /* font-family: 'Libre Baskerville', serif; */
+    font-family: SuisseIntl-Light;
+
 }
 
 ul li {
@@ -64,13 +66,13 @@ body {
     color: #1b1e23;
     font-family: Roboto, sans-serif;
     font-size: 18px;
-    max-width: 45rem;
+    max-width: 50rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 body #column {
-  max-width: 50rem;
+  max-width: 55rem;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 2rem;
@@ -136,9 +138,9 @@ body #column {
     padding: 20px 20px;
     background: hwb(345 15% 3%);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 800;
     letter-spacing: 0;
-    color: #FFFFFF;
+    color: #ffffff;
     cursor: pointer;
     outline: none;
     box-shadow: 0 5px 30px rgba(255, 255, 255, 0.05);
@@ -212,7 +214,7 @@ a:hover {
 .sideNote {
     margin: 1em 0em;
     padding-left: 1em;
-    font-size: 0.95em;
+    font-size: 1em;
     border-left: 3px solid #bfd444;
     background-color: rgb(249, 255, 215);
 }
@@ -256,7 +258,8 @@ button .verify-button{
     border-radius: 0 4px 4px 0;
     padding: 5px 5px;
     background: hwb(345 15% 3%);
-    color: #FFFFFF;
+    font-size: 20px;
+    color: #000000;
     cursor: pointer;
     outline: none;
     box-shadow: 0 5px 30px rgba(255, 255, 255, 0.05);

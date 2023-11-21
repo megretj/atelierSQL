@@ -11,7 +11,7 @@ contents_fr:
   url: atelier.html
   blurb: "Introduction à l'utilisation d'une base de données SQL."
   sections:
-  - name: La base de données
+  - name: La requête magique
     url: "#base"
   - name: Filtrer les informations
     url: "#filtrer"

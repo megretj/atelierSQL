@@ -5,11 +5,15 @@ dbFile: data/harrypotter_fr.db
 ---
 # Défi supplémentaire
 
+## A peu près...
+
+Tu as surement remarqué qu'il faut être très précis lorsque l'on cherche des données.
+
 ## Les bases de données relationelles
 
 Le vrai avantage d'utiliser une base de donnée telle que celle que nous avons utilisé jusqu'à présent est que tu peux lier ces tableaux entre eux! Rappelles-toi du schéma que nous avons vus précédement:
 
-<img src="imgs/harrypotter_fr.png">
+<img src="imgs/HarryPotterDB_fr.png">
 
 On pourrait par exemple, vouloir voir tous les magiciens qui ont un patronyme de type_créature _Créature imaginaire_. Toutefois l'attribut type_créature ne se trouve pas dans le même tableau que les noms des magiciens. La requête suivante ne peut donc pas fonctionner.
 
