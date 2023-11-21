@@ -13,7 +13,7 @@ layout: default
 {% endfor %}
 
 <div class="section-nav">
-  <a href="/">Home</a>
+  <a href="{{ site.url }}/{{ site.baseurl }}">Home</a>
   {% for i in (1..max_count) reversed %}
     {% assign previous = tutorial_index | minus: i %}
     {% if previous >= 0 %}

@@ -22,16 +22,16 @@ FROM personnages
 LIMIT 3"></sql-exercise>
 
 
-<span class="sideNote">
+<div class="sideNote">
 <h3>Ta première requête SQL</h3>
 <p>Tu peux voir qu'une commande ou <span class="keyword">requête</span> SQL se lit un peu comme une phrase. Les mots en majuscules sont des mots clés en anglais et les mots en minuscules spécifient ce que tu veux chercher. <code class="keyword">SELECT</code> veut dire Sélectionne, <code class=keyword>FROM</code> veut dire de ou depuis et <code class="keyword">LIMIT</code> veur dire limite. Donc si on traduit la ligne de code on trouve: "<code>SELECTIONNE</code> prénom, nom <code>DE</code> personnages <code>LIMITE</code> 3".</p>
-</span> 
+</div> 
 
 Avec chaque requête on sélectionne un certain nombre <span class="keyword">d'attributs</span> (charctéristiques) comme le nom, le genre, l'année de naissance, etc. . Tu as déjà appris comment connaitre le nom des magiciens mais ça serait utile de savoir quels autres attributs peut on connaitre sur chaque personnage dans cette base de donnée.
 
-<span class ="sideNote">
+<div class ="sideNote">
 <p>Pour sélectionner <strong>tous</strong> les attributs d'un personnage, il faut sélectionner <code class="keyword">*</code>. </p>
-</span>
+</div>
 
 <sql-exercise
   data-question="Modifie la requête de tout à l'heure pour chercher tous les attributs de 3 magiciens dans la base de données."
@@ -68,7 +68,7 @@ _SELECTIONNE * DE personnages OÙ genre='Femme'_
 Il faut donc une commande comme _OÙ_ qui puisse filtrer une _condition_. Pour chaque personnage, soit la condition (par exemple:_genre='Femme'_) est vraie, dans quel cas la ligne du personnage sera affichée sinon la condition est fausse et on ignore la ligne. Si on traduit en anglais:
 
 <div class="sideNote">
-Tu peux utiliser <code class="keyword">WHERE</code> pour filtrer les résultats de tes recherches.
+<p>Tu peux utiliser <code class="keyword">WHERE</code> pour filtrer les résultats de tes recherches.</p>
 </div>
 
 
@@ -129,9 +129,9 @@ Cela devient donc:
 
 _SELECTIONNE COMPTE(*) DE personnages_
 
-<span class="sideNote">
-On peut compter le nombre de rangées sélectionnées grâce à la fonction <code class="keyword">COUNT()</code>.
-</span>
+<div class="sideNote">
+<p>On peut compter le nombre de rangées sélectionnées grâce à la fonction <code class="keyword">COUNT()</code>.</p>
+</div>
 
 <sql-exercise
   data-question="À toi de traduire ça dans une commande SQL. "
@@ -157,15 +157,15 @@ WHERE genre = 'homme'
 AND (cheveux = 'Noirs' OR cheveux = 'Roux' OR cheveux='Bruns')"
   ></sql-exercise>
 
-<span class="sideNote">
-Tu as certainement remarqué qu'on utilise <code>OR</code> pour dire _ou_. 
-</span>
+<div class="sideNote">
+<p>Tu as certainement remarqué qu'on utilise <code>OR</code> pour dire _ou_. </p>
+</div>
 
 Mais on peut faire mieux! Au lieu de répéter à chaque fois <code>cheveux=...</code> c'est plus simple d'écrire quelque chose comme "il faut que les cheveux soient dans la liste: {'Noirs','Roux','Bruns'}". 
 
-<span class="sideNote">
-On peut utiliser <code class='keyword'>IN</code> (ce qui veut dire _dans_) pour lister les possiblités. 
-</span>
+<div class="sideNote">
+<p>On peut utiliser <code class='keyword'>IN</code> (ce qui veut dire _dans_) pour lister les possiblités. </p>
+</div>
 
 La commande au complet donne:
 
@@ -241,7 +241,7 @@ WHERE relation = 'frère'"
 
 Pour un sondage il faudrait que tu ressences toutes les créatures qui ont des poils. En d'autres termes, il faut trouver les créatures où la colone _poils\_créature_ n'est pas _?_. 
 
-<span class="sideNote">Pour filtrer quelque chose qu'on ne veut pas, on peut utiliser la négation: <code class="keyword">NOT</code> ("pas" en français)avant la condition.</div>
+<div class="sideNote"><p>Pour filtrer quelque chose qu'on ne veut pas, on peut utiliser la négation: <code class="keyword">NOT</code> ("pas" en français)avant la condition.</p></div>
 
 <sql-exercise
   data-question="Quels sont les créatures qui ont des poils?"
@@ -319,8 +319,6 @@ Tu peux donc utiliser plusieurs commandes SQL les unes à l'intérieur des autre
 
 ### Le vol de la coupe de feu
 
-Tu as maintenant tous les outils pour t'attaquer à la grande enquête du vol de la coupe de feu! Si tu te sens prête à relever le défi, clique sur le bouton ci-dessous.
-
-<a href="vol_de_la_coupe_de_feu.html" class="button-link"> Commencer l'enquête </a>
+Tu as maintenant tous les outils pour t'attaquer à la grande enquête du vol de la coupe de feu! Si tu te sens prête à relever le défi, va à la prochaine page.
 
 

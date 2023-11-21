@@ -5,9 +5,15 @@ dbFile: data/harrypotter_fr.db
 ---
 # Défi supplémentaire
 
+<div class="warning">
+<p> Le défi supplémentaire n'est pas encore fini mais l'idée serait de soit enseigner: <code>JOIN</code> ou bien <code>LIKE</code></p>
+</div>
+
 ## A peu près...
 
-Tu as surement remarqué qu'il faut être très précis lorsque l'on cherche des données.
+Tu as surement remarqué qu'il faut être très précis lorsque l'on cherche des données. Mais si on ne connait qu'une partie d'une information on peut utiliser <code class="keyword">LIKE</code>.
+
+...
 
 ## Les bases de données relationelles
 

@@ -34,9 +34,6 @@ La particularité de SQL est que la syntaxe (les règles d'écriture) est assez 
 Pour ne pas trop spoiler les livres/les films, certaines des informations sur les personnages ont été modifiées. Dans tous les cas si tu n'as pas encore lu les livres on te conseilles grandement de le faire!
 </div>
 
-Dès que tu es prête, tu peux commencer l'atelier "*Accio query* ou SQLevioso ou SQL et la base des secrets ou SQL et l'ordre des requêtes ou la requête magique ou Queryddich":
-
-<a href="atelier.html" class="button-link is-centered"> Commencer l'atelier </a>
-
 Si tu ne te souviens plus d'une commande que tu as utilisée, tu peux te référer au <a href="commandes_sql.html">résumé des principales commandes sql</a>.
 
+Dès que tu es prête, tu peux commencer l'atelier "*Accio query* ou SQLevioso ou SQL et la base des secrets ou SQL et l'ordre des requêtes ou Queryddich". En cliquant sur le lien à coté de Next.
