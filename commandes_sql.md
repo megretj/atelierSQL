@@ -37,6 +37,12 @@ On peut ensuite ajouter des mots clés pour spécifier la requête (recherche).
     <td>SELECT nom FROM personnages </td>
   </tr>
   <tr>
+    <td>*</td>
+    <td>tout</td>
+    <td>Sélectionne toutes les colones d'une ligne</td>
+    <td>SELECT * FROM personnages LIMIT 5</td>
+  </tr>
+  <tr>
     <td>FROM</td>
     <td>DEPUIS</td>
     <td>Pour choisir le tableau où on veut aller chercher l'information</td>
