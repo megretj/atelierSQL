@@ -2,6 +2,32 @@ contents_de:
 - title: Einfuerung workshop SQL
   url: einfuerung.html
   blurb: "Einfuerung an der workshop SQL"
+- title: Das Zauberministerium
+  url: zauberministerium.html
+  blurb: "Einfuerung "
+  sections:
+  - name: Die Zauberabfrage
+    url: "#abfrage"
+  - name: Informationen filtern
+    url: "#filtern"
+  - name: Zählen
+    url: "#zaelen"
+  - name: Tabellen in der Datenbank
+    url: "#struktur"
+- title: Der Diebstahl des Feuerkelchs
+  url: der_diebstahl_des_Feuerkelchs.html
+  blurb: "Untersuchung des Diebstahls des Feuerkelchs unter Verwendung der Datenbank des Zauberministeriums."
+  sections:
+  - name: Die Zeugen
+    url: "#zeugen"
+  - name: Der Kämpfer
+    url: "#kämpfer"
+  - name: Der/die Schuldige
+    url: "#schuldige"
+- title: Zusätzliche Herausforderung
+  url: zusaetzliche_herausforderung.html
+- title: SQL-Befehle
+  url: sql_befehle.html
 
 contents_fr:
 - title: Introduction atelier SQL

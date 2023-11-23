@@ -26,6 +26,10 @@ Généralement il faut installer des programmes pour pouvoir utiliser SQL mais c
 FROM personnages
 LIMIT 3"></sql-exercise>
 
+<div class="sideNote">
+On verra que la base de donnée n'est pas remplie partout. En effet, souvent les données sont remplies par des humains et il peut y avoir des erreurs. Dans notre cas, on a utilisé le site <a href = "https://harrypotter.fandom.com/fr/wiki/Wiki_Harry_Potter">Wiki Harry Potter</a>. C'est aussi le travail d'un data scientist de "nettoyer" des données pour les rendre lisibles et cohérentes! Il se peut qu'il y ait encore des erreurs, tu peux volontiers nous les dire et on modifiera la base en conséquence.
+</div>
+
 <div class="supplementary">
 La particularité de SQL est que la syntaxe (les règles d'écriture) est assez libre. En particulier, on prend l'habitude d'écrire des mots clés comme <code>SELECT</code> en majuscule mais SQLite ne fait pas la différence entre majuscules et minuscule. On peut aussi ajouter des retours à la ligne et des tabulations à souhait. Pour une meilleure lisibilité, on garde souvent la syntaxe proposée dans cet atelier. Il est par contre important de suivre l'ordre dans laquelle on écrit les commandes (SELECT (MIN/MAX/COUNT/SUM) puis FROM (puis JOIN) puis WHERE/LIMIT/LIKE etc...). Il faut aussi faire attention à la syntaxe à l'intérieur de la base de données.
 </div>

@@ -76,17 +76,17 @@ failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-fe
   elle est née avant 1955 (elle a plus de 40 ans et il est noté au début de l'enquête que nous sommes en 1995). 
   Essaies de trouver toutes les informations séparément et écris les sur une feuille."
   data-solution="
-  /* Il vaut mieux détacher la commande en plusieurs parties
-  mais voici une manière de trouver la coupable en une seule commande.*/
+Il vaut mieux détacher la commande en plusieurs parties
+mais voici une manière de trouver la coupable en une seule commande.
 SELECT nom 
 FROM personnages 
-WHERE nom IN (SELECT premier_nom 
-              FROM famille
-              WHERE second_nom='Drago Malefoy' 
-              AND premier_nom IN (SELECT premier_nom
+WHERE nom IN (SELECT premier_nom
                               FROM famille
-                              WHERE second_nom='Sirius Black'))
-AND genre='Femme' AND cheveux='Noirs' AND naissance < 1955 "
+                              WHERE second_nom='Sirius Black')
+AND genre='Femme' 
+AND (cheveux='Noirs' OR cheveux='Bruns')
+AND naissance < 1955 
+AND mort > 1995"
   ></sql-exercise>
 
 <input-feedback 
