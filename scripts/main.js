@@ -289,6 +289,8 @@ class sqlExercise extends HTMLElement {
     var hint = this. getAttribute('data-hint') || '';
     var solution = this.getAttribute('data-solution') || '';
     var orderSensitive = this.getAttribute('data-orderSensitive') || false;
+    var successMessage = this.getAttribute('success-message') || '';
+    var failureMessage = this.getAttribute('failure-message') || '';
 
     var homeDiv = document.createElement('div');
     homeDiv.className = 'sqlExHomeDiv';
@@ -349,7 +351,7 @@ class sqlExercise extends HTMLElement {
                 submission_u.sort();
                 solution_u.sort();
             }
-            var verdict = arraysEqual(submission_u, solution_u) ? "Correct" : "Incorrect";
+            var verdict = arraysEqual(submission_u, solution_u) ? successMessage : failureMessage;
             // http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html
             verdict_div.innerText = verdict;
           });

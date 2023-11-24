@@ -7,12 +7,12 @@ def randomly_attribute(attribute):
     couleurs_cheveux_weights= [42, 30, 10, 10, 5, 3]
     couleurs_yeux = ['Bruns','Marron','Bleus','Gris','Verts','Noirs','Violets']
     couleurs_yeux_weights= [22,20, 30, 10, 10, 5, 3]
-    patronus = ['Phénix','Dragon','Hippogriffe','Hibou','Licorne','Veracrasse','Niffleur','Fléreur','Crabe de Feu','Boursouf','Chimère','Hippocampe','Chat','Chien','Kappa','Nundu','Limace à cornes','Bison','Grenouille lunaire','Vache','Mouette','Antilope','Canard','Iguane','Snallygaster','Puckwoodgenie','Baleine']
+    patronus = ['Phénix','Dragon','Hippogriffe','Hibou','Licorne','Veracrasse','Niffleur','Fléreur','Crabe de Feu','Boursouf','Chimère','Hippocampe','Chat','Chien','Kappa','Nundu','Limace à cornes','Bison','Grenouille lunaire','Vache','Mouette','Antilope','Canard','Iguane','Snallygaster','Puckwoodgenie','Baleine','Lièvre','Étoile de mer', 'Âne','Grinchebourdon','Serpencendre (ashwinder)','Tranchesac ongubulaire','Tébo','Tigre à dents de sabre','Girafe','Chrysope']
     if attribute=="Cheveux":
         return random.choices(couleurs_cheveux)[0]
     elif attribute=="Yeux":
         return random.choices(couleurs_yeux)[0]
-    elif attribute=="Patrouns":
+    elif attribute=="Patronus":
         return random.choices(patronus)[0]
     else:
         return "?"
@@ -41,6 +41,6 @@ def getAttribute(attribute, page):
         except:
             return "?"
     result = result.replace("'","''")
-    result.capitalize()
-    result.strip()
+    result = result.capitalize()
+    result = result.strip()
     return result

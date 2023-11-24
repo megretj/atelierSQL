@@ -1,4 +1,4 @@
-# Atelier SQL
+# Accio query
 
 Repo pour l'atelier du coding club des filles pour apprendre le SQL.
 
@@ -14,7 +14,8 @@ bundle exec jekyll serve
 
 This will compile the website and create a local server to test the website. Press crtl+C to stop the development server.
 
-
+#### Développement/déploiment
+Pour le développement en local ou le déploiment, il faut changer l'url de base dans [_config.yml](/_config.yml).
 
 -----
 

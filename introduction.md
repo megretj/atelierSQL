@@ -34,8 +34,15 @@ On verra que la base de donnée n'est pas remplie partout. En effet, souvent les
 La particularité de SQL est que la syntaxe (les règles d'écriture) est assez libre. En particulier, on prend l'habitude d'écrire des mots clés comme <code>SELECT</code> en majuscule mais SQLite ne fait pas la différence entre majuscules et minuscule. On peut aussi ajouter des retours à la ligne et des tabulations à souhait. Pour une meilleure lisibilité, on garde souvent la syntaxe proposée dans cet atelier. Il est par contre important de suivre l'ordre dans laquelle on écrit les commandes (SELECT (MIN/MAX/COUNT/SUM) puis FROM (puis JOIN) puis WHERE/LIMIT/LIKE etc...). Il faut aussi faire attention à la syntaxe à l'intérieur de la base de données.
 </div>
 
+<div class="supplementary">
+Informations sur la base de données:
+* Les données sont standardisés de telle manière qu'elles commencent toutes par une lettre majuscule.
+* Les chiffres 0 dans l'année de naissance et de mort veulent signifier que l'on a pas l'information ou que le personnage en question n'est pas mort.
+* Des données telles que les cheveux, les yeux et le patronus on partiellement été générées aléatoirement.
+</div>
+
 <div class="warning">
-Pour ne pas trop spoiler les livres/les films, certaines des informations sur les personnages ont été modifiées. Dans tous les cas si tu n'as pas encore lu les livres on te conseilles grandement de le faire!
+Pour ne pas trop spoiler les livres/les films, certaines des informations sur les personnages ont été modifiées. Dans tous les cas si tu n'as pas encore lu les livres on te conseilles vivement de le faire!
 </div>
 
 Si tu ne te souviens plus d'une commande que tu as utilisée, tu peux te référer au <a href="commandes_sql.html">résumé des principales commandes sql</a>.
