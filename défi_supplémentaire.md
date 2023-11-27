@@ -1,9 +1,9 @@
 ---
 layout: tutorial_fr
-title: Défi supplémentaire
+title: Défis supplémentaires
 dbFile: data/harrypotter_fr.db
 ---
-# Défis supplémentaire
+# Défis supplémentaires
 
 <div class="warning">
 <p> Le défi supplémentaire n'est pas encore fini mais l'idée serait de soit enseigner: <code>JOIN</code> ou bien <code>LIKE</code></p>
