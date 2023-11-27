@@ -3,7 +3,7 @@ title: Introduction atelier SQL
 layout: tutorial_fr
 dbFile: data/harrypotter_fr.db
 ---
-<h1>Introduction</h1>
+<h1>Accio Query!</h1>
 
 <div class="warning">
 Les informations présentes dans l'introduction seront données lors de la présentation. Tu n'as donc pas besoin de tout lire si tu as écouté la présentation.
@@ -47,4 +47,4 @@ Pour ne pas trop spoiler les livres/les films, certaines des informations sur le
 
 Si tu ne te souviens plus d'une commande que tu as utilisée, tu peux te référer au <a href="commandes_sql.html">résumé des principales commandes sql</a>.
 
-Dès que tu es prête, tu peux commencer l'atelier "*Accio query* ou SQLevioso ou SQL et la base des secrets ou SQL et l'ordre des requêtes ou Queryddich". En cliquant sur le lien à coté de Next.
+Dès que tu es prête, tu peux commencer l'atelier en cliquant sur le lien à coté de Next.
