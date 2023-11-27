@@ -69,6 +69,7 @@ body {
     max-width: 50rem;
     margin-left: auto;
     margin-right: auto;
+    cursor: url('../imgs/magicwand_new_small.png'), auto;
 }
 
 body #column {
@@ -141,7 +142,7 @@ body #column {
     font-weight: 800;
     letter-spacing: 0;
     color: #ffffff;
-    cursor: pointer;
+    cursor: url('../imgs/magicwand_new_small.png'), auto;
     outline: none;
     box-shadow: 0 5px 30px rgba(255, 255, 255, 0.05);
     text-align: center;
@@ -264,11 +265,15 @@ button .verify-button{
     background: hwb(345 15% 3%);
     font-size: 20px;
     color: #000000;
-    cursor: pointer;
+    cursor: url('../imgs/magicwand_new_small.png'), auto;
     outline: none;
     box-shadow: 0 5px 30px rgba(255, 255, 255, 0.05);
     text-align: center;
     margin: auto;
+}
+
+button:hover {
+    cursor: url('../imgs/magicwand_new_small.png'), auto;
 }
 
 .sqlQuizHomeDiv {

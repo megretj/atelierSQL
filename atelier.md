@@ -34,7 +34,7 @@ Avec chaque requête, on sélectionne un certain nombre <span class="keyword">d'
 </div>
 
 <sql-exercise
-  data-question="Modifie la requête de tout à l'heure pour chercher tous les attributs de 3 magiciens dans la base de données."
+  data-question="Modifie la requête de tout à l'heure pour chercher tous les attributs de 15 magiciens dans la base de données."
   data-comment="Si tu n'arrives pas, tu peux cliquer sur 'SOLUTION' et la solution apparaitra... magiquement!"
   data-default-text = "/* Ceci est un commentaire. */
 SELECT nom 
@@ -52,7 +52,7 @@ LIMIT 15"></sql-exercise>
 <input-feedback 
 data-title="Arrives-tu maintenant à dire quel est le patronus de Hermine Granger?"
 data-solution="loutre"
-success-message="🦦 C'est ça!  On va maintenant apprendre comment simplifier la recherche d'informations dans la base de données."
+success-message="🦦 C'est ça, bravo!  On va maintenant apprendre comment simplifier la recherche d'informations dans la base de données, au lieu de devoir lire les lignes une par une."
 failure-message="Ça n'est pas tout à fait ça. Essaies à nouveau ou demande à un.e assistant.e."></input-feedback>
 
 <div class="warning">
@@ -79,7 +79,7 @@ _SELECTIONNE COMPTE(*) DE personnages_
 <sql-exercise
   data-question="À toi de traduire ça dans une commande SQL. "
   data-comment=""
-  data-default-text=""
+  data-default-text="SELECT ..."
   data-solution="SELECT COUNT(*) 
 FROM personnages"
   success-message="Exactement, tu sais maintenant compter le nombre de lignes retournées par une requête. Maintenant on va essayer de faire des recherches un peu plus intéressantes."
@@ -89,7 +89,7 @@ failure-message="Pas tout à fait, essaies à nouveau."></sql-exercise>
 
 ## Filtrer les informations
 
-Hier, Mme Miranda Fauconnette a reporté au ministère qu'une jeune femme l'a défendue contre des voyous qui essayaient de lui voler son balais. Mme Fauconnette aimerait retrouver son nom pour la remercier car la fille a du partir de toute vitesse après l'avoir sauvée. Voici son portrait[^1] robot reconstitué d'après les descriptions très précises de la vieille femme:
+Hier, Mme Miranda Fauconnette a reporté au ministère qu'une jeune femme l'a défendue contre des voyous qui essayaient de lui voler son balais. Mme Fauconnette aimerait retrouver son nom pour la remercier car la fille a du partir de toute vitesse après l'avoir sauvée. Voici son portrait robot[^1] reconstitué d'après les descriptions très précises de la vieille femme:
 
 <img src="imgs/luna_lovegood_portrait.jpg">
 
@@ -97,7 +97,7 @@ Hier, Mme Miranda Fauconnette a reporté au ministère qu'une jeune femme l'a d�
 
 Il faudrait donc que tu ailles chercher les personnages féminins qui ont les yeux bleus et ont un patronus (l'esprit protecteur) sous forme de lièvre. Essayons déjà de chercher tous les personnages féminins. Il nous faut donc une commande qui dit:
 
-_Selectionne toutes les informations des personnages qui sont des femmes_
+_Sélectionne toutes les informations des personnages qui sont des femmes_
 
 En simplifiant donc un petit peu, on obtient:
 
@@ -131,7 +131,7 @@ Comme tout à l'heure, on traduit avec:
 _SELECTIONNE * DE personnages OÙ genre='Femme' ET yeux='Bleus'_
 
 <div class ="sideNote">
-<p>En anglais "et" se dit "and". On peut donc utiliser <code class="keyword">AND</code> pour combiner des conditions et obliger que le personnage remplisse toutes les conditions. Il ne faut pas confondre <code>AND</code> avec <code class="keyword">OR</code> qui veut dire "ou".</p>
+<p>En anglais "et" se dit "and". On peut donc utiliser <code class="keyword">AND</code> pour combiner des conditions et obliger que le personnage remplisse toutes les conditions.</p>
 </div>
 
 <sql-exercise
@@ -168,13 +168,15 @@ data-solution="luna lovegood"
 success-message="Bravo, détective! Tu as retrouvé Luna Lovegood, grâce à toi elle reçevra une belle récompense pour son acte héroique. Tu sais maintenant filtrer les informations de la base de données."
 failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-feedback>
 
-### Compter AND Filtrer
+<a name="compterEtFiltrer"></a>
+
+## Compter AND Filtrer
 
 Tu te souviens comment on compte? Et bien maintenant que tu sais filtrer, peux compter des choses un peu plus spécifiques.
 
 <sql-exercise
   data-question="Essaies de compter le nombre de magiciens hommes avec les cheveux noirs ou les cheveux roux ou les cheveux bruns en remplissant les trous."
-  data-comment="Remplis les trous manquants"
+  data-comment="Complète les trous manquants"
   data-default-text="SELECT COUNT(*) 
 FROM personnages 
 WHERE ... = 'Homme' 
@@ -187,7 +189,7 @@ AND (cheveux = 'Noirs' OR cheveux = 'Roux' OR cheveux='Bruns')"
   ></sql-exercise>
 
 <div class="sideNote">
-<p>Tu as certainement remarqué qu'on utilise <code>OR</code> pour dire <em>ou</em>. </p>
+<p>Tu as certainement remarqué qu'on utilise <code class="keyword">OR</code> pour dire <em>ou</em>. Quelle est la différence entre <code>OR</code> et <code>AND</code>?</p>
 </div>
 
 Mais on peut faire mieux! Au lieu de répéter à chaque fois <code>cheveux=...</code> c'est plus simple d'écrire quelque chose comme "il faut que les cheveux soient dans la liste: {'Noirs','Roux','Bruns'}". 
@@ -209,9 +211,28 @@ WHERE genre='Hemme'
 AND (cheveux IN('Noirs','Roux','Bruns'))"
   ></sql-exercise>
 
+<sql-exercise
+  data-question="Combien de sorciers et sorcières sont nés en 1990,1991,1992 ou 1993?"
+  data-comment="Utilise COUNT(*). Il y a plusieurs manières de résoudre cet exercice. "
+  data-default-text=""
+  success-message="Exactement!"
+  data-hint="SELECT COUNT(*) 
+FROM personnages 
+WHERE naissance IN ..."
+  data-solution="SELECT COUNT(*) 
+FROM personnages 
+WHERE naissance IN (1990,1991,1992,1993)
+*/
+/*
+SELECT COUNT(*)
+FROM personnages
+WHERE naissance < 1994 AND naissance > 1989
+*/"
+  ></sql-exercise>
+
 <a name="structure"></a>
 
-### Les différents tableaux
+## Les différents tableaux
 
 Avant de te lancer dans l'énigme finale, Professeure McGonagall te dit qu'il y a deux autres tableaux dans la base de données qui te seront utiles: 
 * _famille_, qui répertorie tous les liens de parenté entre les personnage.
@@ -219,10 +240,10 @@ Avant de te lancer dans l'énigme finale, Professeure McGonagall te dit qu'il y 
 
 Il toujours pratique d'avoir un apperçu de la base de donnée du ministère de la magie sous forme de schéma:
 <figure>
-<img src="imgs/HarryPotterDB_fr.png"><figcaption>Structure de la base de données.</figcaption>
+<img src="imgs/HarryPotterDB_fr.png"><figcaption>Structure de la base de données. Un tableau est représenté par une case. Chaque ligne dans les cases correspond à un attribut du tableau.</figcaption>
 </figure>
 
-Nous regarderons le tableau créature plus tard. Pour l'instant, le tableau _famille_, _premier\_nom_ est le/la _relation_ de _second\_nom_. Par exemple dans le tableau suivant, Lily est la mère de Harry et Harry et l'époux de Ginevra.
+Nous regarderons le tableau créature plus tard. Pour l'instant, dans le tableau _famille_, _premier\_nom_ est le/la _relation_ de _second\_nom_. Par exemple dans le tableau suivant, Lily est la mère de Harry et Harry est le fils de James.
 
 <table class="datatable">
 <thead>
@@ -281,7 +302,7 @@ WHERE relation = 'frère'"
 <sql-exercise
   data-question="Comment s'appelle la grand-mère de Neville Londubat?"
   data-default-text=""
-  success-message="C'est elle!"
+  success-message="C'est elle! Bien joué."
   failure-message="Ce n'est pas encore la bonne personne..."
   data-hint="Essaies quelque chose comme
 SELECT premier_nom
@@ -294,7 +315,7 @@ WHERE second_nom = 'Neville Londubat'"
   ></sql-exercise>
 </div>
 
-Finalement, grâce à ces nouveaux tableaux, tu peux aussi croiser les informations. Par exemple, si tu veux savoir quels sorcier.ères ont une fille et ont les yeux bleus, tu as besoin d'informations qui proviennent de deux tableaux différents. Il faudrait donc réussir à les lier ensemble. Voyons déjà comment trouver les deux informations séparément. 
+Finalement, grâce à ces nouveaux tableaux, tu peux aussi croiser les informations. Par exemple, si tu veux savoir quel.le.s sorcier.ères ont une fille et ont les yeux bleus, tu as besoin d'informations qui proviennent de deux tableaux différents. Il faudrait donc réussir à les lier ensemble. Voyons déjà comment trouver les deux informations séparément. 
 
 * D'abord pour trouver le noms des sorcier.ères qui ont une fille, on sélectionne le tableau _famille_ et on filtre les résultats lorsque la relation est égal à "fille".
 
@@ -332,7 +353,7 @@ WHERE yeux='Bleus'"
 <sql-exercise
   data-question="Le noms des sorcier.ères qui ont les yeux bleus et une fille"
   data-comment="N'hésites pas à faire comme tout à l'heure: d'abord une phrase, puis une phrase simplifiée puis traduire pour que ça fasse du code. Insère les solutions des deux points précédents"
-  success-message="Youhou!!! Tu as croisé les informations de deux tableaux différents!"
+  success-message="Youhou!!! Tu as croisé les informations de deux tableaux différents, tu es une véritable experte!"
   data-default-text="SELECT nom
 FROM personnages
 WHERE nom IN (/*Le nom des socier.ères qui ont une fille*/)

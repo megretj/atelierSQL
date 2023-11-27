@@ -3,11 +3,13 @@ layout: tutorial_fr
 title: Défi supplémentaire
 dbFile: data/harrypotter_fr.db
 ---
-# Défi supplémentaire
+# Défis supplémentaire
 
 <div class="warning">
 <p> Le défi supplémentaire n'est pas encore fini mais l'idée serait de soit enseigner: <code>JOIN</code> ou bien <code>LIKE</code></p>
 </div>
+
+<a name="not"></a>
 
 ## NOT un sondage normal
 
@@ -32,14 +34,16 @@ FROM créatures
 WHERE NOT plumes_poils='?''"
   ></sql-exercise>
 
-<span class="sideNode">
+<div class="sideNode">
 <h3>Conseil de pros</h3>
 Au lieu de cliquer sur Run, tu peux taper sur [Shift⇧]+[Enter↵] sur ton clavier pour exécuter ta commande.
-</span>
+</div>
+
+<a name="like"></a>
 
 ## I LIKE SQL
 
-Tu as surement remarqué qu'il faut être très précis lorsque l'on cherche des données specifiques avec le signe <code>=</code> (pare exemple, <code> ... WHERE nom = "Minerva McGonagall" AND ...</code>). Mais si on ne connait qu'une partie d'une information on peut utiliser <code class="keyword">LIKE</code>. Cela permet de chercher si le texte est contenu dans le tableau. 
+Tu as surement remarqué qu'il faut être très précis lorsque l'on cherche des données specifiques avec le signe <code>=</code> (par exemple, <code> ... WHERE nom = "Minerva McGonagall" AND ...</code>). Mais si on ne connait qu'une partie d'une information on peut utiliser <code class="keyword">LIKE</code>. Cela permet de chercher si le texte est contenu dans le tableau. 
 
 <sql-exercise
   data-question="Par exemple, dans le nom 'Minerva McGonagall' il y a 'Mine' ou 'onaga' ou encore 'McGo'."
@@ -63,6 +67,7 @@ FROM créatures
 WHERE nom_créature LIKE '%chat%'"
   ></sql-exercise>
 
+<a name="join"></a>
 
 ## Les bases de données relationelles
 
@@ -70,9 +75,9 @@ Le vrai avantage d'utiliser une base de donnée telle que celle que nous avons u
 
 <img src="imgs/HarryPotterDB_fr.png">
 
-On pourrait par exemple, vouloir voir tous les magiciens qui ont un patronyme de type_créature _Créature imaginaire_. Toutefois l'attribut type_créature ne se trouve pas dans le même tableau que les noms des magiciens. La requête suivante ne peut donc pas fonctionner.
+On pourrait par exemple, vouloir voir tous les magiciens qui ont un patronyme de statut_créature _Créature imaginaire_. Toutefois l'attribut statut_créature ne se trouve pas dans le même tableau que les noms des magiciens. La requête suivante ne peut donc pas fonctionner.
 
-<code>SELECT nom FROM personnages WHERE type_créature='Créature imaginaire'</code>
+<code class="codeBloc">SELECT nom FROM personnages WHERE statut_créature='Créature imaginaire'</code>
 
 L'attribut type_créature se trouve dans le tableau créatures. Il faut donc lier, ou joindre les deux tableaux grâce à la commande <span class="keyword">_JOIN_</span>. Par exemple, si Harry Potter a un Patronus "Cerf", on aimerait que toutes les informations du Cerf soient ajoutées au tableau personnages. Pour cela on pourrait écrire quelque chose comme: 
 
@@ -84,17 +89,23 @@ _SELECTIONNE * DE personnages JOINDRE créatures TEL QUE personnages.patronus=cr
 
 En anglais on traduit:
 
-<code> SELECT *
+<code class="codeBolc"> SELECT *
 FROM personnages 
 JOIN créatures ON personnages.patronus=créatures.nom_créature</code>
 
 Tu peux maintenant essayer par toi même.
 
 <sql-exercise
-  data-question="Joins les tableaux personnages et créatures sur l'attribut patronus = nom_créatures"
-  data-comment="Tu peux aussi essayer de filtrer les résultats avec <code>WHERE</code> ou <code>LIMIT</code> comme tu l'as fait précédemment."
+  data-question="Joins les tableaux personnages et créatures sur l'attribut patronus = nom_créatures et trouve tous les magicien.nes qui ont un patronus qui est une créature imaginaire."
+  data-comment="Tu peux utiliser la commande qu'on vient de voir et filtrer les résultats avec <code>WHERE</code> comme tu l'as fait précédemment."
   data-default-text=""
+  success-message="Super! Tu es maintenant une véritable data-scientiste. "
+  data-hint="SELECT *
+FROM personnages 
+JOIN créatures ON ... =créatures.nom_créature
+WHERE ... ='Créature imaginaire'"
   data-solution="SELECT *
 FROM personnages 
-JOIN créatures ON personnages.patronus=créatures.nom_créature"
+JOIN créatures ON personnages.patronus=créatures.nom_créature
+WHERE statut_créature='Créature imaginaire'"
   ></sql-exercise>

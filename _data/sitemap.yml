@@ -39,10 +39,12 @@ contents_fr:
   sections:
   - name: La requête magique
     url: "#base"
-  - name: Filtrer les informations
-    url: "#filtrer"
   - name: Compter
     url: "#compter"
+  - name: Filtrer les informations
+    url: "#filtrer"
+  - name: "Compter AND Filtrer"
+    url: "#compterEtFiltrer"
   - name: Les tableaux de la base de données
     url: "#structure"
 - title: Le vol de la coupe de feu
@@ -57,5 +59,12 @@ contents_fr:
     url: "#coupable"
 - title: Défi supplémentaire
   url: défi_supplémentaire.html
+  sections:
+  - name: NOT
+    url: "#not"
+  - name: LIKE
+    url: "#like"
+  - name: JOIN
+    url: "#join"
 - title: Commandes SQL
   url: commandes_sql.html
