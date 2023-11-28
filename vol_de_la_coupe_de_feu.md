@@ -19,7 +19,7 @@ dbFile: data/harrypotter_fr.db
 
 ## Le témoin
 
-C'est l'épouse du témoine est une personne nommée Narcissa Malefoy... qui est-ce?
+L'appel au témoin à bien fonctionné. C'est l'épouse du témoin qui s'est annoncé elle s'appelle Narcissa Malefoy.
 
 <sql-exercise
   data-question="Essaies d'écrire une commande pour trouver le témoin de l'affaire."
