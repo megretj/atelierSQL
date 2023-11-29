@@ -5,9 +5,9 @@ import random
 def randomly_attribute(attribute):
     couleurs_cheveux = ['Schwarz','Braun','Rot','Blond','Grau','Weiss']
     couleurs_cheveux_weights= [42, 30, 10, 10, 5, 3]
-    couleurs_yeux = ['Braun','Blau','Grau','Grün','Schwarz','Rot']
-    couleurs_yeux_weights= [42, 30, 10, 10, 5, 3]
-    patronus = ['Hippogreif','Hase','Phönix','Fawkes','Dementor','Sphinx','Kniesel', 'Demiguise', 'Billywig', 'Bowtruckle', 'Chimära', 'Crup', 'Diricawl', 'Drachen', 'Einhorn', 'Erumpent','Hippocampus','Niffler','Salamander','Adler','Löwe','Donnervogel','Pufferfisch']
+    couleurs_yeux = ['Braun','Blau','Grau','Grün','Schwarz','Rot','Silbergrau']
+    couleurs_yeux_weights= [42, 24, 8, 10, 5, 3,8]
+    patronus = ['Hippogreif','Hase','Otter','Phönix','Fawkes','Dementor','Sphinx','Kniesel', 'Demiguise', 'Billywig', 'Bowtruckle', 'Chimära', 'Crup', 'Diricawl', 'Drachen', 'Einhorn', 'Erumpent','Hippocampus','Niffler','Salamander','Adler','Löwe','Donnervogel','Pufferfisch']
     if attribute=="Haare":
         return random.choices(couleurs_cheveux, weights=couleurs_cheveux_weights)[0]
     elif attribute=="Augen":

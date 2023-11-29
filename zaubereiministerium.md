@@ -17,13 +17,13 @@ Deine Chefin, Professor McGonagall, zeigt dir, wie das System funktioniert. Du h
 <sql-exercise
   data-question="Hier ist ein Beispiel, um die Namen von 3 Zauberern in der Datenbank zu suchen."
   data-comment="Versuche, die Anzahl der angezeigten Namen auf 15 zu ändern."
-  data-default-text="SELECT name
+  data-default-text="SELECT Name
 FROM Charaktere
 LIMIT 3"></sql-exercise>
 
 <div class="sideNote">
 <h3>Dein erster SQL-Befehl</h3>
-<p>Du kannst sehen, dass ein SQL-Befehl oder eine <span class="keyword">Abfrage</span> ein wenig wie ein Satz aussieht. Die in Großbuchstaben geschriebenen Wörter sind englische Schlüsselwörter, und die in Kleinbuchstaben geschriebenen Wörter geben an, wonach du suchen möchtest. <code class="keyword">SELECT</code> bedeutet "Wähle aus", <code class=keyword>FROM</code> bedeutet "von" oder "aus", und <code class="keyword">LIMIT</code> bedeutet "Begrenzung". Wenn wir die Codezeile übersetzen, erhalten wir: "<code>WÄHLE AUS</code> Name <code>VON</code> Charaktere <code>BEGRENZUNG</code> 3".</p>
+<p>Du kannst sehen, dass ein SQL-Befehl oder eine <span class="keyword">Abfrage</span> ein wenig wie ein Satz aussieht. Die in Großbuchstaben geschriebenen Wörter sind englische Schlüsselwörter, und die in Kleinbuchstaben geschriebenen Wörter geben an, wonach du suchen möchtest. <code class="keyword">SELECT</code> bedeutet "Wähle aus", <code class=keyword>FROM</code> bedeutet "von" oder "aus", und <code class="keyword">LIMIT</code> bedeutet "Begrenzung". Wenn wir die Codezeile übersetzen, erhalten wir: "<code>WÄHLE</code> Name <code>AUS VON</code> Charaktere <code>BEGRENZUNG</code> 3".</p>
 </div> 
 
 Bei jeder Abfrage wählen wir eine bestimmte Anzahl von <span class="keyword">Attributen</span> (Eigenschaften) wie Name, Geschlecht, Geburtsjahr usw. aus. Du hast gerade gelernt, wie man den Namen von Zauberern anzeigt, aber es wäre nützlich zu wissen, welche anderen Attribute wir zu jedem Charakter kennen können.
@@ -36,7 +36,7 @@ Bei jeder Abfrage wählen wir eine bestimmte Anzahl von <span class="keyword">At
   data-question="Ändere die vorherige Abfrage, um alle Attribute von 15 Zauberern in der Datenbank zu suchen."
   data-comment="Wenn du es nicht schaffst, kannst du auf 'LÖSUNG' klicken, und die Lösung wird magisch erscheinen!"
   data-default-text = "/* Dies ist ein Kommentar. */
-SELECT name 
+SELECT Name 
 FROM Charaktere
 LIMIT 15"
   data-solution="
@@ -45,17 +45,17 @@ FROM Charaktere
 LIMIT 15"></sql-exercise>
 
 <div class="sideNote">
-<p>Alles zwischen <code>/*</code> und <code>*/</code> ist ein Kommentar und wird nicht ausgeführt, wenn du auf AUSFÜHREN klickst.</p>
+<p>Alles zwischen <code>/*</code> und <code>*/</code> ist ein Kommentar und wird nicht ausgeführt, wenn du auf Run druckst.</p>
 </div>
 
 <input-feedback 
-data-title="Kannst du jetzt sagen, welches Patronus Hermine Granger hat?"
-data-solution="Frettchen"
-success-message="🦦 Das ist es, super! Jetzt lernen wir, wie man die Suche nach Informationen in der Datenbank vereinfacht, anstatt jede Zeile einzeln lesen zu müssen."
+data-title="Kannst du jetzt sagen, welches Patronus Der Blutige Baron hat?"
+data-solution="Löwe"
+success-message="🦁 Das ist es, super! Jetzt lernen wir, wie man die Suche nach Informationen in der Datenbank vereinfacht, anstatt jede Zeile einzeln lesen zu müssen."
 failure-message="Das ist es noch nicht ganz. Versuche es erneut oder frage eine/n Assistenten/Assistentin."></input-feedback>
 
 <div class="warning">
-Wenn du dich nicht mehr an einen Befehl erinnerst, den du verwendet hast, kannst du das <a href="commandes_sql.html">Zusammenfassung der wichtigsten SQL-Befehle</a> überprüfen.
+Wenn du dich nicht mehr an einen Befehl erinnerst, den du verwendet hast, kannst du das <a href="sql_befehle.html">Zusammenfassung der wichtigsten SQL-Befehle</a> überprüfen.
 </div>
 
 
@@ -69,50 +69,47 @@ _Wähle die Anzahl der Elemente in der Tabelle Charaktere aus._
 
 Das wird also zu:
 
-_WÄHLE ZÄHLE(*) VON Charaktere_
+_WÄHLE ZÄHLE(*) AUS VON Charaktere_
 
 <div class="sideNote">
-<p>Die Anzahl der ausgewählten Zeilen kann mithilfe der Funktion <code class="keyword">COUNT()</code> gezählt werden. Wir geben an, was wir zählen möchten, in Klammern.</p>
+<p>Die Anzahl der ausgewählten Zeilen kann mithilfe der Befehl <code class="keyword">COUNT()</code> gezählt werden. Wir geben in Klammern an, was wir zählen möchten.</p>
 </div>
 
 <sql-exercise
   data-question="Versuche, dies in einem SQL-Befehl zu übersetzen."
   data-comment=""
   data-default-text="SELECT ..."
-  data-solution="SELECT COUNT(*) 
+  data-solution="
+SELECT COUNT(*) 
 FROM Charaktere"
-  success-message="Genau, jetzt weißt du, wie man die Anzahl der von einer Abfrage zurückgegebenen Zeilen zählt. Jetzt werden wir versuchen, etwas interessantere Suchen durchzuführen."
-failure
-
--message="Noch nicht ganz, versuche es erneut."></sql-exercise>
+  success-message="Genau, jetzt weißt du, wie man die Anzahl der von einer Abfrage zurückgegebenen Zeilen zählt. Zunächst werden wir versuchen, etwas interessantere Suchen durchzuführen."
+failure-message="Noch nicht ganz, versuche es erneut."></sql-exercise>
 
 <a name="filtern"></a>
 
 ## Informationen filtern
 
-Gestern hat Frau Miranda Falkenauge dem Ministerium gemeldet, dass eine junge Frau sie gegen Rowdys verteidigt hat, die versucht haben, ihr den Besen zu stehlen. Frau Falkenauge möchte ihren Namen herausfinden, um ihr zu danken, denn das Mädchen musste nach der Rettung schnell verschwinden. Hier ist ihr Phantombild[^1], rekonstruiert nach den sehr genauen Beschreibungen der alten Dame:
+Gestern hat Frau Bathilda Bagshot dem Ministerium gemeldet, dass eine junge Frau sie gegen Rowdys verteidigt hat, die versucht haben, ihr den Besen zu stehlen. Frau Bagshot möchte ihren Namen herausfinden, um ihr zu danken, denn das Mädchen musste nach der Rettung schnell verschwinden. Hier ist ihr Phantombild[^1], rekonstruiert nach den sehr genauen Beschreibungen der alten Dame:
 
 <img src="imgs/luna_lovegood_portrait.jpg">
 
 [^1]: Quelle [wallpaperaccess.com](https://wallpaperaccess.com/luna-lovegood)
 
-Du müsstest also nach weiblichen Charakteren suchen, die blaue Augen haben und deren Patronus (Schutzgeist) ein Hase ist. Versuchen wir zunächst, alle weiblichen Charaktere zu finden. Dafür benötigen wir einen Befehl, der sagt:
+Du müsstest also nach weiblichen Charakteren suchen, die silbergraue Augen haben und deren Patronus (Schutzgeist) ein Hase ist. Versuchen wir zunächst, alle weiblichen Charaktere zu finden. Dafür benötigen wir einen Befehl, der sagt:
 
 _Wähle alle Informationen der Charaktere aus, die Frauen sind._
 
 Indem wir das ein wenig vereinfachen, erhalten wir:
 
-_WÄHLE * AUS Charaktere WO Geschlecht='Frau'_
+_WÄHLE * AUS Charaktere WO Geschlecht='Weiblich'_
 
-Wir benötigen also einen Befehl wie _WO_, der eine _Bedingung_ filtern kann. Für jeden Charakter ist die Bedingung entweder wahr (zum Beispiel: _Geschlecht='Frau'_), in diesem Fall wird die Zeile des Charakters angezeigt, oder die Bedingung ist falsch, und die Zeile wird ignoriert. Wenn wir dies ins Englische übersetzen:
+Wir benötigen also einen Befehl wie _WO_, der eine _Bedingung_ filtern kann. Für jeden Charakter ist die Bedingung entweder wahr (zum Beispiel: _Geschlecht='Weiblich'_), in diesem Fall wird die Zeile des Charakters angezeigt, oder die Bedingung ist falsch, und die Zeile wird ignoriert. Wenn wir dies ins Englische übersetzen:
 
 <div class="sideNote">
-<p>Du kannst <code class="keyword">WHERE</code> verwenden, um die Ergebnisse deiner Suchanfragen zu filtern.</p>
+<p>Du kannst <code class="keyword">WHERE</code> (WO auf Deutsch) verwenden, um die Ergebnisse deiner Suchanfragen zu filtern.</p>
 </div>
 
-Und wir können schreiben:
-
-<code class="codeblock">SELECT * FROM Charaktere WHERE Geschlecht='Frau'</code>
+<code class="codeblock">SELECT * FROM Charaktere WHERE Geschlecht='Weiblich'</code>
 <sql-exercise
   data-question="Versuche, selbständig alle weiblichen Charaktere mit <code>WHERE</code> anzuzeigen."
   data-comment=""
@@ -120,16 +117,16 @@ Und wir können schreiben:
   data-solution="
 SELECT * 
 FROM Charaktere 
-WHERE Geschlecht='Frau' "
+WHERE Geschlecht='Weiblich' "
   ></sql-exercise>
 
-Gut, aber das sind immer noch zu viele Zeilen zum Durchgehen, und du müsstest deine Suche verfeinern. Dazu können wir die Bedingung hinzufügen, dass das Mädchen blaue Augen hat. Auf Französisch würde man sagen:
+Gut, aber das sind immer noch zu viele Zeilen zum Durchgehen, und du müsstest deine Suche verfeinern. Dazu können wir die Bedingung hinzufügen, dass das Mädchen silbergraue Augen hat. Auf Deutsch würde man sagen:
 
-_Wähle alle Informationen der Charaktere aus, die Frauen sind und blaue Augen haben._
+_Wähle alle Informationen der Charaktere aus, die Frauen sind und silbergraue Augen haben._
 
 Wie vorhin übersetzt:
 
-_WÄHLE * AUS Charaktere WO Geschlecht='Frau' UND Augen='Blau'_
+_WÄHLE * AUS Charaktere WO Geschlecht='Weiblich' UND Augen='Silbergrau'_
 
 <div class ="sideNote">
 <p>Im Englischen sagt man "und" mit "and". Wir können also <code class="keyword">AND</code> verwenden, um Bedingungen zu kombinieren und sicherzustellen, dass der Charakter alle Bedingungen erfüllt.</p>
@@ -139,25 +136,26 @@ _WÄHLE * AUS Charaktere WO Geschlecht='Frau' UND Augen='Blau'_
   data-question="Übersetze die Anfrage ins Englische, indem du das bisher Gelernte verwendest."
   data-default-text="SELECT ...
 FROM ...
-WHERE ..."
+WHERE ...
+AND ..."
   data-solution="
 SELECT * 
 FROM Charaktere 
-WHERE Geschlecht='Frau' 
-AND Augen='Blau'"
+WHERE Geschlecht='Weiblich' 
+AND Augen='Silbergrau'"
   ></sql-exercise>
 
 Immer noch zu viele Personen... Versuche, die Bedingung des Patronus Hase hinzuzufügen.
 
 <sql-exercise
-  data-question="Ändere die vorherige Anfrage wie folgt"
+  data-question="Ändere die vorherige Anfrage"
   data-comment="Versuche, die Lösung nicht zu verwenden, und frage einen Assistenten um Hilfe, wenn du Hilfe brauchst."
   data-default-text="SELECT ..."
   data-solution="
 SELECT * 
 FROM Charaktere 
-WHERE Geschlecht='Frau' 
-AND Augen='Blau'
+WHERE Geschlecht='Weiblich' 
+AND Augen='Silbergrau'
 AND Patronus='Hase'"
   ></sql-exercise>
 
@@ -165,8 +163,8 @@ Hast du sie jetzt gefunden?
 
 <input-feedback 
 data-title="Schreibe den Namen der Person auf, wenn du denkst, dass du den Namen der freundlichen Hexe gefunden hast, die der alten Dame geholfen hat."
-data-solution="Luna Lovegood"
-success-message="Bravo, Detektivin! Du hast Luna Lovegood gefunden, dank dir wird sie eine schöne Belohnung für ihre heldenhafte Tat erhalten. Du kannst jetzt Informationen in der Datenbank filtern."
+data-solution="luna lovegood"
+success-message="Bravo, Detektivin! Du hast Luna Lovegood gefunden, dank dir wird sie eine schöne Belohnung für ihre heldenhafte Tat erhalten. Du kannst jetzt Informationen in einer Datenbank filtern."
 failure-message="Das ist nicht die richtige Person, versuche es erneut."></input-feedback>
 
 <a name="zaehlenFiltern"></a>
@@ -179,37 +177,39 @@ Erinnerst du dich, wie man zählt? Nun, jetzt, da du filtern kannst, kannst du a
   data-question="Versuche die Anzahl der männlichen Zauberer mit schwarzen, roten oder braunen Haaren zu zählen, indem du die Lücken ausfüllst."
   data-comment="Fülle die fehlenden Lücken aus."
   data-default-text="SELECT COUNT(*) 
-FROM personnages 
-WHERE ... = 'Mann' 
-AND (... = 'Schwarze' OR ... = ... OR ... = ...)"
+FROM Charaktere 
+WHERE ... = 'Männlich' 
+AND (... = 'Schwarz' OR ... = ... OR ... = ...)"
   data-solution=" 
-SELECT COUNT(*) 
-FROM personnages 
-WHERE genre = 'Mann' 
-AND (cheveux = 'Schwarze' OR cheveux = 'Rote' OR cheveux='Braune')"
+SELECT COUNT(*)
+FROM Charaktere
+WHERE Geschlecht = 'Männlich'
+AND (Haare='Schwarz' OR Haare='Rot' OR Haare='Braun')"
+  success-message="Richtig!"
   ></sql-exercise>
 
 <div class="sideNote">
 <p>Du hast sicherlich bemerkt, dass wir <code class="keyword">OR</code> verwenden, um <em>oder</em> auszudrücken. Was ist der Unterschied zwischen <code>OR</code> und <code>AND</code>?</p>
 </div>
 
-Aber wir können es noch besser machen! Anstatt jedes Mal <code>cheveux=...</code> zu wiederholen, ist es einfacher, etwas wie "die Haare müssen in der Liste sein: {'Schwarze','Rote','Braune'}" zu schreiben.
+Aber wir können es noch besser machen! Anstatt jedes Mal <code>Haare=...</code> zu wiederholen, ist es einfacher, etwas wie "die Haare müssen in der Liste sein: {'Schwarze','Rote','Braune'}" zu schreiben.
 
 <div class="sideNote">
 <p>Wir können <code class='keyword'>IN</code> (was <em>in</em> bedeutet) verwenden, um die Möglichkeiten aufzulisten.</p>
 </div>
 
 <sql-exercise
-  data-question="Die vollständige Abfrage lautet:"
+  data-question="Vervollständige die folgende Abfrage."
   data-comment="Probiere beide Abfragen aus und überprüfe, ob sie äquivalent sind. Du kannst auch versuchen, andere Dinge in der Tabelle zu zählen, wenn du möchtest."
-  data-default-text="SELECT COUNT(*) 
-FROM personnages 
-WHERE genre='Frau'
-AND (cheveux IN('Schwarze','Rote','Braune'))"
-  data-solution="SELECT COUNT(*) 
-FROM personnages 
-WHERE genre='Frau'
-AND (cheveux IN('Schwarze','Rote','Braune'))"
+  data-default-text="SELECT COUNT(*)
+FROM ...
+WHERE Geschlecht = 'Männlich'
+AND Haare IN ('Schwarz','Rot',...)"
+  data-solution="
+SELECT COUNT(*)
+FROM Charaktere
+WHERE Geschlecht = 'Männlich'
+AND Haare IN ('Schwarz','Rot','Braun')"
   ></sql-exercise>
 
 <sql-exercise
