@@ -2,30 +2,40 @@ contents_de:
 - title: Einfuerung workshop SQL
   url: einfuerung.html
   blurb: "Einfuerung an der workshop SQL"
-- title: Das Zauberministerium
-  url: zauberministerium.html
+- title: Das Zaubereiministerium
+  url: zaubereiministerium.html
   blurb: "Einfuerung "
   sections:
-  - name: Die Zauberabfrage
-    url: "#abfrage"
+  - name: Der magische Befehl
+    url: "#base"
+  - name: Zählen
+    url: "#zaehlen"
   - name: Informationen filtern
     url: "#filtern"
-  - name: Zählen
-    url: "#zaelen"
-  - name: Tabellen in der Datenbank
+  - name: Zählen UND Filtern
+    url: "#zaehlenFiltern"
+  - name: Die verschiedenen Tabellen in der Datenbank
     url: "#struktur"
 - title: Der Diebstahl des Feuerkelchs
   url: der_diebstahl_des_Feuerkelchs.html
   blurb: "Untersuchung des Diebstahls des Feuerkelchs unter Verwendung der Datenbank des Zauberministeriums."
   sections:
-  - name: Die Zeugen
-    url: "#zeugen"
+  - name: Der Zeuge
+    url: "#zeuge"
   - name: Der Kämpfer
-    url: "#kämpfer"
+    url: "#kaempfer"
   - name: Der/die Schuldige
     url: "#schuldige"
-- title: Zusätzliche Herausforderung
-  url: zusaetzliche_herausforderung.html
+- title: Zusätzliche Herausforderungen
+  url: zusaetzliche_herausforderungen.html
+  blurb: "Zusätzliche Übungen"
+  sections:
+  - name: NOT
+    url: "#not"
+  - name: LIKE
+    url: "#like"
+  - name: JOIN
+    url: "#join"
 - title: SQL-Befehle
   url: sql_befehle.html
 

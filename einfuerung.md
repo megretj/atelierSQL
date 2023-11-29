@@ -1,34 +1,53 @@
 ---
-title: Workshop SQL
+title: Einfuerung workshop SQL
 layout: tutorial_de
 dbFile: data/harrypotter_de.db
 ---
-<h1>Introduction</h1>
+<h1>Accio Query!</h1>
 
 <div class="warning">
-Les informations présentes dans l'introduction seront soit données lors de la présentation ou des informations supplémentaires. Tu n'as donc pas besoin de tout lire si tu as écouté la présentation.
+Die Informationen in der Einleitung werden während der Präsentation gegeben. Du musst also nicht alles lesen, wenn du der Präsentation zugehört hast.
 </div>
 
-Aujourd'hui nous allons apprendre à gérer des bases de données grace à un outil bien pratique: SQL (Structured Query Language en anglais veut dire Languague de Requête Structurée). Grâce au dévelopement du monde numérique il est facile d'enregistrer beaucoup de données. Mais c'est parfois pas si facile de bien les ranger pour facilement les retrouver plus tard. les  monde est confronté à une grande quantité de données ou d'informations.
+Heute lernen wir, Datenbanken mit einem sehr nützlichen Tool zu verwalten: SQL (Structured Query Language auf Englisch bedeutet Strukturierte Abfragesprache). Dank der Entwicklung der digitalen Welt ist es einfach, viele Daten zu speichern. Aber es ist manchmal nicht so einfach, sie gut zu organisieren, um sie später leicht wiederzufinden. Die Welt steht vor einer großen Menge an Daten oder Informationen.
 
 <div class="sideNote">
-Par exemple, Instagram a de grandes bases de données pour enregistrer toutes les images des utilisateurs, les commentaires, les likes, etc... Quand tu ouvre l'application instagram ton téléphone envoies un message chez Instagram pour leur demander de t'envoyer les données qui t'intéressent. Imagine maintenant qu'il n'y a pas seulement tes images, mais celles de chaque utilisateurs Instagram (plus d'un milliard!). Il faut une sorte de grosse archive ou grande bibliothèque digitale pour enregistrer tout ça. On appelle cette archive une base de données. Pour aller chercher des données sur cette base, ou y déposer de nouvelles données, il faut envoyer des commandes à l'ordinateur. 
+Zum Beispiel hat Instagram große Datenbanken, um alle Bilder der Benutzer, Kommentare, Likes usw. zu speichern. Wenn du die Instagram-App öffnest, sendet dein Telefon eine Nachricht an Instagram, um sie nach den Daten zu fragen, die dich interessieren. Stell dir jetzt vor, es gibt nicht nur deine Bilder, sondern die von jedem Instagram-Benutzer (über eine Milliarde!). Dafür braucht es eine Art großes Archiv oder große digitale Bibliothek, um all das zu speichern. Dieses Archiv nennt man eine Datenbank. Um Daten aus dieser Datenbank abzurufen oder neue Daten einzufügen, muss man Befehle an den Computer senden.
 </div>
 
-Comme tu peux le voir, le résultat de tes requêtes est donné sous forme de tableau, car après tout, les bases de données ne sont que de grands tableaux! Malgré tout, ils sont un peu trop grands pour pouvoir chercher les informations à la main. Mais heuresement, les ordinateurs sont très bons pour ce genre de tâche. Mais encore faut-il savoir parler la langue des ordinateurs pour leur demander poliment de fair le long et fastudieux travail de recherche d'informations.
+Wie du sehen wirst, wird das Ergebnis deiner Abfragen in Form einer Tabelle angezeigt, denn schließlich sind Datenbanken nur große Tabellen! Trotzdem sind sie manchmal zu groß, um die Informationen manuell zu durchsuchen. Aber zum Glück sind Computer sehr gut in dieser Art von Aufgabe. Aber man muss immer noch die Sprache der Computer sprechen können, um sie höflich zu bitten, die langwierige Arbeit der Informationsrecherche zu erledigen.
 
-Généralement il faut installer des programmes pour pouvoir utiliser SQL mais ce site internet à été crée pour utiliser le SQL directement dans ton navigateur. Pour faire une requête SQL (plus précisément SQLite) il te suffit donc d'écrire ta commande dans un bloc de code comme celui ci et de cliquer sur "RUN" (lancer ou exécuter en anglais). 
+Normalerweise muss man Programme installieren, um SQL verwenden zu können, aber diese Website wurde erstellt, um SQL direkt in deinem Browser zu verwenden. Um eine SQL-Anfrage (genauer gesagt SQLite) zu stellen, musst du also deinen Befehl in einen Codeblock wie diesen eingeben und auf "RUN" klicken (auf Englisch starten oder ausführen).
 
 <sql-exercise
-  data-question="Ceci est un bloc de code interactif, tu peux éditer le code ci-dessous."
-  data-comment="(Pour les pros: Shift+Enter est un raccourci de clavier pour exécuter la commande au lieu de clique sur RUN)"
+  data-question="Dies ist ein interaktiver Codeblock. Du kannst den Code unten bearbeiten."
+  data-comment="(Für Profis: Shift+Enter ist eine Tastenkombination, um den Befehl auszuführen, anstelle auf RUN zu klicken)"
   data-default-text="SELECT *
-FROM personnages
+FROM charakter
 LIMIT 3"></sql-exercise>
 
-Dès que tu es prête, tu peux commencer l'atelier:
+<div class="sideNote">
+Wir werden feststellen, dass die Datenbank nicht überall vollständig ist. Oft werden Daten von Menschen eingetragen, und es können Fehler auftreten. In unserem Fall haben wir die Website <a href="https://harrypotter.fandom.com/de/wiki/Harry-Potter-Lexikon:Hauptseite">Harry Potter Lexikon</a> verwendet. Es ist auch die Aufgabe eines Data Scientists, Daten zu "reinigen", um sie lesbar und konsistent zu machen! Es kann immer noch Fehler geben; du kannst sie uns gerne mitteilen, und wir werden die Datenbank entsprechend aktualisieren.
+</div>
 
-<a href="atelier.html" class="button-link"> Commencer l'atelier </a>
+<div class="supplementary">
+Die Besonderheit von SQL ist, dass die Syntax (die Schreibregeln) ziemlich frei ist. Insbesondere neigen wir dazu, Schlüsselwörter wie <code>SELECT</code> in Großbuchstaben zu schreiben, aber SQLite unterscheidet nicht zwischen Groß- und Kleinschreibung. Du kannst auch Zeilenumbrüche und Tabulatoren nach Belieben hinzufügen. Für bessere Lesbarkeit halten wir uns oft an die in diesem Workshop vorgeschlagene Syntax. Es ist jedoch wichtig, die Reihenfolge einzuhalten, in der die Befehle geschrieben werden (SELECT (MIN/MAX/COUNT/SUM) dann FROM (dann JOIN) dann WHERE/LIMIT/LIKE usw.). Es ist auch wichtig, auf die Syntax innerhalb der Datenbank zu achten.
+</div>
 
-Si tu ne te souviens plus d'une commande que tu as utilisé, tu peux te référer au <a href="commandes_sql.html">résumé des principales commandes sql</a>.
+<div class="supplementary">
+Informationen zur Datenbank:
+<ul>
+<li>Die Daten sind standardisiert, sodass sie alle mit einem Großbuchstaben beginnen.</li>
+<li>Die Ziffern 0 im Geburts- und Sterbejahr bedeuten, dass wir die Information nicht haben oder dass die betreffende Person nicht gestorben ist.</li>
+<li>Daten wie Haarfarbe, Augenfarbe und Patronus wurden teilweise zufällig generiert.</li>
+</ul>
+</div>
+
+<div class="warning">
+Um die Bücher/Filme nicht zu sehr zu spoilern, wurden einige Informationen über die Charaktere geändert. In jedem Fall empfehlen wir dringend, die Bücher zu lesen, wenn du sie noch nicht gelesen hast!
+</div>
+
+Wenn du dich nicht mehr an einen Befehl erinnerst, den du verwendet hast, kannst du das <a href="sql_befehle.html">Zusammenfassung der wichtigsten SQL-Befehle</a> überprüfen.
+
+Wenn du bereit bist, kannst du mit dem Workshop beginnen, indem du auf den Link neben "Next" klickst.
 

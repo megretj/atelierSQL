@@ -1,28 +1,32 @@
 ---
-layout: default
+layout: default_de
 ---
 
-{% for tutorial in site.data.sitemap.contents %}
+{% for tutorial in site.data.sitemap.contents_de %}
   {% if tutorial.title == page.title %}
     {% assign tutorial_index = forloop.index0 %}
     {% assign content_length = forloop.length %}
     {% assign previous = tutorial_index | minus: 1 %}
     {% assign next = tutorial_index | plus: 1 %}
+    {% assign max_count = 5 %}
   {% endif %}
 {% endfor %}
 
 <div class="section-nav">
-  <a href="/">Home</a>
-  {% if previous >= 0 %}
-    {% assign previous_tutorial = site.data.sitemap.contents[previous] %}
-    <div class="section-sib">
-      &#x21b3; <a href="{{ previous_tutorial.url }}">{{ previous_tutorial.title }}</a>
-    </div>
-  {% endif %}
+  <a href="{{ site.url }}/{{ site.baseurl }}">Home</a>
+  {% for i in (1..max_count) reversed %}
+    {% assign previous = tutorial_index | minus: i %}
+    {% if previous >= 0 %}
+      {% assign previous_tutorial = site.data.sitemap.contents_de[previous] %}
+      <div class="section-sib">
+        &#x21b3; <a href="{{ previous_tutorial.url }}">{{ previous_tutorial.title }}</a>
+      </div>
+    {% endif %}
+  {% endfor %}
 
   <div class="section-sib">&#x21b3; <div class="cur-text">{{ page.title }}</div></div>
 
-  {% for tutorial in site.data.sitemap.contents %}
+  {% for tutorial in site.data.sitemap.contents_de %}
     {% if tutorial.title == page.title %}
       {% for section in tutorial.sections %}
         {% unless section.sidenote %}
@@ -34,30 +38,36 @@ layout: default
     {% endif %}
   {% endfor %}
 
-  {% if site.data.sitemap.contents[next].title %}
-    {% assign next_tutorial = site.data.sitemap.contents[next] %}
-    <div class="section-sib">
-      &#x21b3; <a href="{{ next_tutorial.url }}">{{ next_tutorial.title }}</a>
-    </div>
-  {% endif %}
+  {% for _ in (1..max_count) %}
+    {% if site.data.sitemap.contents_de[next].title %}
+      {% assign next_tutorial = site.data.sitemap.contents_de[next] %}
+      <div class="section-sib">
+        &#x21b3; <a href="{{ next_tutorial.url }}">{{ next_tutorial.title }}</a>
+      </div>
+      {% assign next = next | plus: 1 %}
+    {% endif %}
+  {% endfor %}
 </div>
 
 {{content}}
 
 <div class="tutorial-nav">
+  {% assign previous = tutorial_index | minus: 1 %}
+  {% assign next = tutorial_index | plus: 1 %}
   {% if previous >= 0 %}
-    {% assign previous_tutorial = site.data.sitemap.contents[previous] %}
+    {% assign previous_tutorial = site.data.sitemap.contents_de[previous] %}
     <div class="previous">Previous: <a href="{{ previous_tutorial.url }}">
     {{ previous_tutorial.title }}</a></div>
   {% endif %}
 
-  {% if site.data.sitemap.contents[next].title %}
-    {% assign next_tutorial = site.data.sitemap.contents[next] %}
+  {% if site.data.sitemap.contents_de[next].title %}
+    {% assign next_tutorial = site.data.sitemap.contents_de[next] %}
     <div class="next">Next: <a href="{{ next_tutorial.url }}">
     {{ next_tutorial.title }}</a></div>
   {% endif %}
 </div>
+
 <div class="footer">
-  Prose and code is licensed by <a rel="author" href="https://www.epfl.ch/education/education-and-science-outreach/fr/promotion-des-sciences/">SPS EPFL</a> under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr">CC BY-NC-ND 4.0 License</a>. Concept and code inspired by <a href="https://selectstarsql.com/">SelectStarSQL</a>. Hosted on <a href="https://github.com/megretj/atelierSQL">Github Pages</a>.
+  Prosa und Code sind von <a rel="author" href="https://www.epfl.ch/education/education-and-science-outreach/fr/promotion-des-sciences/">SPS EPFL</a> unter der Lizenz <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr">CC BY-NC-ND 4.0 License</a>. Code und Konzept inspiriert von <a href="https://selectstarsql.com/">SelectStarSQL</a>. Gehostet auf <a href="https://github.com/megretj/atelierSQL">Github Pages</a>.
   <!-- under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA 4.0 License</a>. Code and data are released into the public domain under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 License</a>. -->
 </div>

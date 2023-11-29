@@ -10,10 +10,8 @@ dbFile: data/harrypotter_fr.db
 # Le vol de la coupe de feu 
 
 <figure>
-<img src="imgs/newspaper.gif" style="width:80%;text-align:center;"><figcaption>Une copie de la une de "The Daily Prophet"</figcaption>
+<img src="imgs/newspaper.gif" style="width:80%;text-align:center;" alt="Épouvante à la banque de Gringotts: La coupe de feu a été volée! Le vol s'est passé la nuit du 24 au 25 avril 1995. Quelqu'un s'est introduit dans la salle du coffre et a détruit plusieurs murs pour s'échaper. On a que peu d'informations à propos des suspects. On sait seulement qu'il y avait un témoin sur les lieux du vol."><figcaption>Une copie de la une de "The Daily Prophet"</figcaption>
 </figure>
-
-<!-- Épouvante à la banque de Gringotts: La coupe de feu a été volée! Le vol s'est passé la nuit du 24 au 25 avril 1995. Quelqu'un s'est introduit dans la salle du coffre et a détruit plusieurs murs pour s'échaper. On a que peu d'informations à propos des suspects. On sait seulement qu'il y avait un témoin sur les lieux du vol.  -->
 
 <a name="témoins"></a>
 
