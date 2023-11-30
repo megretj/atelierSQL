@@ -179,7 +179,7 @@ Erinnerst du dich, wie man zählt? Nun, jetzt, da du filtern kannst, kannst du a
   data-default-text="SELECT COUNT(*) 
 FROM Charaktere 
 WHERE ... = 'Männlich' 
-AND (... = 'Schwarz' OR ... = ... OR ... = ...)"
+AND (... = 'Schwarz' OR Haare = ... OR Haare = ...)"
   data-solution=" 
 SELECT COUNT(*)
 FROM Charaktere
@@ -192,10 +192,10 @@ AND (Haare='Schwarz' OR Haare='Rot' OR Haare='Braun')"
 <p>Du hast sicherlich bemerkt, dass wir <code class="keyword">OR</code> verwenden, um <em>oder</em> auszudrücken. Was ist der Unterschied zwischen <code>OR</code> und <code>AND</code>?</p>
 </div>
 
-Aber wir können es noch besser machen! Anstatt jedes Mal <code>Haare=...</code> zu wiederholen, ist es einfacher, etwas wie "die Haare müssen in der Liste sein: {'Schwarze','Rote','Braune'}" zu schreiben.
+Aber wir können es noch besser machen! Anstatt jedes Mal <code>Haare=...</code> zu wiederholen, ist es einfacher, etwas wie "die Haare müssen in der Liste: {'Schwarze','Rote','Braune'}" sein zu schreiben.
 
 <div class="sideNote">
-<p>Wir können <code class='keyword'>IN</code> (was <em>in</em> bedeutet) verwenden, um die Möglichkeiten aufzulisten.</p>
+<p>Wir können <code class='keyword'>IN</code> verwenden, um die Möglichkeiten aufzulisten.</p>
 </div>
 
 <sql-exercise
@@ -212,22 +212,24 @@ WHERE Geschlecht = 'Männlich'
 AND Haare IN ('Schwarz','Rot','Braun')"
   ></sql-exercise>
 
+Versuche jetzt ein ganze Abfrage selber zu schreiben.
 <sql-exercise
-  data-question="Wie viele Zauberer und Hexen sind in den Jahren 1990, 1991, 1992 oder 1993 geboren?"
+  data-question="Wie viele Zauberer und Hexen sind in den Jahren 1979, 1980, 1981 oder 1982 geboren?"
   data-comment="Verwende COUNT(*). Es gibt mehrere Möglichkeiten, diese Aufgabe zu lösen."
   data-default-text=""
   success-message="Genau!"
-  data-hint="SELECT COUNT(*) 
-FROM personnages 
-WHERE naissance IN ..."
-  data-solution="SELECT COUNT(*) 
-FROM personnages 
-WHERE naissance IN (1990,1991,1992,1993)
-*/
+  data-hint="
+SELECT COUNT(*) 
+FROM Charaktere 
+WHERE Geburt IN"
+  data-solution="
+SELECT COUNT(*) 
+FROM Charaktere 
+WHERE Geburt IN (1979,1980,1981,1982)
 /*
 SELECT COUNT(*)
-FROM personnages
-WHERE naissance < 1994 AND naissance > 1989
+FROM Charaktere
+WHERE Geburt > 1978 AND Geburt < 1983
 */"
   ></sql-exercise>
 
@@ -236,22 +238,22 @@ WHERE naissance < 1994 AND naissance > 1989
 ## Die verschiedenen Tabellen
 
 Bevor du dich dem finalen Rätsel stellst, sagt Professor McGonagall, dass es zwei weitere Tabellen in der Datenbank gibt, die dir nützlich sein werden:
-* _famille_, die alle Verwandtschaftsbeziehungen zwischen den Charakteren auflistet.
-* _créatures_, die alle magischen Kreaturen auflistet.
+* _verwandte_, die alle Verwandtschaftsbeziehungen zwischen den Charakteren auflistet.
+* _kreaturen_, die alle magischen Kreaturen auflistet.
 
 Es ist immer praktisch, einen Überblick über die Datenbank des Zaubereiministeriums in Form eines Schemas zu haben:
 <figure>
 <img src="imgs/HarryPotterDB_de.png"><figcaption>Struktur der Datenbank. Eine Tabelle wird durch ein Kästchen dargestellt. Jede Zeile in den Kästchen entspricht einem Attribut der Tabelle.</figcaption>
 </figure>
 
-Wir werden uns die Tabelle _créatures_ später ansehen. Im Moment ist in der Tabelle _famille_ der _premier\_nom_ der/die _relation_ des _second\_nom_. Zum Beispiel ist in der folgenden Tabelle Lily die Mutter von Harry und Harry ist der Sohn von James.
+Wir werden uns die Tabelle _kreaturen_ später ansehen. Im Moment ist in der Tabelle _verwandte_ der _erste\_Name_ der/die _verwandtschaft_ des _zweite\_Name_. Zum Beispiel ist in der folgenden Tabelle Lily die Mutter von Harry und Harry ist der Sohn von James.
 
 <table class="datatable">
 <thead>
   <tr>
-    <th class="tg-0pky">premier_nom</th>
-    <th class="tg-0pky">second_nom</th>
-    <th class="tg-0pky">relation</th>
+    <th class="tg-0pky">erste_Name</th>
+    <th class="tg-0pky">zweite_Name</th>
+    <th class="tg-0pky">verwandtschaft</th>
   </tr>
 </thead>
 <tbody>
@@ -274,16 +276,16 @@ Wir werden uns die Tabelle _créatures_ später ansehen. Im Moment ist in der Ta
 </table>
 
 <sql-exercise
-  data-question="Erkunde die Tabelle famille."
+  data-question="Erkunde die Tabelle verwandte."
   data-comment="Beginne damit, alle Attribute beider Tabellen anzuzeigen."
   data-default-text=""
   data-hint="Probiere etwas wie
-  SELECT *
-  FROM famille
-  LIMIT 5"></sql-exercise>
+SELECT *
+FROM verwandte
+LIMIT 5"></sql-exercise>
 
 <div class='supplementary'>
-Um deine Erkundung zu leiten, kannst du die beiden folgenden Herausforderungen ausprobieren:
+Um deine Erkundungen zu leiten, kannst du die beiden folgenden Herausforderungen ausprobieren:
 
 <sql-exercise
   data-question="Liste alle Attribute aller Charaktere auf, die einen Bruder haben."
@@ -292,12 +294,12 @@ Um deine Erkundung zu leiten, kannst du die beiden folgenden Herausforderungen a
   failure-message=""
   data-hint="Probiere etwas wie
 SELECT *
-FROM famille
-WHERE relation = ..."
+FROM verwandte
+WHERE verwandtschaft = ..."
   data-solution="
 SELECT *
-FROM famille
-WHERE relation = 'Bruder'"
+FROM verwandte
+WHERE verwandtschaft = 'Bruder'"
   ></sql-exercise>
 
 <sql-exercise
@@ -306,75 +308,76 @@ WHERE relation = 'Bruder'"
   success-message="Das ist sie! Gut gemacht."
   failure-message="Das ist noch nicht die richtige Person..."
   data-hint="Probiere etwas wie
-SELECT premier_nom
+SELECT erste_Name
 FROM ...
-WHERE second_nom = ..."
+WHERE zweite_Name = ...
+UND ... = 'Grossmutter'"
   data-solution="
-SELECT premier_nom
-FROM famille
-WHERE second_nom = 'Neville Longbottom'"
+SELECT erste_Name
+FROM verwandte
+WHERE zweite_Name = 'Neville Longbottom'
+UND verwandtschaft = 'Grossmutter'"
   ></sql-exercise>
 </div>
 
-Schließlich kannst du dank dieser neuen Tabellen auch Informationen miteinander verknüpfen. Zum Beispiel, wenn
+Schließlich kannst du dank dieser neuen Tabellen auch Informationen miteinander verknüpfen. Zum Beispiel, wenn du wissen möchtest, welche Zauberer eine Tochter haben und blaue Augen haben, benötigst du Informationen aus zwei verschiedenen Tabellen. Du müsstest also versuchen, sie miteinander zu verbinden. Schauen wir uns erst einmal an, wie man die beiden Informationen getrennt findet.
 
- du wissen möchtest, welche Zauberer eine Tochter haben und blaue Augen haben, benötigst du Informationen aus zwei verschiedenen Tabellen. Du müsstest also versuchen, sie miteinander zu verbinden. Schauen wir uns erst einmal an, wie man die beiden Informationen getrennt findet.
-
-* Zuerst, um die Namen der Zauberer zu finden, die eine Tochter haben, wählen wir die Tabelle _famille_ aus und filtern die Ergebnisse, wenn die Beziehung gleich "Tochter" ist.
+* Zuerst, um die Namen der Zauberer und Hexen zu finden, die eine Tochter haben, wählen wir die Tabelle _famille_ aus und filtern die Ergebnisse, wenn die Verwandtschaft gleich "Tochter" ist.
 
 <sql-exercise
   data-question="Die Namen der Zauberer, die eine Tochter haben"
-  data-comment="Du kannst es alleine versuchen, aber zögere nicht, auf Lösung zu klicken, um die Lösung zu enthüllen."
+  data-comment="Du kannst es alleine versuchen, aber zögere nicht, auf Hinweis zu drucken."
   data-default-text=""
   data-hint="Fülle die Lücken aus
 SELECT ...
 FROM ...
 WHERE ...='Tochter'"
-  data-solution="SELECT premier_nom 
-FROM famille 
-WHERE relation='Tochter'"
+  data-solution="
+SELECT erste_Name 
+FROM verwandte 
+WHERE verwandtschaft='Tochter'"
   ></sql-exercise>
 
 * Dann möchten wir den Namen der Zauberer finden, die blaue Augen haben.
 
 <sql-exercise
   data-question="Die Namen der Zauberer, die blaue Augen haben"
-  data-comment="Du kannst es alleine versuchen, aber zögere nicht, auf Lösung zu klicken, um die Lösung zu enthüllen."
+  data-comment=""
   data-default-text=""
   data-hint="Fülle die Lücken aus
-SELECT nom
-FROM personnages
-WHERE ... = ..."
+SELECT Name 
+FROM Charaktere
+WHERE ...=..."
   data-solution="
-SELECT nom 
-FROM personnages
-WHERE yeux='Blau'"
+SELECT Name 
+FROM Charaktere
+WHERE Augen='Blau'"
   ></sql-exercise>
 
 * Wir setzen die beiden Bedingungen zusammen und kombinieren die vorherigen Antworten in einem einzigen Befehl.
 
 <sql-exercise
-  data-question="Die Namen der Zauberer, die blaue Augen und eine Tochter haben"
+  data-question="Die Namen der Zauberer und Hexen, die blaue Augen und eine Tochter haben"
   data-comment="Zögere nicht, es so zu machen wie zuvor: zuerst einen Satz, dann einen vereinfachten Satz und übersetze ihn in Code. Füge die Lösungen der beiden vorherigen Punkte ein."
   success-message="Juhu!!! Du hast Informationen aus zwei verschiedenen Tabellen miteinander verknüpft, du bist eine wahre Expertin!"
   data-default-text="SELECT nom
-FROM personnages
-WHERE nom IN (/*Die Namen der Zauberer, die eine Tochter haben*/)
+FROM Charaktere
+WHERE nom IN (/*Die Namen der Zauberer und Hexen, die eine Tochter haben*/)
 AND /*die Augen sind blau*/"
   data-hint="Hinweis: Du musst verwenden, was wir zuvor gelernt haben.
-1. Die Namen der Zauberer, die eine Tochter haben:
-  SELECT premier_nom 
-  FROM famille 
-  WHERE relation='Tochter'
+1. Die Namen der Zauberer und Hexen, die eine Tochter haben:
+SELECT erste_Name 
+FROM verwandte 
+WHERE verwandtschaft='Tochter'
 1. Die Zauberer, die blaue Augen haben:
-  WHERE yeux = 'Blau'"
+WHERE Augen = 'Blau'"
   data-solution="
-SELECT nom
-FROM personnages
-WHERE nom IN (SELECT premier_nom 
-              FROM famille 
-              WHERE relation='Tochter')
-AND yeux='Blau'"
+SELECT Name
+FROM Charaktere
+WHERE Name IN (SELECT erste_Name 
+              FROM verwandte 
+              WHERE verwandtschaft='Tochter')
+AND Augen='Blau'"
   ></sql-exercise>
 
 Du kannst also mehrere SQL-Befehle ineinander verschachteln.

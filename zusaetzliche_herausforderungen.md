@@ -5,36 +5,38 @@ dbFile: data/harrypotter_de.db
 ---
 # Zusätzliche Herausforderungen
 
-<div class="warning">
-<p>Die zusätzliche Herausforderung ist noch nicht abgeschlossen, aber die Idee wäre entweder <code>JOIN</code> oder <code>LIKE</code> zu lehren.</p>
-</div>
-
 <a name="not"></a>
 
 ## NOT eine normale Umfrage
 
-Für eine Umfrage müsstest du alle Kreaturen auflisten, die Haare haben. Anders ausgedrückt, du musst die Kreaturen finden, bei denen die Spalte _poils\_créature_ nicht _?_ ist.
+Für eine Umfrage müsstest du alle Kreaturen auflisten, die Federn haben. 
+<sql-exercise
+  data-question="Zum aufwärmen, zeige die Tabelle _kreaturen_ und lies die verschiedenen Spalten."
+  data-default-text="SELECT *
+FROM kreaturen"></sql-exercise>
 
-<div class="sideNote"><p>Um etwas zu filtern, das wir nicht wollen, können wir die Verneinung verwenden: <code class="keyword">NOT</code> ("not" auf Englisch) vor der Bedingung.</p></div>
+Alle Kreaturen bei denen die Spalte _federn\_kreatur_ _?_ ist, haven keine Federn. Das wollen wir eben nicht!
+
+<div class="sideNote"><p>Um etwas zu filtern, das wir nicht wollen, können wir die Verneinung verwenden: <code class="keyword">NOT</code> ("nicht" auf Deutsch) vor der Bedingung.</p></div>
 
 <sql-exercise
   data-question="Welche Kreaturen haben Haare?"
-  data-comment="Auf Französisch würde die Abfrage wie folgt aussehen: 'Wähle den Namen der Kreaturen und ihre Haare/Federn aus der Tabelle Kreaturen aus, bei denen ihre Haare/Federn nicht unbekannt sind.'"
+  data-comment="Auf Deutsch würde die Abfrage wie folgt aussehen: 'Wähle den Namen der Kreaturen und ihre Federn aus der Tabelle Kreaturen aus, bei denen ihre Federn nicht unbekannt sind.'"
   success-message="🐉 Gut gemacht!"
   data-default-text="SELECT ...
 FROM ...
 WHERE ..."
   data-hint="
-SELECT nom_créature, plumes_poils
-FROM créatures
+SELECT Name_kreatur, federn_kreatur
+FROM Kreaturen
 WHERE NOT ...=..."
   data-solution="
-SELECT nom_créature, plumes_poils
-FROM créatures 
-WHERE NOT plumes_poils='?'"
+SELECT Name_kreatur, federn_kreatur
+FROM Kreaturen
+WHERE NOT federn_kreatur='?'"
   ></sql-exercise>
 
-<div class="sideNode">
+<div class="sideNote">
 <h3>Profi-Tipp</h3>
 Anstatt auf "Run" zu klicken, kannst du [Shift⇧]+[Enter↵] auf deiner Tastatur drücken, um deinen Befehl auszuführen.
 </div>
@@ -43,14 +45,14 @@ Anstatt auf "Run" zu klicken, kannst du [Shift⇧]+[Enter↵] auf deiner Tastatu
 
 ## I LIKE SQL
 
-Du hast sicherlich bemerkt, dass du sehr präzise sein musst, wenn du spezifische Daten suchst, mit dem Zeichen <code>=</code> (zum Beispiel <code> ... WHERE nom = "Minerva McGonagall" AND ...</code>). Aber wenn du nur einen Teil einer Information kennst, kannst du <code class="keyword">LIKE</code> verwenden. Das ermöglicht es, nach Text zu suchen, der in der Tabelle enthalten ist.
+Du hast sicherlich bemerkt, dass du sehr präzise sein musst, wenn du spezifische Daten suchst, mit dem Zeichen <code>=</code>. Zum Beispiel, <code> ... WHERE Name = "Minerva McGonagall" AND ...</code>. Aber wenn du nur einen Teil einer Information kennst, kannst du <code class="keyword">LIKE</code> verwenden. Das ermöglicht es, nach Text zu suchen, der in der Tabelle enthalten ist.
 
 <sql-exercise
   data-question="Zum Beispiel gibt es im Namen 'Minerva McGonagall' 'Mine' oder 'onaga' oder auch 'McGo'."
   data-comment=""
-  data-default-text="SELECT nom
-FROM personnages
-WHERE nom LIKE '%MIN%'"
+  data-default-text="SELECT Name
+FROM Charaktere
+WHERE Name LIKE '%MINE%'"
   ></sql-exercise>
 
 <div class="sideNote">
@@ -58,56 +60,55 @@ Wir können eine Bedingung erstellen, indem wir <code>=</code> durch <code class
 </div>
 
 <sql-exercise
-  data-question="Zeige alle Kreaturen an, die 'chat' im Namen enthalten."
+  data-question="Zeige alle Kreaturen an, die 'drache' im Namen enthalten."
   data-hint="SELECT *
-FROM créatures
+FROM Kreaturen
 WHERE ... LIKE ..."
+success-message="Was ist deine Liebligsdrache?"
   data-solution="SELECT *
-FROM créatures
-WHERE nom_créature LIKE '%chat%'"
+FROM Kreaturen
+WHERE Name_Kreatur LIKE '%drache%'"
   ></sql-exercise>
 
 <a name="join"></a>
 
 ## Relationale Datenbanken
 
-Der wirkliche Vorteil bei der Verwendung einer Datenbank wie der, die wir bisher verwendet haben, ist, dass du diese Tabellen miteinander verknüpfen kannst! Erinnere dich an das Schema, das wir zuvor gesehen haben:
+Der wirkliche Vorteil bei der Verwendung einer Datenbank ist, dass du diese Tabellen miteinander verknüpfen kannst! Erinnere dich an das Schema, das wir zuvor gesehen haben:
 
 <img src="imgs/HarryPotterDB_de.png">
 
-Man könnte zum Beispiel alle Zauberer sehen wollen, die ein Geschöpfstatus "Imaginäres Wesen" haben. Der Geschöpfstatus ist jedoch nicht in derselben Tabelle wie die Namen der Zauberer. Die folgende Abfrage kann daher nicht funktionieren.
+Man könnte zum Beispiel alle Zauberer sehen wollen, die ein ein Patronus mit spezielle eigenschaften haben. Die Eigenschaften von Kreaturen ist jedoch nicht in derselben Tabelle wie die Namen der Zauberer. Die folgende Abfrage kann daher nicht funktionieren.
 
-<code class="codeBloc">SELECT nom FROM personnages WHERE statut_créature='Imaginäres Wesen'</code>
+<code class="codeBloc">SELECT Name FROM Charakter WHERE NOT Eigenschaften_kreature = '?'</code>
 
-Der Geschöpfstatus befindet sich in der Tabelle créatures. Du musst also diese beiden Tabellen mit dem Befehl <span class="keyword">JOIN</span> verbinden. Zum Beispiel, wenn Harry Potter ein Patronus "Hirsch" hat, möchten wir, dass alle Informationen zum Hirsch zur Tabelle personnages hinzugefügt werden. Dafür könnten wir etwas schreiben wie:
+Die Eigenschaften von Kreaturen befindet sich in der Tabelle Kreaturen. Du musst also diese beiden Tabellen mit dem Befehl <span class="keyword">JOIN</span> verbinden. Zum Beispiel, wenn Harry Potter ein Patronus "Hochwild" hat, möchten wir, dass alle Informationen zum Hochwild zur Tabelle Charakter hinzugefügt werden. Dafür könnten wir etwas schreiben wie:
 
-_Wähle alle Attribute von personnages aus, indem du die Tabelle créatures verbindest, so dass der Patronus des Charakters dem Namen der Kreatur entspricht._
+_Wähle alle Attribute von charaktere aus, indem du die Tabelle Kreaturen verbindest, so dass der Patronus des Charakters dem Namen der Kreatur entspricht._
 
 In vereinfachter Form erhalten wir:
 
-_SELECTIONNE * DE personnages JOINDRE créatures TEL QUE personnages.patronus=créatures.nom
-
-_créature_
+_WÄHLE * AUS VON Charaktere VERBINDE Kreaturen DAMIT Charaktere.Patronus=Kreaturen.Name_Kreatur
 
 Im Englischen übersetzen wir:
 
 <code class="codeBloc"> SELECT *
-FROM personnages 
-JOIN créatures ON personnages.patronus=créatures.nom_créature</code>
+FROM Charaktere 
+JOIN Kreaturen ON Charaktere.Patronus=Kreaturen.Name_Kreatur</code>
 
 Du kannst es jetzt selbst ausprobieren.
 
 <sql-exercise
-  data-question="Verbinde die Tabellen personnages und créatures über das Attribut patronus = nom_créatures und finde alle Magier, die einen Patronus haben, der ein imaginäres Wesen ist."
+  data-question="Verbinde die Tabellen Charaktere und Kreaturen über das Attribut Patronus = Name_Kreaturen und finde alle Zauberer und Hexen, die einen Patronus haben, der spezielle eigenschaften hat."
   data-comment="Du kannst den Befehl verwenden, den wir gerade gesehen haben, und die Ergebnisse mit <code>WHERE</code> wie zuvor filtern."
   data-default-text=""
   success-message="Super! Du bist jetzt eine echte Datenwissenschaftlerin."
-  data-hint="SELECT *
-FROM personnages 
-JOIN créatures ON ... =créatures.nom_créature
-WHERE ... ='Imaginäres Wesen'"
-  data-solution="SELECT *
-FROM personnages 
-JOIN créatures ON personnages.patronus=créatures.nom_créature
-WHERE statut_créature='Imaginäres Wesen'"
+  data-hint="SELECT Name, Patronus, eigenschaften_kreatur
+FROM Charaktere 
+JOIN Kreaturen ON ... =Kreaturen.Name_Kreatur
+WHERE NOT ... ='?'"
+  data-solution="SELECT Name, Patronus, eigenschaften_kreatur
+FROM Charaktere 
+JOIN Kreaturen ON Charaktere.Patronus=Kreaturen.Name_Kreatur
+WHERE NOT eigenschaften_kreatur='?'"
   ></sql-exercise>
