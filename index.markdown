@@ -10,3 +10,5 @@ dbFile: data/harrypotter_fr.db
 <h3> Auf Deutsch </h3>
 <a href="einfuerung.html" class="button-link is-centered"> Workshop anfangen </a>
 
+<script src="scripts/magic.js"></script>
+

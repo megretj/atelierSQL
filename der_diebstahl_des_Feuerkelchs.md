@@ -10,7 +10,7 @@ dbFile: data/harrypotter_de.db
 # Der Diebstahl des Feuerkelchs 
 
 <figure>
-<img src="imgs/newspaper.gif" style="width:80%;text-align:center;" alt="Schrecken in der Gringotts-Bank: Der Feuerkelch wurde gestohlen! Der Diebstahl ereignete sich in der Nacht vom 24. auf den 25. April 1995. Jemand drang in den Tresorraum ein und zerstörte mehrere Wände, um zu entkommen. Wir haben nur wenige Informationen über die Verdächtigen. Wir wissen nur, dass es einen Zeugen am Tatort gab."><figcaption>Eine Kopie der Titelseite des "Tagespropheten"</figcaption>
+<img src="imgs/newspaper_de.gif" style="width:80%;text-align:center;" alt="Schrecken in der Gringotts-Bank: Der Feuerkelch wurde gestohlen! Der Diebstahl ereignete sich in der Nacht vom 24. auf den 25. April 1995. Jemand drang in den Tresorraum ein und zerstörte mehrere Wände, um zu entkommen. Wir haben nur wenige Informationen über die Verdächtigen. Wir wissen nur, dass es einen Zeugen am Tatort gab."><figcaption>Eine Kopie der Titelseite des "Tagespropheten"</figcaption>
 </figure>
 
 <a name="zeuge"></a>
@@ -84,7 +84,7 @@ failure-message="Das ist nicht die richtige Person. Versuche es erneut."></input
   eine Frau, 
   mit schwarzen Haaren, 
   sie ist mit Sirius Black verwandt, 
-  sie wurde vor 1955 geboren (sie ist älter als 40 Jahre und es steht am Anfang der Untersuchung, dass wir uns im Jahr 1995 befinden). 
+  sie wurde vor 1955 geboren (sie ist älter als 40 Jahre und es steht am Anfang der Untersuchung, dass wir uns im Jahr 1995 befinden).
   sie ist noch nicht Tod! (d.h. Tod > 1995 oder Tod = 0)
   Versuche, alle Informationen separat zu finden und sie auf ein Blatt zu schreiben, oder verwende den folgende Muster:
 SELECT Name
@@ -113,6 +113,7 @@ AND (Tod > 1995 OR Tod = '0')"
 <input-feedback 
 data-title="Hast du es geschafft, herauszufinden, wer der/die Schuldige des Diebstahls war?"
 data-solution="bellatrix lestrange"
+lastQuest=true
 success-message="Ausgezeichnet! Du hast die Schuldige gefunden: Bellatrix Lestrange. Dank dir konnte der Feuerkelch wiederbeschafft werden, und das Trimagische Turnier kann wie geplant in Hogwarts stattfinden."
 failure-message="Das ist nicht die richtige Person. Versuche es erneut oder frage um Hilfe."></input-feedback>
 

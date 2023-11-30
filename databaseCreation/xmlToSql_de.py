@@ -22,8 +22,7 @@ def randomly_attribute(attribute):
 def preprocessing(target):
     target = re.sub(r'\n(?!\|)', ', ', target)
     target = re.sub(r'\ ?=\ ?','=',target)
-    target = re.sub(r'ß','ss',target)
-    return target.replace('*','').replace('[', '').replace(']', '')
+    return target.replace('*','').replace('[', '').replace(']', '').replace('ß','ss')
 
 def getAttribute(attribute, page):
     if page.comment is not None:
