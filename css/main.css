@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "SuisseIntl-light";
+    src:
+      url("SuisseIntl-Light/SuisseIntl-Light.woff2") format("woff2"),
+      url("SuisseIntl-Light/SuisseIntl-Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
 /* font elements */
 h1,h2,h3,h4,h5,h6 {
     color: #333;
@@ -30,7 +40,7 @@ p {
     margin: 0.5em 0 0.5em 0;
     line-height: 170%;
     /* font-family: 'Libre Baskerville', serif; */
-    font-family: SuisseIntl-Light;
+    font-family: 'SuisseIntl-Light';
 
 }
 
