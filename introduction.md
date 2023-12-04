@@ -6,13 +6,13 @@ dbFile: data/harrypotter_fr.db
 <h1>Accio Query!</h1>
 
 <div class="warning">
-Les informations présentes dans l'introduction seront données lors de la présentation. Tu n'as donc pas besoin de tout lire si tu as écouté la présentation.
+Les informations présentes dans l'introduction seront données lors de la présentation. Si tu as écouté la présentation, tu n'as donc pas besoin de tout lire et tu peux directement commencer avec <a href="atelier.html">l'atelier</a>.
 </div>
 
 Aujourd'hui nous allons apprendre à gérer des bases de données grace à un outil bien pratique: SQL (Structured Query Language en anglais veut dire Languague de Requête Structurée). Grâce au dévelopement du monde numérique il est facile d'enregistrer beaucoup de données. Mais c'est parfois pas si facile de bien les ranger pour facilement les retrouver plus tard. les  monde est confronté à une grande quantité de données ou d'informations.
 
 <div class="sideNote">
-Par exemple, Instagram a de grandes bases de données pour enregistrer toutes les images des utilisateurs, les commentaires, les likes, etc... Quand tu ouvre l'application instagram ton téléphone envoies un message chez Instagram pour leur demander de t'envoyer les données qui t'intéressent. Imagine maintenant qu'il n'y a pas seulement tes images, mais celles de chaque utilisateurs Instagram (plus d'un milliard!). Il faut une sorte de grosse archive ou grande bibliothèque digitale pour enregistrer tout ça. On appelle cette archive une base de données. Pour aller chercher des données sur cette base, ou y déposer de nouvelles données, il faut envoyer des commandes à l'ordinateur. 
+Quand tu cherches une musique sur Spotify, ton téléphone envoies un message à un centre de données de Spotify (un datacenter) avec ta recherche. Un programme dans le datacenter s'exécutera alors pour chercher les musiques qui t'intéressent et ensuite te les envoyer. Mais il y a des millions de musiques sur Spotify! Et elles ont chacune un titre, un style, un nombre d'écoutes, un ou plusieurs artistes ... Comment rapidement trouver rapidement la musique que tu cherches dans ce grand bazar? Il faut une sorte de grosse archive ou grande bibliothèque digitale pour enregistrer tout ça. On appelle cette archive une <span class="keyword">base de données</span>. Pour aller chercher des données sur cette base, ou y déposer de nouvelles données, il faut envoyer des commandes à l'ordinateur. Spotify a de grandes bases de données pour enregistrer non seulement toutes les musiques des artistes mais aussi le nombre d'écoutes, les playlists des utilisateurs, l'historique des écoutes, etc...
 </div>
 
 Comme tu pourras le voir, le résultat de tes requêtes est donné sous forme de tableau, car après tout, les bases de données ne sont que de grands tableaux! Malgré tout, ils sont un peu trop grands pour pouvoir chercher les informations à la main. Mais heuresement, les ordinateurs sont très bons pour ce genre de tâche. Mais encore faut-il savoir parler la langue des ordinateurs pour leur demander poliment de fair le long et fastudieux travail de recherche d'informations.

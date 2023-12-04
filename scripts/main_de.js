@@ -397,6 +397,18 @@ class sqlExercise extends HTMLElement {
       };
     };
 
+    if (hint) {
+      var hintButton = document.createElement('input');
+      hintButton.name = 'hint';
+      hintButton.type = 'button';
+      hintButton.value = 'Hinweis';
+      hintButton.onclick = (e) => {
+        var existingCode = editor.getValue();
+        editor.setValue("/*" + hint + "*/\n"+ existingCode );
+      };
+      inputArea.appendChild(hintButton);
+    };
+
     if (solution) {
       var solutionButton = document.createElement('input');
       solutionButton.name = 'solution';
@@ -408,18 +420,6 @@ class sqlExercise extends HTMLElement {
       };
       inputArea.appendChild(solutionButton);
     };
-
-    if (hint) {
-      var hintButton = document.createElement('input');
-      hintButton.name = 'hint';
-      hintButton.type = 'button';
-      hintButton.value = 'Hinweis';
-      hintButton.onclick = (e) => {
-        var existingCode = editor.getValue();
-        editor.setValue("/*" + hint + "*/\n"+ existingCode );
-      };
-      inputArea.appendChild(hintButton);
-    }
 
     var resetButton = document.createElement('input');
     resetButton.type = 'button';

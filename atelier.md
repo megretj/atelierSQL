@@ -50,7 +50,7 @@ LIMIT 15"></sql-exercise>
 </div>
 
 <input-feedback 
-data-title="Arrives-tu maintenant à dire quel est le patronus de Hermine Granger?"
+data-title="Arrives-tu maintenant à dire quel est le patronus de Hermione Granger?"
 data-solution="loutre"
 success-message="🦦 C'est ça, bravo!  On va maintenant apprendre comment simplifier la recherche d'informations dans la base de données, au lieu de devoir lire les lignes une par une."
 failure-message="Ça n'est pas tout à fait ça. Essaies à nouveau ou demande à un.e assistant.e."></input-feedback>
@@ -203,11 +203,11 @@ Mais on peut faire mieux! Au lieu de répéter à chaque fois <code>cheveux=...<
   data-comment="Essaies les deux commandes et vérifie si elles sont bien équivalentes. Tu peux aussi essayer de compter d'autres choses dans le tableau si tu veux."
   data-default-text="SELECT COUNT(*) 
 FROM personnages 
-WHERE genre='Hemme'
+WHERE genre='Femme'
 AND (cheveux IN('Noirs','Roux','Bruns'))"
   data-solution="SELECT COUNT(*) 
 FROM personnages 
-WHERE genre='Hemme'
+WHERE genre='Femme'
 AND (cheveux IN('Noirs','Roux','Bruns'))"
   ></sql-exercise>
 

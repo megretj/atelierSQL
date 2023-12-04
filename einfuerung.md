@@ -6,30 +6,30 @@ dbFile: data/harrypotter_de.db
 <h1>Accio Query!</h1>
 
 <div class="warning">
-Dies ist eine Wiederholung der Informationen, die du bereits während der Präsentation gehört hast. Du musst also nicht alles nochmals genau lesen.
+Dies ist eine Wiederholung der Informationen, die du bereits während der Präsentation gehört hast. Du musst also nicht alles nochmals genau lesen und kannst mit den <a href="zaubereiministerium.html">workshop</a> anfangen.
 </div>
 
-Heute lernen wir, Datenbanken mit einem sehr nützlichen Tool zu verwalten: SQL (Structured Query Language auf Englisch bedeutet Strukturierte Abfragesprache). Dank der Entwicklung der digitalen Welt ist es einfach, viele Daten zu speichern. Aber es ist manchmal nicht so einfach, sie gut zu organisieren, um sie später leicht wiederzufinden.
+Heute lernen wir, Datenbanken mit einem sehr nützlichen Tool zu verwalten: SQL (Structured Query Language bedeutet auf Englisch Strukturierte Abfragesprache). Dank der Entwicklung der digitalen Welt ist es einfach, viele Daten zu speichern.
 
 <div class="sideNote">
-Zum Beispiel hat Instagram große Datenbanken, um alle Bilder der Benutzer*innen, Kommentare, Likes usw. zu speichern. Wenn du die Instagram-App öffnest, sendet dein Telefon eine Nachricht an Instagram, um sie nach den Daten zu fragen, die dich interessieren. Stell dir jetzt vor, es gibt nicht nur deine Bilder, sondern die von jedem Instagram-Benutzer*in (über eine Milliarde!). Dafür braucht es eine Art großes Archiv oder große digitale Bibliothek, um all das zu speichern. Dieses Archiv nennt man eine Datenbank. Um Daten aus dieser Datenbank abzurufen oder neue Daten einzufügen, muss man Befehle an den Computer senden.
+Wenn du auf Spotify nach Musik suchst, sendet dein Telefon eine Nachricht an ein Spotify-Datenzentrum mit deiner Suche. Ein Programm im Datenzentrum wird dann ausgeführt, um die Musik zu finden, die dich interessiert, und sie dir dann zu schicken. Aber es gibt Millionen von Songs auf Spotify! Und sie haben alle einen Titel, einen Stil, eine Anzahl von Wiedergaben, einen oder mehrere Künstler... Wie findest du also schnell die Musik, die du in diesem großen Chaos suchst? Es braucht so etwas wie ein großes Archiv oder eine große digitale Bibliothek, um all das zu speichern. Diese Aufzeichnung nennt man eine <span class="keyword">Datenbank</span>. Um Daten in dieser Datenbank abzurufen oder neue Daten hinzuzufügen, müssen Befehle an den Computer gesendet werden. Spotify hat große Datenbanken, um nicht nur alle Songs der Künstler, sondern auch die Anzahl der Wiedergaben, die Playlists der Benutzer, die Wiedergabehistorie usw. zu speichern.
 </div>
 
-Wie du sehen wirst, wird das Ergebnis deiner Abfragen in Form einer Tabelle angezeigt, denn schließlich sind Datenbanken nur große Tabellen! Trotzdem sind sie manchmal zu groß, um die Informationen manuell zu durchsuchen. Aber zum Glück sind Computer sehr gut in dieser Art von Aufgabe. Aber man muss immer noch die Sprache der Computer sprechen können, um sie höflich zu bitten, die langwierige Arbeit der Informationsrecherche zu erledigen.
+Aber es ist manchmal nicht so einfach, sie gut zu organisieren, um sie später leicht wiederzufinden, dabei hilft uns SQL. Wie du sehen wirst, wird das Ergebnis deiner Abfragen in Form einer Tabelle angezeigt, denn schließlich sind Datenbanken nur große Tabellen! Trotzdem sind sie manchmal zu groß, um die Informationen *Zeile per Zeile* zu durchsuchen. Zum Glück sind Computer sehr gut in dieser Art von Aufgabe. Aber man muss immer noch die Sprache der Computer sprechen können, um sie höflich zu bitten, die langwierige Arbeit der Informationsrecherche zu erledigen. Fèr Datenbanken heisst diese sprache SQL.
 
-Normalerweise muss man Programme installieren, um SQL verwenden zu können, aber diese Website wurde erstellt, um SQL direkt in deinem Browser zu verwenden. Um eine SQL-Anfrage [^1] zu stellen, musst du also deinen Befehl in einen Codeblock wie diesen eingeben und auf "RUN" klicken (auf Englisch starten oder ausführen).
+Normalerweise muss man Programme installieren, um SQL verwenden zu können, aber diese Website wurde erstellt, um SQL direkt in deinem Browser zu verwenden. Um eine SQL-Anfrage [^1] zu stellen, musst du also deinen Befehl in einen Codeblock wie unten eingeben und auf "RUN" klicken (auf Englisch starten oder ausführen).
 
 [^1]: Genauer gesagt, wendet man SQLite, da SQL kein Programmiersprache im eigentlichen Sinne ist.
 
 <sql-exercise
   data-question="Dies ist ein interaktiver Codeblock. Du kannst den Code unten bearbeiten."
-  data-comment="(Für Profis: Shift+Enter ist eine Tastenkombination, um den Befehl auszuführen, anstelle auf RUN zu klicken)"
+  data-comment=""
   data-default-text="SELECT *
 FROM charaktere
 LIMIT 3"></sql-exercise>
 
 <div class="sideNote">
-Wir werden feststellen, dass die Datenbank nicht überall vollständig ist. Oft werden Daten von Menschen eingetragen, und es können Fehler auftreten. In unserem Fall haben wir die Website <a href="https://harrypotter.fandom.com/de/wiki/Harry-Potter-Lexikon:Hauptseite">Harry Potter Lexikon</a> verwendet. Es ist auch die Aufgabe eines Data Scientists, Daten zu "reinigen", um sie lesbar und konsistent zu machen! Es kann immer noch Fehler geben; du kannst sie uns gerne mitteilen, und wir werden die Datenbank entsprechend aktualisieren.
+Wir werden feststellen, dass die Datenbank nicht überall vollständig ist. Oft werden Daten von Menschen eingetragen, und es können Fehler auftreten. In unserem Fall haben wir die Seite <a href="https://harrypotter.fandom.com/de/wiki/Harry-Potter-Lexikon:Hauptseite">Harry Potter Lexikon</a> verwendet. Es ist auch die Aufgabe eine Programiererin, Daten zu "reinigen", um sie lesbar und konsistent zu machen! Es kann immer noch Fehler geben; du kannst sie uns gerne mitteilen, und wir werden die Datenbank entsprechend aktualisieren.
 </div>
 
 <div class="supplementary">
@@ -46,9 +46,9 @@ Informationen zur Datenbank:
 </div>
 
 <div class="warning">
-Um die Bücher/Filme nicht zu sehr zu spoilern, wurden einige Informationen über die Charaktere geändert. In jedem Fall empfehlen wir dringend, die Bücher zu lesen, wenn du sie noch nicht gelesen hast!
+Um die Bücher/Filme nicht zu sehr zu verraten, wurden einige Informationen über die Charaktere geändert. In jedem Fall empfehlen wir dringend, die Bücher zu lesen, wenn du sie noch nicht gelesen hast!
 </div>
 
-Wenn du dich nicht mehr an einen Befehl erinnerst, den du verwendet hast, kannst du das <a href="sql_befehle.html">Zusammenfassung der wichtigsten SQL-Befehle</a> überprüfen.
+Wenn du dich nicht mehr an einen Befehl erinnerst, den du verwendet hast, kannst du die <a href="sql_befehle.html">Zusammenfassung der wichtigsten SQL-Befehle</a> überprüfen.
 
 Wenn du bereit bist, kannst du mit dem Workshop beginnen, indem du auf den Link neben "Next" klickst.

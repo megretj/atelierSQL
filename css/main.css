@@ -140,6 +140,15 @@ body #column {
     color:#075800;
 }
 
+.footnotes{
+    font-size: 13px;
+}
+
+figcaption{
+    text-align: center;
+    font-size:13px;
+    font-weight: 100;
+}
 /* Buttons */
 
 .button-link {

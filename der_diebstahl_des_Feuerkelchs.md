@@ -20,7 +20,7 @@ dbFile: data/harrypotter_de.db
 Der Zeugenaufruf war erfolgreich. Die Ehefrau des Zeugen hat sich gemeldet, ihr Name ist Narzissa Malfoy.
 
 <sql-exercise
-  data-question="Versuche eine Abfrage zu schreiben, um den Zeugen des Vorfalls zu finden."
+  data-question="1. Versuche eine Abfrage zu schreiben, um den Zeugen des Vorfalls zu finden."
   data-comment="Versuche, die Lösung nicht zu verwenden, und frage eine/n Assistent/in, wenn du Hilfe benötigst."
   data-default-text="SELECT ..."
   data-hint="SELECT zweiter_Name
@@ -52,7 +52,7 @@ failure-message="Das ist nicht die richtige Person. Versuche es erneut."></input
 ## Der Kämpfer
 
 <sql-exercise
-  data-question="Dank der Aussage des Zeugen kannst du herausfinden, wer der Mann ist, der kämpfte."
+  data-question="2. Dank der Aussage des Zeugen kannst du herausfinden, wer der Mann ist, der kämpfte."
   data-comment="Wenn du ein wenig Hilfe brauchst, kannst du auf HINWEIS klicken, um einen Hinweis zu erhalten."
   data-default-text="SELECT ..."
   data-hint="Du musst einen männlichen Charakter finden, 
@@ -77,7 +77,7 @@ failure-message="Das ist nicht die richtige Person. Versuche es erneut."></input
 ## Der/die Schuldige
 
 <sql-exercise
-  data-question="Du hast jetzt alle Informationen, die du brauchst, um den/die Schuldige/n des Diebstahls des Feuerkelchs zu finden!"
+  data-question="3. Du hast jetzt alle Informationen, die du brauchst, um den/die Schuldige/n des Diebstahls des Feuerkelchs zu finden!"
   data-comment="Versuche, alle Informationen auf ein Blatt Papier zu schreiben. Klicke dann auf den Hinweis, um zu überprüfen, ob du alle Informationen hast. Versuche dann, eine Abfrage zu schreiben, die alle Bedingungen einzeln und dann alle zusammen filtert."
   data-default-text="SELECT ..."
   data-hint="Die Informationen, die du bisher gesammelt hast, sind: 

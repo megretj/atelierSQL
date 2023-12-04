@@ -11,7 +11,7 @@ Das grundlegende Format einer SQL-Abfrage lautet wie folgt:
 
 <code class="codeblock">
 SELECT ... FROM ... 
-<code class="codeblock">
+</code>
 
 Darauf können Schlüsselwörter hinzugefügt werden, um die Abfrage zu spezifizieren (suchen).
 
