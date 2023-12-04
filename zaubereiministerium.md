@@ -6,13 +6,13 @@ dbFile: data/harrypotter_de.db
 
 # Das Zaubereiministerium
 
-Willkommen in der magischen Welt von Harry Potter! Du wurdest als Detektivin und Informatikspezialistin im großen Zaubereiministerium eingestellt. Um dir bei deinen Aufgaben zu helfen, hast du Zugriff auf das Zaubererregister, eine Datenbank, die alle bekannten Informationen über die Welt der Zauberer auflistet.
+Willkommen in der magischen Welt von Harry Potter! Du wurdest als Detektivin und Informatikspezialistin im großen Zaubereiministerium eingestellt. Um dir bei deinen Aufgaben zu helfen, hast du Zugriff auf das Zaubererregister, eine Datenbank, die alle bekannten Informationen über die Welt der Zauberer und Hexen auflistet.
 
 <a name="base"></a>
 
 ## Der magische Befehl
 
-Deine Chefin, Professor McGonagall, zeigt dir, wie das System funktioniert. Du hast Zugriff auf die Datenbank über eine <span class="keyword">Befehlszeile</span> in einem <span class="keyword">Codeblock</span> wie unten. Gib einfach einen gültigen Befehl ein und klicke auf AUSFÜHREN, um das Ergebnis zu sehen. Da dies das erste Mal ist, dass du dieses System verwendest, zeigt Professor McGonagall dir ein Beispiel.
+Deine Chefin, Professor McGonagall, zeigt dir, wie das System funktioniert. Du hast Zugriff auf die Datenbank über eine <span class="keyword">Befehlszeile</span> in einem <span class="keyword">Codeblock</span> wie unten. Gib einfach einen gültigen Befehl ein und klicke auf RUN⬇️, um das Ergebnis zu sehen. Da dies das erste Mal ist, dass du dieses System verwendest, zeigt Professor McGonagall dir ein Beispiel.
 
 <sql-exercise
   data-question="Hier ist ein Beispiel, um die Namen von 3 Zauberern in der Datenbank zu suchen."
@@ -26,7 +26,7 @@ LIMIT 3"></sql-exercise>
 <p>Du kannst sehen, dass ein SQL-Befehl oder eine <span class="keyword">Abfrage</span> ein wenig wie ein Satz aussieht. Die in Großbuchstaben geschriebenen Wörter sind englische Schlüsselwörter, und die in Kleinbuchstaben geschriebenen Wörter geben an, wonach du suchen möchtest. <code class="keyword">SELECT</code> bedeutet "Wähle aus", <code class=keyword>FROM</code> bedeutet "von" oder "aus", und <code class="keyword">LIMIT</code> bedeutet "Begrenzung". Wenn wir die Codezeile übersetzen, erhalten wir: "<code>WÄHLE</code> Name <code>AUS VON</code> Charaktere <code>BEGRENZUNG</code> 3".</p>
 </div> 
 
-Bei jeder Abfrage wählen wir eine bestimmte Anzahl von <span class="keyword">Attributen</span> (Eigenschaften) wie Name, Geschlecht, Geburtsjahr usw. aus. Du hast gerade gelernt, wie man den Namen von Zauberern anzeigt, aber es wäre nützlich zu wissen, welche anderen Attribute wir zu jedem Charakter kennen können.
+Bei jeder Abfrage wählen wir eine bestimmte Anzahl von <span class="keyword">Attributen</span> (Eigenschaften) wie Name, Geschlecht, Geburtsjahr usw. aus. Du hast gerade gelernt, wie man den Namen von Zauberern und Hexen anzeigt, aber es wäre nützlich zu wissen, welche anderen Attribute wir zu jedem Charakter kennen können.
 
 <div class ="sideNote">
 <p>Um <strong>alle</strong> Attribute eines Charakters auszuwählen, muss <code class="keyword">SELECT *</code> verwendet werden. </p>
@@ -50,9 +50,9 @@ LIMIT 15"></sql-exercise>
 
 <input-feedback 
 data-title="Kannst du jetzt sagen, welches Patronus Der Blutige Baron hat?"
-data-solution="Löwe"
+data-solution="löwe"
 success-message="🦁 Das ist es, super! Jetzt lernen wir, wie man die Suche nach Informationen in der Datenbank vereinfacht, anstatt jede Zeile einzeln lesen zu müssen."
-failure-message="Das ist es noch nicht ganz. Versuche es erneut oder frage eine/n Assistenten/Assistentin."></input-feedback>
+failure-message="Das ist es noch nicht ganz. Versuche es erneut oder frage eine Assistent*in."></input-feedback>
 
 <div class="warning">
 Wenn du dich nicht mehr an einen Befehl erinnerst, den du verwendet hast, kannst du das <a href="sql_befehle.html">Zusammenfassung der wichtigsten SQL-Befehle</a> überprüfen.
@@ -89,7 +89,7 @@ failure-message="Noch nicht ganz, versuche es erneut."></sql-exercise>
 
 ## Informationen filtern
 
-Gestern hat Frau Bathilda Bagshot dem Ministerium gemeldet, dass eine junge Frau sie gegen Rowdys verteidigt hat, die versucht haben, ihr den Besen zu stehlen. Frau Bagshot möchte ihren Namen herausfinden, um ihr zu danken, denn das Mädchen musste nach der Rettung schnell verschwinden. Hier ist ihr Phantombild[^1], rekonstruiert nach den sehr genauen Beschreibungen der alten Dame:
+Gestern hat Bathilda Bagshot dem Ministerium gemeldet, dass eine junge Frau sie gegen Rowdys verteidigt hat, die versucht haben, ihr den Besen zu stehlen. Frau Bagshot möchte ihren Namen herausfinden, um ihr zu danken, denn das Mädchen musste nach der Rettung schnell verschwinden. Hier ist ihr Phantombild[^1], rekonstruiert nach den sehr genauen Beschreibungen der alten Dame:
 
 <img src="imgs/luna_lovegood_portrait.jpg">
 
@@ -192,7 +192,7 @@ AND (Haare='Schwarz' OR Haare='Rot' OR Haare='Braun')"
 <p>Du hast sicherlich bemerkt, dass wir <code class="keyword">OR</code> verwenden, um <em>oder</em> auszudrücken. Was ist der Unterschied zwischen <code>OR</code> und <code>AND</code>?</p>
 </div>
 
-Aber wir können es noch besser machen! Anstatt jedes Mal <code>Haare=...</code> zu wiederholen, ist es einfacher, etwas wie "die Haare müssen in der Liste: {'Schwarze','Rote','Braune'}" sein zu schreiben.
+Aber wir können es noch besser machen! Anstatt jedes Mal <code>Haare=...</code> zu wiederholen, ist es einfacher, etwas zu schreiben, wie "die Haare müssen in der Liste: {'Schwarze','Rote','Braune'} sein".
 
 <div class="sideNote">
 <p>Wir können <code class='keyword'>IN</code> verwenden, um die Möglichkeiten aufzulisten.</p>
@@ -233,6 +233,10 @@ WHERE Geburt > 1978 AND Geburt < 1983
 */"
   ></sql-exercise>
 
+<div class="sideNote">
+<p> Die Zeichen <code class="keyword"><</code> und <code class="keyword">></code> zwischen zwei Zahlen stehen für "ist kleiner als" respektiv "ist grösser als". Zum beispiel: 1\< 2 und 2 \> 1.</p>
+</div>
+
 <a name="struktur"></a>
 
 ## Die verschiedenen Tabellen
@@ -251,8 +255,8 @@ Wir werden uns die Tabelle _kreaturen_ später ansehen. Im Moment ist in der Tab
 <table class="datatable">
 <thead>
   <tr>
-    <th class="tg-0pky">erste_Name</th>
-    <th class="tg-0pky">zweite_Name</th>
+    <th class="tg-0pky">erster_Name</th>
+    <th class="tg-0pky">zweiter_Name</th>
     <th class="tg-0pky">verwandtschaft</th>
   </tr>
 </thead>
@@ -308,21 +312,21 @@ WHERE verwandtschaft = 'Bruder'"
   success-message="Das ist sie! Gut gemacht."
   failure-message="Das ist noch nicht die richtige Person..."
   data-hint="Probiere etwas wie
-SELECT erste_Name
+SELECT erster_Name
 FROM ...
-WHERE zweite_Name = ...
-UND ... = 'Grossmutter'"
+WHERE zweiter_Name = ...
+AND ... = 'Grossmutter'"
   data-solution="
-SELECT erste_Name
+SELECT erster_Name
 FROM verwandte
-WHERE zweite_Name = 'Neville Longbottom'
-UND verwandtschaft = 'Grossmutter'"
+WHERE zweiter_Name = 'Neville Longbottom'
+AND verwandtschaft = 'Grossmutter'"
   ></sql-exercise>
 </div>
 
 Schließlich kannst du dank dieser neuen Tabellen auch Informationen miteinander verknüpfen. Zum Beispiel, wenn du wissen möchtest, welche Zauberer eine Tochter haben und blaue Augen haben, benötigst du Informationen aus zwei verschiedenen Tabellen. Du müsstest also versuchen, sie miteinander zu verbinden. Schauen wir uns erst einmal an, wie man die beiden Informationen getrennt findet.
 
-* Zuerst, um die Namen der Zauberer und Hexen zu finden, die eine Tochter haben, wählen wir die Tabelle _famille_ aus und filtern die Ergebnisse, wenn die Verwandtschaft gleich "Tochter" ist.
+* Zuerst, um die Namen der Zauberer und Hexen zu finden, die eine Tochter haben, wählen wir die Tabelle _verwandte_ aus und filtern die Ergebnisse, wenn die Verwandtschaft gleich "Tochter" ist.
 
 <sql-exercise
   data-question="Die Namen der Zauberer, die eine Tochter haben"
@@ -333,7 +337,7 @@ SELECT ...
 FROM ...
 WHERE ...='Tochter'"
   data-solution="
-SELECT erste_Name 
+SELECT erster_Name 
 FROM verwandte 
 WHERE verwandtschaft='Tochter'"
   ></sql-exercise>
@@ -360,13 +364,13 @@ WHERE Augen='Blau'"
   data-question="Die Namen der Zauberer und Hexen, die blaue Augen und eine Tochter haben"
   data-comment="Zögere nicht, es so zu machen wie zuvor: zuerst einen Satz, dann einen vereinfachten Satz und übersetze ihn in Code. Füge die Lösungen der beiden vorherigen Punkte ein."
   success-message="Juhu!!! Du hast Informationen aus zwei verschiedenen Tabellen miteinander verknüpft, du bist eine wahre Expertin!"
-  data-default-text="SELECT nom
+  data-default-text="SELECT Name
 FROM Charaktere
 WHERE nom IN (/*Die Namen der Zauberer und Hexen, die eine Tochter haben*/)
 AND /*die Augen sind blau*/"
   data-hint="Hinweis: Du musst verwenden, was wir zuvor gelernt haben.
 1. Die Namen der Zauberer und Hexen, die eine Tochter haben:
-SELECT erste_Name 
+SELECT erster_Name 
 FROM verwandte 
 WHERE verwandtschaft='Tochter'
 1. Die Zauberer, die blaue Augen haben:
@@ -374,7 +378,7 @@ WHERE Augen = 'Blau'"
   data-solution="
 SELECT Name
 FROM Charaktere
-WHERE Name IN (SELECT erste_Name 
+WHERE Name IN (SELECT erster_Name 
               FROM verwandte 
               WHERE verwandtschaft='Tochter')
 AND Augen='Blau'"

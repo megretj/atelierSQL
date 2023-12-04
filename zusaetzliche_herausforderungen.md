@@ -15,12 +15,12 @@ Für eine Umfrage müsstest du alle Kreaturen auflisten, die Federn haben.
   data-default-text="SELECT *
 FROM kreaturen"></sql-exercise>
 
-Alle Kreaturen bei denen die Spalte _federn\_kreatur_ _?_ ist, haven keine Federn. Das wollen wir eben nicht!
+Alle Kreaturen bei denen die Spalte _federn\_kreatur_ _?_ ist, haben keine Federn. Das wollen wir eben nicht!
 
 <div class="sideNote"><p>Um etwas zu filtern, das wir nicht wollen, können wir die Verneinung verwenden: <code class="keyword">NOT</code> ("nicht" auf Deutsch) vor der Bedingung.</p></div>
 
 <sql-exercise
-  data-question="Welche Kreaturen haben Haare?"
+  data-question="Welche Kreaturen haben Federn?"
   data-comment="Auf Deutsch würde die Abfrage wie folgt aussehen: 'Wähle den Namen der Kreaturen und ihre Federn aus der Tabelle Kreaturen aus, bei denen ihre Federn nicht unbekannt sind.'"
   success-message="🐉 Gut gemacht!"
   data-default-text="SELECT ...

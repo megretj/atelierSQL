@@ -128,10 +128,6 @@ class InputFeedback extends HTMLElement {
     this.appendChild(container);
   }
 
-  YEAH_fireworks(){
-    celebrateTrophy();
-  }
-
   checkAnswer() {
     // Get solution
     var dataSolution = this.getAttribute('data-solution') || '';
@@ -145,15 +141,27 @@ class InputFeedback extends HTMLElement {
     let feedback = '';
     if (userInput.toLowerCase() === dataSolution) {
       feedback = successMessage;
+      if (lastQuest == "true"){
+        const container = document.createElement('div');
+        const magic = document.createElement('script');
+        magic.src ="scripts/magic.js"
+        container.className = 'trophy';
+        const image = document.createElement('img');
+        image.src = "imgs/coupe_de_feu.png";
+        const figcaption = document.createElement('figcaption')
+        figcaption.textContent = "Quelle: https://www.craiyon.com/"
+        image.setAttribute('style','width:400px;');
+        container.appendChild(magic);
+        container.appendChild(image);
+        container.appendChild(figcaption)
+        this.appendChild(container);
+      }
     } else {
       feedback = failureMessage;
     }
 
     // Display the feedback message
     this.querySelector('.feedback-message').textContent = feedback;
-    if (lastQuest == true){
-      this.YEAH_fireworks();
-    }
     
   }
 }
