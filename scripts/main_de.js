@@ -83,7 +83,7 @@ warningTags.forEach(function(tag) {
   tag.innerHTML="⚠️ " + tag.innerHTML;
 });
 
-var noteClass = document.querySelectorAll('.sideNote');
+var noteClass = document.querySelectorAll('.sideNote p');
 
 noteClass.forEach(function(tag) {
   tag.innerHTML="🗒️ " + tag.innerHTML;
