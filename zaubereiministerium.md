@@ -206,6 +206,7 @@ Aber wir können es noch besser machen! Anstatt jedes Mal <code>Haare=...</code>
 <sql-exercise
   data-question="8. Vervollständige die folgende Abfrage."
   data-comment="Vergleiche diese Abfrage mit die Abfrage davor. Geben sie das gleiche Ergebnis? Du kannst auch versuchen, andere Dinge in der Tabelle zu zählen, wenn du möchtest."
+  success-message="Tip top!"
   data-default-text="SELECT COUNT(*)
 FROM ...
 WHERE Geschlecht = 'Männlich'
