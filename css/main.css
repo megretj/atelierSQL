@@ -146,7 +146,7 @@ body #column {
 
 figcaption{
     text-align: center;
-    font-size:13px;
+    font-size:14px;
     font-weight: 100;
 }
 /* Buttons */
@@ -169,6 +169,12 @@ figcaption{
 }
 .button-link:hover{
     background: hwb(345 40% 3%);
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .is-centered{
@@ -253,7 +259,16 @@ a:hover {
     border-left: 3px solid #4452d4;
     background-color: rgb(215, 219, 255)
 }
-
+warning {
+    margin: 1em 1em;
+    padding: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 0.95em;
+    border: 2px solid #f7265b;
+    background-color: #ffe2e9;
+    border-radius: 1em;
+}
 .warning {
     margin: 1em 1em;
     padding: 0.5em;

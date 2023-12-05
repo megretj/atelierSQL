@@ -10,7 +10,7 @@ dbFile: data/harrypotter_de.db
 # Der Diebstahl des Feuerkelchs 
 
 <figure>
-<img src="imgs/newspaper_de.gif" style="width:80%;text-align:center;" alt="Schrecken in der Gringotts-Bank: Der Feuerkelch wurde gestohlen! Der Diebstahl ereignete sich in der Nacht vom 24. auf den 25. April 1995. Jemand drang in den Tresorraum ein und zerstörte mehrere Wände, um zu entkommen. Wir haben nur wenige Informationen über die Verdächtigen. Wir wissen nur, dass es einen Zeugen am Tatort gab."><figcaption>Titelseite des "Daily Prophet"</figcaption>
+<img src="imgs/newspaper_de.gif" style="width:80%;" class = "center" alt="Schrecken in der Gringotts-Bank: Der Feuerkelch wurde gestohlen! Der Diebstahl ereignete sich in der Nacht vom 24. auf den 25. April 1995. Jemand drang in den Tresorraum ein und zerstörte mehrere Wände, um zu entkommen. Wir haben nur wenige Informationen über die Verdächtigen. Wir wissen nur, dass es einen Zeugen am Tatort gab."><figcaption>Titelseite des "Daily Prophet"</figcaption>
 </figure>
 
 <a name="zeuge"></a>
@@ -49,7 +49,7 @@ failure-message="Das ist nicht die richtige Person. Versuche es erneut."></input
 
 <a name="kaempfer"></a>
 
-## Der Kämpfer
+## Der/die Kämpfer*in
 
 <sql-exercise
   data-question="2. Dank der Aussage des Zeugen kannst du herausfinden, wer der Mann ist, der kämpfte."

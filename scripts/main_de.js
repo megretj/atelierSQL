@@ -77,6 +77,17 @@ function datatable (data) {
   return tbl;
 }
 
+var warningTags = document.querySelectorAll('.warning');
+
+warningTags.forEach(function(tag) {
+  tag.innerHTML="⚠️ " + tag.innerHTML;
+});
+
+var noteClass = document.querySelectorAll('.sideNote');
+
+noteClass.forEach(function(tag) {
+  tag.innerHTML="🗒️ " + tag.innerHTML;
+});
 
 //////////////////////////
 // SQL Verify Component
