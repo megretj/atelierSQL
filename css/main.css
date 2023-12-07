@@ -288,6 +288,12 @@ a:hover {
     background: lightgrey;
 }
 
+.verdict {
+    color:#075800;
+    font-size: 20px;
+    text-align: center;
+}
+
 /* sql quiz component */
 button .verify-button{
     min-height: 20px;

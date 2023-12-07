@@ -370,6 +370,7 @@ class sqlExercise extends HTMLElement {
 
         if (solution) {
           var verdict_div = document.createElement('div');
+          verdict_div.className = 'verdict';
           result_div.appendChild(verdict_div);
 
           query(solution, (solution_data) => {

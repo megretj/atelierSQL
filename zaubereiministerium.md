@@ -259,12 +259,12 @@ Es ist immer praktisch, einen Überblick über die Datenbank des Zaubereiministe
 
 Wir werden uns die Tabelle _kreaturen_ später ansehen. Im Moment ist in der Tabelle _Verwandte_ der _erste\_Name_ der/die _verwandtschaft_ des _zweite\_Name_. Zum Beispiel ist in der folgenden Tabelle Lily die Mutter von Harry und Harry ist der Sohn von James.
 
-<table class="datatable">
+<table class="datatable" style="width:100%">
 <thead>
   <tr>
     <th class="tg-0pky">erster_Name</th>
     <th class="tg-0pky">zweiter_Name</th>
-    <th class="tg-0pky">verwandtschaft</th>
+    <th class="tg-0pky">Verwandtschaft</th>
   </tr>
 </thead>
 <tbody>
@@ -288,7 +288,7 @@ Wir werden uns die Tabelle _kreaturen_ später ansehen. Im Moment ist in der Tab
 
 <sql-exercise
   data-question="Erkunde die Tabelle Verwandte."
-  data-comment="Beginne damit, alle Attribute beider Tabellen anzuzeigen."
+  data-comment="Beginne damit, alle Attribute der Tabelle anzuzeigen."
   data-default-text=""
   data-hint="Probiere etwas wie
 SELECT *
