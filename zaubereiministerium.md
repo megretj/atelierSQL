@@ -227,7 +227,7 @@ Versuche jetzt ein ganze Abfrage selber zu schreiben.
   data-hint="
 SELECT COUNT(*) 
 FROM Charaktere 
-WHERE Geburt IN"
+WHERE Geburt IN ..."
   data-solution="
 SELECT COUNT(*) 
 FROM Charaktere 
@@ -314,7 +314,7 @@ WHERE Verwandtschaft = 'Bruder'"
   ></sql-exercise>
 
 <sql-exercise
-  data-question="11. Wie heißt die Großmutter von Neville Longbottom?"
+  data-question="11. Wie heißt die Grossmutter von Neville Longbottom?"
   data-default-text=""
   success-message="Das ist sie! Gut gemacht."
   failure-message="Das ist noch nicht die richtige Person..."

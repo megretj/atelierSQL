@@ -27,19 +27,19 @@ WHERE NOT ...=..."
   data-solution="
 SELECT nom_créature, plumes_poils
 FROM créatures 
-WHERE NOT plumes_poils='?''"
+WHERE NOT plumes_poils='?'"
   ></sql-exercise>
 
 <div class="sideNote">
 <h3>Conseil de pros</h3>
-Au lieu de cliquer sur Run, tu peux taper sur [Shift⇧]+[Enter↵] sur ton clavier pour exécuter ta commande.
+<p>Au lieu de cliquer sur Run, tu peux taper sur [Shift⇧]+[Enter↵] sur ton clavier pour exécuter ta commande.</p>
 </div>
 
 <a name="like"></a>
 
 ## I LIKE SQL
 
-Tu as surement remarqué qu'il faut être très précis lorsque l'on cherche des données specifiques avec le signe <code>=</code> (par exemple, <code> ... WHERE nom = "Minerva McGonagall" AND ...</code>). Mais si on ne connait qu'une partie d'une information on peut utiliser <code class="keyword">LIKE</code>. Cela permet de chercher si le texte est contenu dans le tableau. 
+Tu as surement remarqué qu'il faut être très précis lorsque l'on cherche des données specifiques avec le signe <code>=</code> (par exemple, <code> ... WHERE nom = "Minerva McGonagall" AND ...</code>). Mais si on ne connait qu'une partie d'une information on peut utiliser <code class="keyword">LIKE</code>. Cela permet de chercher les textes qui sont a peu près corrects. 
 
 <sql-exercise
   data-question="Par exemple, dans le nom 'Minerva McGonagall' il y a 'Mine' ou 'onaga' ou encore 'McGo'."
@@ -50,11 +50,11 @@ WHERE nom LIKE '%MIN%'"
   ></sql-exercise>
 
 <div class="sideNote">
-On peut créer une condition en remplacant <code>=</code> par <code class="keyword">LIKE</code> et en placant le texte que l'on veut chercher entre <code>"%...%"</code>
+<p>On peut créer une condition en remplacant <code>=</code> par <code class="keyword">LIKE</code> et en placant le texte que l'on veut chercher entre <code>"%...%"</code></p>
 </div>
 
 <sql-exercise
-  data-question="Affiches toutes les créatures qui contiennent chat dans leur nom"
+  data-question="Affiches toutes les créatures qui contiennent 'chat' dans leur nom"
   data-hint="SELECT *
 FROM créatures
 WHERE ... LIKE ..."
@@ -67,15 +67,15 @@ WHERE nom_créature LIKE '%chat%'"
 
 ## Les bases de données relationelles
 
-Le vrai avantage d'utiliser une base de donnée telle que celle que nous avons utilisé jusqu'à présent est que tu peux lier ces tableaux entre eux! Rappelles-toi du schéma que nous avons vus précédement:
+Le vrai avantage d'utiliser une base de donnée telle que celle que nous avons utilisé jusqu'à présent est que tu peux lier ces tableaux entre eux! Rappelle-toi du schéma que nous avons vus précédement:
 
 <img src="imgs/HarryPotterDB_fr.png">
 
-On pourrait par exemple, vouloir voir tous les magiciens qui ont un patronus qui est une créature imaginaire. Toutefois, l'attribut statut_créature ne se trouve pas dans le même tableau que celui des noms des magiciens. La requête suivante ne peut donc pas fonctionner.
+On pourrait par exemple, vouloir voir le nom de tous les magiciens qui ont un patronus qui est une créature imaginaire. Toutefois, l'attribut statut_créature ne se trouve pas dans le même tableau que celui des noms des magiciens. La requête suivante ne peut donc pas fonctionner.
 
 <code class="codeBloc">SELECT nom FROM personnages WHERE statut_créature='Créature imaginaire'</code>
 
-L'attribut type_créature se trouve dans le tableau créatures. Il faut donc lier ou joindre les deux tableaux grâce à la commande <span class="keyword">_JOIN_</span>. Par exemple, si Harry Potter a un Patronus "Cerf", on aimerait que toutes les informations du Cerf soient ajoutées au tableau personnages. Pour cela on pourrait écrire quelque chose comme: 
+L'attribut type_créature se trouve dans le tableau créatures. Il faut donc lier ou joindre les deux tableaux grâce à la commande <span class="keyword">_JOIN_</span>. Par exemple: Harry Potter a un Patronus "Cerf" et on aimerait que toutes les informations du Cerf soient ajoutées au tableau personnages. Pour cela on pourrait écrire quelque chose comme: 
 
 _Sélectionne tout les attributs de personnages en joignant le tableau créatures tel que le patronus du personnage correpondre au nom de la créature_
 

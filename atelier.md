@@ -12,11 +12,11 @@ Bienvenue dans le monde magique de Harry Potter! Tu as été employée en tant q
 
 ## La requête magique
 
-Ta cheffe, Professeure McGonagall, te montre comment fonctionne le système. Tu as accès à la base de donnée via une <span class="keyword">ligne de commande</span> dans un <span class="keyword">bloc de code</span> comme ci-dessous. Il suffit de rentrer une commande valide et de cliquer sur RUN pour voir le résultat. Comme c'est la première fois que tu utilise ce système, Professeure McGonagall te montre un exemple.
+Ta cheffe, Professeure McGonagall, te montre comment fonctionne le système. Tu as accès à la base de donnée via une <span class="keyword">ligne de commande</span> dans un <span class="keyword">bloc de code</span> comme ci-dessous. Il suffit de rentrer une commande valide et de cliquer sur RUN⬇️ pour voir le résultat. Comme c'est la première fois que tu utilise ce système, Professeure McGonagall te montre un exemple pour chercher le nom de 3 magiciens dans la base de données..
 
 <sql-exercise
-  data-question="Voici un exemple pour chercher le nom de 3 magiciens dans la base de données."
-  data-comment="Essaies de modifier le nombre de noms qui sont affichés à 15"
+  data-question="1. Essaies de modifier le nombre de noms qui sont affichés à 15"
+  data-comment=""
   data-default-text="SELECT nom
 FROM personnages
 LIMIT 3"></sql-exercise>
@@ -27,14 +27,14 @@ LIMIT 3"></sql-exercise>
 <p>Tu peux voir qu'une commande ou <span class="keyword">requête</span> SQL se lit un peu comme une phrase. Les mots en majuscules sont des mots clés en anglais et les mots en minuscules spécifient ce que tu veux chercher. <code class="keyword">SELECT</code> veut dire Sélectionne, <code class=keyword>FROM</code> veut dire de ou depuis et <code class="keyword">LIMIT</code> veur dire limite. Donc si on traduit la ligne de code on trouve: "<code>SELECTIONNE</code> nom <code>DE</code> personnages <code>LIMITE</code> 3".</p>
 </div> 
 
-Avec chaque requête, on sélectionne un certain nombre <span class="keyword">d'attributs</span> (charctéristiques) comme le nom, le genre, l'année de naissance, etc. . Tu viens d'apprendre comment afficher le nom des magiciens, mais ça serait utile de savoir quels autres attributs peut on connaitre sur chaque personnage.
+Tu viens d'apprendre comment afficher le nom des magiciens. Avec chaque requête, on sélectionne un certain nombre <span class="keyword">d'attributs</span> (charctéristiques) comme le nom, le genre, l'année de naissance, etc... Ça serait utile de savoir quels autres attributs on peut connaître sur chaque personnage.
 
 <div class ="sideNote">
-<p>Pour sélectionner <strong>tous</strong> les attributs d'un personnage, il faut sélectionner <code class="keyword">*</code>. </p>
+<p>Pour sélectionner <strong>tous</strong> les attributs d'un personnage, il faut utiliser <code class="keyword">*</code>. </p>
 </div>
 
 <sql-exercise
-  data-question="Modifie la requête de tout à l'heure pour chercher tous les attributs de 15 magiciens dans la base de données."
+  data-question="2. Modifie la requête suivante pour afficher tous les attributs de 15 magiciens dans la base de données."
   data-comment="Si tu n'arrives pas, tu peux cliquer sur 'SOLUTION' et la solution apparaitra... magiquement!"
   data-default-text = "/* Ceci est un commentaire. */
 SELECT nom 
@@ -77,12 +77,12 @@ _SELECTIONNE COMPTE(*) DE personnages_
 </div>
 
 <sql-exercise
-  data-question="À toi de traduire ça dans une commande SQL. "
+  data-question="3. À toi de traduire ça dans une commande SQL. "
   data-comment=""
   data-default-text="SELECT ..."
   data-solution="SELECT COUNT(*) 
 FROM personnages"
-  success-message="Exactement, tu sais maintenant compter le nombre de lignes retournées par une requête. Maintenant on va essayer de faire des recherches un peu plus intéressantes."
+  success-message="Exactement! Tu sais maintenant compter le nombre de lignes retournées par une requête. Maintenant on va essayer de faire des recherches un peu plus intéressantes."
 failure-message="Pas tout à fait, essaies à nouveau."></sql-exercise>
 
 <a name="filtrer"></a>
@@ -103,17 +103,20 @@ En simplifiant donc un petit peu, on obtient:
 
 _SELECTIONNE * DE personnages OÙ genre='Femme'_
 
-Il faut donc une commande comme _OÙ_ qui puisse filtrer une _condition_. Pour chaque personnage, soit la condition (par exemple:_genre='Femme'_) est vraie, dans quel cas la ligne du personnage sera affichée soit la condition est fausse et on ignore la ligne. Si on traduit en anglais:
+Il nous faudrait encore une commande comme _OÙ_ qui puisse filtrer une _condition_. Pour chaque personnage, soit la condition (par exemple:_genre='Femme'_) est vraie, dans quel cas la ligne du personnage sera affichée soit la condition est fausse et la ligne n'est pas affichée. Si on traduit en anglais:
 
 <div class="sideNote">
-<p>Tu peux utiliser <code class="keyword">WHERE</code> pour filtrer les résultats de tes recherches.</p>
+<p>Tu peux utiliser <code class="keyword">WHERE</code> (OÙ en français) pour filtrer les résultats de tes recherches.</p>
 </div>
 
-Et on peut écrire:
+* <code class="codeblock">FROM personnages  </code>
 
-<code class="codeblock">SELECT * FROM personnages WHERE genre='Femme'</code>
+* <code class="codeblock">WHERE genre='Femme'</code>
+
+* <code class="codeblock">SELECT * </code>
+
 <sql-exercise
-  data-question="Essaies, toi même et affiche tous le personnages féminins en utilisant <code>WHERE</code>"
+  data-question="4. Écrit les 3 lignes de code dans le bon ordre pour afficher tous le personnages féminins grace à <code>WHERE</code>"
   data-comment=""
   data-default-text="SELECT ..."
   data-solution="
@@ -135,7 +138,7 @@ _SELECTIONNE * DE personnages OÙ genre='Femme' ET yeux='Bleus'_
 </div>
 
 <sql-exercise
-  data-question="Traduis en anglais la requête en utilisant ce que tu as apris jusqu'à présent"
+  data-question="5. Traduis la requête en anglais en utilisant ce que tu as appris jusqu'à présent"
   data-default-text="SELECT ...
 FROM ...
 WHERE ..."
@@ -149,7 +152,7 @@ AND yeux='Bleus'"
 Toujours trop de personnes... Essaies d'ajouter la condition du patronus lièvre.
 
 <sql-exercise
-  data-question="Modifie la requête précédente pour "
+  data-question="6. Modifie la requête précédente pour ajouter la condition du patronus lièvre."
   data-comment="Essaies de ne pas utiliser la solution et demandes à un/e assistant/e pour de l'aide si tu en as besoin."
   data-default-text="SELECT ..."
   data-solution="
@@ -172,20 +175,21 @@ failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-fe
 
 ## Compter AND Filtrer
 
-Tu te souviens comment on compte? Et bien maintenant que tu sais filtrer, peux compter des choses un peu plus spécifiques.
+Tu te souviens comment on compte? Et bien maintenant que tu sais filtrer avec <code>WHERE</code>, peux compter des choses un peu plus spécifiques.
 
 <sql-exercise
-  data-question="Essaies de compter le nombre de magiciens hommes avec les cheveux noirs ou les cheveux roux ou les cheveux bruns en remplissant les trous."
+  data-question="7. Essaies de compter le nombre de magiciens hommes avec les cheveux Noirs ou Roux ou Bruns en remplissant les trous."
   data-comment="Complète les trous manquants"
   data-default-text="SELECT COUNT(*) 
 FROM personnages 
 WHERE ... = 'Homme' 
-AND (... = 'Noirs' OR ... = ... OR ... = ...)"
+AND (... = 'Noirs' OR cheveux = ... OR ... = ...)"
   data-solution=" 
 SELECT COUNT(*) 
 FROM personnages 
 WHERE genre = 'Homme' 
 AND (cheveux = 'Noirs' OR cheveux = 'Roux' OR cheveux='Bruns')"
+success-message="Correct!"
   ></sql-exercise>
 
 <div class="sideNote">
@@ -199,20 +203,22 @@ Mais on peut faire mieux! Au lieu de répéter à chaque fois <code>cheveux=...<
 </div>
 
 <sql-exercise
-  data-question="La commande au complet donne:"
-  data-comment="Essaies les deux commandes et vérifie si elles sont bien équivalentes. Tu peux aussi essayer de compter d'autres choses dans le tableau si tu veux."
+  data-question="8. Remplis la requête suivante"
+  data-comment="Compare cette commande avec la précédente. Les résultats sont-ils bien équivalents? Tu peux aussi essayer de compter d'autres choses dans le tableau si tu veux."
   data-default-text="SELECT COUNT(*) 
-FROM personnages 
-WHERE genre='Femme'
-AND (cheveux IN('Noirs','Roux','Bruns'))"
+FROM ... 
+WHERE genre='Homme'
+AND (cheveux IN('Noirs','Roux', ... ))"
   data-solution="SELECT COUNT(*) 
 FROM personnages 
-WHERE genre='Femme'
+WHERE genre='Homme'
 AND (cheveux IN('Noirs','Roux','Bruns'))"
   ></sql-exercise>
 
+Tu as appris un paquet de choses, maintenant essaies d'écrire une commande par toi même.
+
 <sql-exercise
-  data-question="Combien de sorciers et sorcières sont nés en 1990,1991,1992 ou 1993?"
+  data-question="9. Combien de sorciers et sorcières sont nés en 1990,1991,1992 ou 1993?"
   data-comment="Utilise COUNT(*). Il y a plusieurs manières de résoudre cet exercice. "
   data-default-text=""
   success-message="Exactement!"
@@ -230,15 +236,19 @@ WHERE naissance < 1994 AND naissance > 1989
 */"
   ></sql-exercise>
 
+<div class="sideNote">
+<p> Les signes <code class="keyword"><</code> et <code class="keyword">></code> entre deux nombres veulent dire "est plus petit que" respectivement "est plus grand que". Par exemple: 1 < 2 et 2 > 1.</p>
+</div>
+
 <a name="structure"></a>
 
 ## Les différents tableaux
 
-Avant de te lancer dans l'énigme finale, Professeure McGonagall te dit qu'il y a deux autres tableaux dans la base de données qui te seront utiles: 
+Jusqu'à maintenant, on a toujours accédé aux information dans le tableau _personnages_ en écrivant <code>FROM personnages</code>. Avant de te lancer dans l'énigme finale, Professeure McGonagall te dit qu'il y a deux autres tableaux dans la base de données qui te seront utiles: 
 * _famille_, qui répertorie tous les liens de parenté entre les personnage.
 * _créatures_, qui répertorie toutes les créatures magiques. 
 
-Il toujours pratique d'avoir un apperçu de la base de donnée du ministère de la magie sous forme de schéma:
+Il est toujours pratique d'avoir un apperçu de la base de donnée du ministère de la magie sous forme de schéma:
 <figure>
 <img src="imgs/HarryPotterDB_fr.png"><figcaption>Structure de la base de données. Un tableau est représenté par une case. Chaque ligne dans les cases correspond à un attribut du tableau.</figcaption>
 </figure>
@@ -274,7 +284,7 @@ Nous regarderons le tableau créature plus tard. Pour l'instant, dans le tableau
 
 <sql-exercise
   data-question="Explore le tableau famille."
-  data-comment="Commence par afficher tous les attribus des deux tableau."
+  data-comment="Commence par afficher tous les attribus du tableau."
   data-default-text=""
   data-hint="Essaies quelque chose comme
   SELECT *
@@ -285,7 +295,7 @@ Nous regarderons le tableau créature plus tard. Pour l'instant, dans le tableau
 Pour guider ton exploration, tu peux essayer les deux challenges suivants:
 
 <sql-exercise
-  data-question="Liste tous les attributs de tous les personnages qui ont un frère"
+  data-question="10. Liste tous les attributs de tous les personnages qui ont un frère"
   data-default-text=""
   success-message="Exactement! C'est des grandes familles!"
   failure-message=""
@@ -300,7 +310,7 @@ WHERE relation = 'frère'"
   ></sql-exercise>
 
 <sql-exercise
-  data-question="Comment s'appelle la grand-mère de Neville Londubat?"
+  data-question="11. Comment s'appelle la grand-mère de Neville Londubat?"
   data-default-text=""
   success-message="C'est elle! Bien joué."
   failure-message="Ce n'est pas encore la bonne personne..."
@@ -320,14 +330,15 @@ Finalement, grâce à ces nouveaux tableaux, tu peux aussi croiser les informati
 * D'abord pour trouver le noms des sorcier.ères qui ont une fille, on sélectionne le tableau _famille_ et on filtre les résultats lorsque la relation est égal à "fille".
 
 <sql-exercise
-  data-question="Le nom des sorcier.ères qui ont une fille"
-  data-comment="Tu peux essayer toute seule mais n'hésite pas à clique sur solution pour révéler la solution"
+  data-question="12. Le nom des sorcier.ères qui ont une fille"
+  data-comment="Tu peux essayer toute seule mais n'hésite pas à cliquer sur indice pour t'aider. "
   data-default-text=""
-  data-hint="Remplis les trous
+  data-hint="/*Remplis les trous*/
 SELECT ...
 FROM ...
 WHERE ...='fille'"
-  data-solution="SELECT premier_nom 
+  data-solution="
+SELECT premier_nom 
 FROM famille 
 WHERE relation='fille'"
   ></sql-exercise>
@@ -335,8 +346,8 @@ WHERE relation='fille'"
 * Ensuite, on veut trouver le nom des socier.ères qui ont les yeux bleus.
 
 <sql-exercise
-  data-question="Le nom des sorcier.ères qui ont les yeux bleus"
-  data-comment="Tu peux essayer toute seule mais n'hésite pas à clique sur solution pour révéler la solution"
+  data-question="13. Le nom des sorcier.ères qui ont les yeux bleus"
+  data-comment="Si l'indice ne t'aide pas, n'hésite pas à demander à un.e assistant.e!"
   data-default-text=""
   data-hint="Remplis les trous
 SELECT nom
@@ -351,7 +362,7 @@ WHERE yeux='Bleus'"
 * On met les deux conditions ensemble en combinant les réponses précédentes dans une seule commande.
 
 <sql-exercise
-  data-question="Le noms des sorcier.ères qui ont les yeux bleus et une fille"
+  data-question="14. Le noms des sorcier.ères qui ont les yeux bleus et une fille"
   data-comment="N'hésites pas à faire comme tout à l'heure: d'abord une phrase, puis une phrase simplifiée puis traduire pour que ça fasse du code. Insère les solutions des deux points précédents"
   success-message="Youhou!!! Tu as croisé les informations de deux tableaux différents, tu es une véritable experte!"
   data-default-text="SELECT nom

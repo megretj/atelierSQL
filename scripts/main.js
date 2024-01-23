@@ -77,6 +77,17 @@ function datatable (data) {
   return tbl;
 }
 
+var warningTags = document.querySelectorAll('.warning');
+
+warningTags.forEach(function(tag) {
+  tag.innerHTML="⚠️ " + tag.innerHTML;
+});
+
+var noteClass = document.querySelectorAll('.sideNote p');
+
+noteClass.forEach(function(tag) {
+  tag.innerHTML="🗒️ " + tag.innerHTML;
+});
 
 //////////////////////////
 // SQL Verify Component
@@ -107,7 +118,7 @@ class InputFeedback extends HTMLElement {
     // Create an input element
     const input = document.createElement('input');
     input.type = 'text';
-    input.placeholder = 'Rentre ta réponse...';
+    input.placeholder = 'Écris ta réponse ici';
 
     // Create a button to submit the answer
     const submitButton = document.createElement('button');
@@ -131,8 +142,9 @@ class InputFeedback extends HTMLElement {
   checkAnswer() {
     // Get solution
     var dataSolution = this.getAttribute('data-solution') || '';
-    var successMessage = this.getAttribute('success-message') || 'Correcte!';
-    var failureMessage = this.getAttribute('failure-message') || 'Incorrecte, essaies à nouveau!';
+    var successMessage = this.getAttribute('success-message') || 'Correct!!';
+    var failureMessage = this.getAttribute('failure-message') || 'Pas tout à fait, essaies à nouveau!';
+    var lastQuest = this.getAttribute('lastQuest')|| false;
     // Get the user's input
     const userInput = this.querySelector('input').value.trim();
 
@@ -140,12 +152,28 @@ class InputFeedback extends HTMLElement {
     let feedback = '';
     if (userInput.toLowerCase() === dataSolution) {
       feedback = successMessage;
+      if (lastQuest == "true"){
+        const container = document.createElement('div');
+        const magic = document.createElement('script');
+        magic.src ="scripts/magic.js"
+        container.className = 'trophy';
+        const image = document.createElement('img');
+        image.src = "imgs/coupe_de_feu.png";
+        const figcaption = document.createElement('figcaption')
+        figcaption.textContent = "Quelle: https://www.craiyon.com/"
+        image.setAttribute('style','width:400px;');
+        container.appendChild(magic);
+        container.appendChild(image);
+        container.appendChild(figcaption)
+        this.appendChild(container);
+      }
     } else {
       feedback = failureMessage;
     }
 
     // Display the feedback message
     this.querySelector('.feedback-message').textContent = feedback;
+    
   }
 }
 
@@ -342,6 +370,7 @@ class sqlExercise extends HTMLElement {
 
         if (solution) {
           var verdict_div = document.createElement('div');
+          verdict_div.className = 'verdict';
           result_div.appendChild(verdict_div);
 
           query(solution, (solution_data) => {
@@ -380,6 +409,18 @@ class sqlExercise extends HTMLElement {
       };
     };
 
+    if (hint) {
+      var hintButton = document.createElement('input');
+      hintButton.name = 'hint';
+      hintButton.type = 'button';
+      hintButton.value = 'Indice';
+      hintButton.onclick = (e) => {
+        var existingCode = editor.getValue();
+        editor.setValue("/*" + hint + "*/\n"+ existingCode );
+      };
+      inputArea.appendChild(hintButton);
+    };
+
     if (solution) {
       var solutionButton = document.createElement('input');
       solutionButton.name = 'solution';
@@ -391,18 +432,6 @@ class sqlExercise extends HTMLElement {
       };
       inputArea.appendChild(solutionButton);
     };
-
-    if (hint) {
-      var hintButton = document.createElement('input');
-      hintButton.name = 'hint';
-      hintButton.type = 'button';
-      hintButton.value = 'Indice';
-      hintButton.onclick = (e) => {
-        var existingCode = editor.getValue();
-        editor.setValue("/*" + hint + "*/\n"+ existingCode );
-      };
-      inputArea.appendChild(hintButton);
-    }
 
     var resetButton = document.createElement('input');
     resetButton.type = 'button';

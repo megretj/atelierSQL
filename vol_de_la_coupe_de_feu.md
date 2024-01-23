@@ -8,7 +8,7 @@ dbFile: data/harrypotter_fr.db
 </figure>
 
 # Le vol de la coupe de feu 
-
+Lis la une du journal:
 <figure>
 <img src="imgs/newspaper.gif" style="width:80%;text-align:center;" alt="Épouvante à la banque de Gringotts: La coupe de feu a été volée! Le vol s'est passé la nuit du 24 au 25 avril 1995. Quelqu'un s'est introduit dans la salle du coffre et a détruit plusieurs murs pour s'échaper. On a que peu d'informations à propos des suspects. On sait seulement qu'il y avait un témoin sur les lieux du vol."><figcaption>Une copie de la une de "The Daily Prophet"</figcaption>
 </figure>
@@ -20,7 +20,7 @@ dbFile: data/harrypotter_fr.db
 L'appel au témoin à bien fonctionné. C'est l'épouse du témoin qui s'est annoncé elle s'appelle Narcissa Malefoy.
 
 <sql-exercise
-  data-question="Essaies d'écrire une commande pour trouver le témoin de l'affaire."
+  data-question="1. Écris une commande pour trouver le témoin de l'affaire."
   data-comment="Essaies de ne pas utiliser la solution et demandes à un/e assistant/e pour de l'aide si tu en as besoin."
   data-default-text="SELECT ..."
   data-hint="SELECT ...

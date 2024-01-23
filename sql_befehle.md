@@ -13,7 +13,7 @@ Das grundlegende Format einer SQL-Abfrage lautet wie folgt:
 SELECT ... FROM ... 
 </code>
 
-Darauf können Schlüsselwörter hinzugefügt werden, um die Abfrage zu spezifizieren (suchen).
+Darauf können Schlüsselwörter hinzugefügt werden, um die Abfrage zu spezifizieren.
 
 <sql-exercise
   data-question="Hier kannst du SQL-Abfragen testen."

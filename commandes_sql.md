@@ -9,9 +9,9 @@ Sur cette page, tu trouveras un résumé des commandes SQL de base, leur effet e
 
 Le format de base d'une requête SQL est la suivante:
 
-{% highlight ruby %}
+<code class = "codeblock">
 SELECT ... FROM ... 
-{% endhighlight %}
+</code>
 
 On peut ensuite ajouter des mots clés pour spécifier la requête (recherche). 
 
@@ -77,6 +77,12 @@ On peut ensuite ajouter des mots clés pour spécifier la requête (recherche).
     <td>DANS</td>
     <td>Lorsque l'on a le choix entre plusieurs valeurs pour le même attribut</td>
     <td>SELECT * FROM créatures WHERE yeux_créature IN ('Gris','Noirs','Rouge')</td>
+  </tr>
+  <tr>
+    <td>JOIN ... ON</td>
+    <td>JOINDRE ... SUR</td>
+    <td>Lorsque l'on veut joindre deux tableaux ensembles sur une donnée particulière.</td>
+    <td>SELECT * FROM créatures JOIN créatures.nom_créature = personnages.patronus WHERE créature = 'Canard'</td>
   </tr>
   <tr>
     <td>DISTINCT</td>
