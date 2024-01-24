@@ -228,7 +228,6 @@ WHERE naissance IN ..."
   data-solution="SELECT COUNT(*) 
 FROM personnages 
 WHERE naissance IN (1990,1991,1992,1993)
-*/
 /*
 SELECT COUNT(*)
 FROM personnages
@@ -306,7 +305,7 @@ WHERE relation = ..."
   data-solution="
 SELECT *
 FROM famille
-WHERE relation = 'frère'"
+WHERE relation = 'Frère'"
   ></sql-exercise>
 
 <sql-exercise
@@ -317,11 +316,13 @@ WHERE relation = 'frère'"
   data-hint="Essaies quelque chose comme
 SELECT premier_nom
 FROM ...
-WHERE second_nom = ..."
+WHERE second_nom = ...
+AMD ... = 'Grand-mère'"
   data-solution="
 SELECT premier_nom
 FROM famille
-WHERE second_nom = 'Neville Londubat'"
+WHERE second_nom = 'Neville Londubat'
+AND relation = 'Grand-mère'"
   ></sql-exercise>
 </div>
 
@@ -333,14 +334,15 @@ Finalement, grâce à ces nouveaux tableaux, tu peux aussi croiser les informati
   data-question="12. Le nom des sorcier.ères qui ont une fille"
   data-comment="Tu peux essayer toute seule mais n'hésite pas à cliquer sur indice pour t'aider. "
   data-default-text=""
+  success-message="Super"
   data-hint="/*Remplis les trous*/
 SELECT ...
 FROM ...
-WHERE ...='fille'"
+WHERE ...='Fille'"
   data-solution="
 SELECT premier_nom 
 FROM famille 
-WHERE relation='fille'"
+WHERE relation='Fille'"
   ></sql-exercise>
 
 * Ensuite, on veut trouver le nom des socier.ères qui ont les yeux bleus.
@@ -349,6 +351,7 @@ WHERE relation='fille'"
   data-question="13. Le nom des sorcier.ères qui ont les yeux bleus"
   data-comment="Si l'indice ne t'aide pas, n'hésite pas à demander à un.e assistant.e!"
   data-default-text=""
+  success-message="Bien!"
   data-hint="Remplis les trous
 SELECT nom
 FROM personnages
@@ -373,7 +376,7 @@ AND /*les yeux sont bleus*/"
 1. Le nom des socières qui ont une fille:
   SELECT premier_nom 
   FROM famille 
-  WHERE relation='fille'
+  WHERE relation='Fille'
 1. Les sorcières qui ont les yeux bleus:
   WHERE yeux = 'Bleus'"
   data-solution="
@@ -381,7 +384,7 @@ SELECT nom
 FROM personnages
 WHERE nom IN (SELECT premier_nom 
               FROM famille 
-              WHERE relation='fille')
+              WHERE relation='Fille')
 AND yeux='Bleus'"
   ></sql-exercise>
 

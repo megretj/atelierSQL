@@ -58,6 +58,7 @@ WHERE nom LIKE '%MIN%'"
   data-hint="SELECT *
 FROM créatures
 WHERE ... LIKE ..."
+success-message="C'est bien chat!"
   data-solution="SELECT *
 FROM créatures
 WHERE nom_créature LIKE '%chat%'"
