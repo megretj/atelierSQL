@@ -6,7 +6,7 @@ dbFile: data/harrypotter_fr.db
 <h1>Accio Query!</h1>
 
 <div class="warning">
-Les informations présentes dans l'introduction seront données lors de la présentation. Si tu as écouté la présentation, tu n'as donc pas besoin de tout lire et tu peux directement commencer avec <a href="atelier.html">l'atelier</a>.<a href="atelier.html" class="button-link center"> Commencer l'atelier </a>
+Les informations présentes dans l'introduction seront données lors de la présentation. Si tu as écouté la présentation, tu n'as pas besoin de tout lire et tu peux directement commencer avec <a href="atelier.html">l'atelier</a>.<a href="atelier.html" class="button-link center"> Commencer l'atelier </a>
 </div>
 
 Aujourd'hui nous allons apprendre à gérer des bases de données grace à un outil bien pratique: SQL (Structured Query Language en anglais veut dire Languague de Requête Structurée). Mais à quoi servent les bases de données?
