@@ -6,13 +6,13 @@ dbFile: data/harrypotter_fr.db
 
 # Le ministère de la magie 
 
-Bienvenue dans le monde magique de Harry Potter! Tu as été employée en tant que détective et spécialiste informatique dans le grand ministère de la magie. Pour t'aider dans tes tâches, tu as accès au registre des magiciens, une base de données qui répertorie toutes les informations connues à propos du monde des sorciers.
+Bienvenue dans le monde magique de Harry Potter! Tu as été employée en tant que détective et spécialiste informatique dans le grand ministère de la magie. Pour t'aider dans tes tâches, tu as accès au registre des magiciens et magiciennes, une base de données qui répertorie toutes les informations connues à propos de l'univers de Harry Potter.
 
 <a name="base"></a>
 
 ## La requête magique
 
-Ta cheffe, Professeure McGonagall, te montre comment fonctionne le système. Tu as accès à la base de donnée via une <span class="keyword">ligne de commande</span> dans un <span class="keyword">bloc de code</span> comme ci-dessous. Il suffit de rentrer une commande valide et de cliquer sur RUN⬇️ pour voir le résultat. Comme c'est la première fois que tu utilise ce système, Professeure McGonagall te montre un exemple pour chercher le nom de 3 magiciens dans la base de données..
+Ta cheffe, Professeure McGonagall, te montre comment fonctionne le système. Tu as accès à la base de données via une <span class="keyword">ligne de commande</span> dans un <span class="keyword">bloc de code</span> comme ci-dessous. Il suffit de rentrer une commande valide et de cliquer sur RUN⬇️ pour voir le résultat. Comme c'est la première fois que tu utilises ce système, Professeure McGonagall te montre un exemple pour chercher le nom de 3 magiciens dans la base de données..
 
 <sql-exercise
   data-question="1. Essaies de modifier le nombre de noms qui sont affichés à 15"
