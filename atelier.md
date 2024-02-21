@@ -12,10 +12,10 @@ Bienvenue dans le monde magique de Harry Potter! Tu as été employée en tant q
 
 ## La requête magique
 
-Ta cheffe, Professeure McGonagall, te montre comment fonctionne le système. Tu as accès à la base de données via une <span class="keyword">ligne de commande</span> dans un <span class="keyword">bloc de code</span> comme ci-dessous. Il suffit de rentrer une commande valide et de cliquer sur RUN⬇️ pour voir le résultat. Comme c'est la première fois que tu utilises ce système, Professeure McGonagall te montre un exemple pour chercher le nom de 3 magiciens dans la base de données..
+Ta cheffe, Professeure McGonagall, te montre comment fonctionne le système. Tu as accès à la base de données via une <span class="keyword">ligne de commande</span> dans un <span class="keyword">bloc de code</span> comme ci-dessous. Il suffit de rentrer une commande valide et de cliquer sur RUN⬇️ pour voir le résultat. Comme c'est la première fois que tu utilises ce système, professeure McGonagall te montre un exemple pour chercher le nom de 3 magiciens et magiciennes dans la base de données..
 
 <sql-exercise
-  data-question="1. Essaies de modifier le nombre de noms qui sont affichés à 15"
+  data-question="1. Essaie de modifier le nombre de noms qui sont affichés à 15"
   data-comment=""
   data-default-text="SELECT nom
 FROM personnages
@@ -24,10 +24,10 @@ LIMIT 3"></sql-exercise>
 
 <div class="sideNote">
 <h3>Ta première requête SQL</h3>
-<p>Tu peux voir qu'une commande ou <span class="keyword">requête</span> SQL se lit un peu comme une phrase. Les mots en majuscules sont des mots clés en anglais et les mots en minuscules spécifient ce que tu veux chercher. <code class="keyword">SELECT</code> veut dire Sélectionne, <code class=keyword>FROM</code> veut dire de ou depuis et <code class="keyword">LIMIT</code> veur dire limite. Donc si on traduit la ligne de code on trouve: "<code>SELECTIONNE</code> nom <code>DE</code> personnages <code>LIMITE</code> 3".</p>
+<p>Tu peux voir qu'une commande ou <span class="keyword">requête</span> SQL se lit un peu comme une phrase. Les mots en majuscules sont des mots clés en anglais et les mots en minuscules spécifient ce que tu veux chercher. <code class="keyword">SELECT</code> veut dire Sélectionne, <code class=keyword>FROM</code> veut dire de ou depuis et <code class="keyword">LIMIT</code> veut dire limite. Donc si on traduit la ligne de code on trouve: "<code>SELECTIONNE</code> nom <code>DE</code> personnages <code>LIMITE</code> 3".</p>
 </div> 
 
-Tu viens d'apprendre comment afficher le nom des magiciens. Avec chaque requête, on sélectionne un certain nombre <span class="keyword">d'attributs</span> (charctéristiques) comme le nom, le genre, l'année de naissance, etc... Ça serait utile de savoir quels autres attributs on peut connaître sur chaque personnage.
+Tu viens d'apprendre comment afficher les noms. Avec chaque requête, on sélectionne un certain nombre <span class="keyword">d'attributs</span> (carctéristiques) comme le nom, le genre, l'année de naissance, etc... Ça serait utile de savoir quels autres attributs on peut connaître sur chaque personnage.
 
 <div class ="sideNote">
 <p>Pour sélectionner <strong>tous</strong> les attributs d'un personnage, il faut utiliser <code class="keyword">*</code>. </p>
