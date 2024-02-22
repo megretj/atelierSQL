@@ -365,8 +365,8 @@ WHERE yeux='Bleus'"
 * On met les deux conditions ensemble en combinant les réponses précédentes dans une seule commande.
 
 <sql-exercise
-  data-question="14. Le noms des sorcier.ères qui ont les yeux bleus et une fille"
-  data-comment="N'hésites pas à faire comme tout à l'heure: d'abord une phrase, puis une phrase simplifiée puis traduire pour que ça fasse du code. Insère les solutions des deux points précédents"
+  data-question="14. Le noms des sorcier.ère.s qui ont les yeux bleus et une fille"
+  data-comment="N'hésite pas à faire comme tout à l'heure: d'abord une phrase, puis une phrase simplifiée puis traduire pour que ça fasse du code. Insère les solutions des deux points précédents"
   success-message="Youhou!!! Tu as croisé les informations de deux tableaux différents, tu es une véritable experte!"
   data-default-text="SELECT nom
 FROM personnages
