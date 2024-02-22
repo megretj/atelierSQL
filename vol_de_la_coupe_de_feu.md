@@ -34,9 +34,9 @@ L'appel à témoins a bien fonctionné. C'est l'épouse du témoin qui s'est ann
 
 
 <input-feedback 
-data-title="Écris le nom du témoin si tu penses avoir trouvé son nom."
+data-title="Écris le nom du témoin si tu penses l'avoir trouvé."
 data-solution="lucius malefoy"
-success-message="En effet c'est bien Lucius Malefoy! Tu lui envoies donc un message par chouette expresse pour lui demander des informations sur le vol et il vous répond ceci:
+success-message="En effet c'est bien Lucius Malefoy ! Tu lui envoies donc un message par chouette expresse pour lui demander des informations sur le vol et il vous répond ceci:
 Chère inspectrice, je me prommenais dans le chemin de traverse avec ma femme Narcissa après minuit lorsque j'ai entendu un bruit fracassant. J'ai dit à ma femme de s'enfuire, mais je voulais rester quelques instants pour comprendre ce qu'il se passait. Comme il faisait nuit, je n'ai pas très bien vu, mais il me semble que j'ai vu deux individus qui se battaient devant la banque Gringotts. Il y avait une femme aux cheveux bruns ou noirs et un homme aux cheveux noirs. Au bout de quelques secondes, la femme s'est envolée avec son balais et des démentors ont continué à se battre avec l'homme. À court de ressources, l'homme a appelé son patronus pour le défendre contre les démentors. C'était une biche. Je me suis ensuite enfuis."
 failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-feedback>
 
