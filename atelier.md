@@ -24,7 +24,7 @@ LIMIT 3"></sql-exercise>
 
 <div class="sideNote">
 <h3>Ta première requête SQL</h3>
-<p>Tu peux voir qu'une commande ou <span class="keyword">requête</span> SQL se lit un peu comme une phrase. Les mots en majuscules sont des mots clés en anglais et les mots en minuscules spécifient ce que tu veux chercher. <code class="keyword">SELECT</code> veut dire Sélectionne, <code class=keyword>FROM</code> veut dire de ou depuis et <code class="keyword">LIMIT</code> veut dire limite. Donc si on traduit la ligne de code on trouve: "<code>SELECTIONNE</code> nom <code>DE</code> personnages <code>LIMITE</code> 3".</p>
+<p>Tu peux voir qu'une commande ou <span class="keyword">requête</span> SQL se lit un peu comme une phrase. Les mots en majuscules sont des mots clés en anglais et les mots en minuscules spécifient ce que tu veux chercher. <code class="keyword">SELECT</code> veut dire Sélectionne, <code class=keyword>FROM</code> veut dire De ou Depuis et <code class="keyword">LIMIT</code> veut dire Limite. Donc si on traduit la ligne de code on trouve: "<code>SELECTIONNE</code> nom <code>DE</code> personnages <code>LIMITE</code> 3".</p>
 </div> 
 
 Tu viens d'apprendre comment afficher les noms. Avec chaque requête, on sélectionne un certain nombre <span class="keyword">d'attributs</span> (carctéristiques) comme le nom, le genre, l'année de naissance, etc... Ça serait utile de savoir quels autres attributs on peut connaître sur chaque personnage.
@@ -34,8 +34,8 @@ Tu viens d'apprendre comment afficher les noms. Avec chaque requête, on sélect
 </div>
 
 <sql-exercise
-  data-question="2. Modifie la requête suivante pour afficher tous les attributs de 15 magiciens dans la base de données."
-  data-comment="Si tu n'arrives pas, tu peux cliquer sur 'SOLUTION' et la solution apparaitra... magiquement!"
+  data-question="2. Modifie la requête suivante pour afficher tous les attributs de 15 personnages de la base de données."
+  data-comment="Si tu n'arrives pas, tu peux cliquer sur 'SOLUTION' et la solution apparaitra... comme par magie !"
   data-default-text = "/* Ceci est un commentaire. */
 SELECT nom 
 FROM personnages
@@ -56,7 +56,7 @@ success-message="🦦 C'est ça, bravo!  On va maintenant apprendre comment simp
 failure-message="Ça n'est pas tout à fait ça. Essaies à nouveau ou demande à un.e assistant.e."></input-feedback>
 
 <div class="warning">
-Si tu ne te souviens plus d'une commande que tu as utilisé, tu peux te référer au <a href="commandes_sql.html">résumé des principales commandes sql</a>.
+Si tu ne te souviens plus d'une commande que tu as utilisé, tu peux te référer au <a href="commandes_sql.html">résumé des principales commandes SQL</a>.
 </div>
 
 
@@ -64,7 +64,7 @@ Si tu ne te souviens plus d'une commande que tu as utilisé, tu peux te référe
 
 ## Compter
 
-Il a l'air d'y avoir beaucoup de sorciers et sorcières dans cette base de données. Mais d'ailleurs, combien exactement? Grâce à SQL il est aussi possible de compter le nombre de lignes qui sont affichées. Pour trouver le nombre de personnages dans la base de données, on aimerait dire:
+Il a l'air d'y avoir beaucoup de sorciers et sorcières dans cette base de données. Mais d'ailleurs, combien exactemen t? Grâce à SQL il est aussi possible de compter le nombre de lignes qui sont affichées. Pour trouver le nombre de personnages dans la base de données, on aimerait dire:
 
 _Sélectionne le nombre d'éléments dans le tableau des personnages._
 
@@ -89,13 +89,13 @@ failure-message="Pas tout à fait, essaies à nouveau."></sql-exercise>
 
 ## Filtrer les informations
 
-Hier, Mme Miranda Fauconnette a reporté au ministère qu'une jeune femme l'a défendue contre des voyous qui essayaient de lui voler son balais. Mme Fauconnette aimerait retrouver son nom pour la remercier car la fille a du partir de toute vitesse après l'avoir sauvée. Voici son portrait robot[^1] reconstitué d'après les descriptions très précises de la vieille femme:
+Hier, Mme Miranda Fauconnette a reporté au ministère qu'une jeune femme l'a défendue contre des voyous qui essayaient de lui voler son balais. Mme Fauconnette aimerait retrouver son nom pour la remercier car la fille a dû partir à toute vitesse après l'avoir sauvée. Voici son portrait robot[^1] reconstitué d'après les descriptions très précises de la vieille dame:
 
 <img src="imgs/luna_lovegood_portrait.jpg">
 
 [^1]:Source [wallpaperaccess.com](https://wallpaperaccess.com/luna-lovegood)
 
-Il faudrait donc que tu ailles chercher les personnages féminins qui ont les yeux bleus et ont un patronus (l'esprit protecteur) sous forme de lièvre. Essayons déjà de chercher tous les personnages féminins. Il nous faut donc une commande qui dit:
+Il faudrait donc que tu ailles chercher les personnages féminins qui ont les yeux bleus et un patronus (l'esprit protecteur) sous forme de lièvre. Essayons déjà de chercher tous les personnages féminins. Il nous faut donc une commande qui dit:
 
 _Sélectionne toutes les informations des personnages qui sont des femmes_
 
@@ -116,7 +116,7 @@ Il nous faudrait encore une commande comme _OÙ_ qui puisse filtrer une _conditi
 * <code class="codeblock">SELECT * </code>
 
 <sql-exercise
-  data-question="4. Écrit les 3 lignes de code dans le bon ordre pour afficher tous le personnages féminins grace à <code>WHERE</code>"
+  data-question="4. Écris les 3 lignes de code dans le bon ordre pour afficher tous les personnages féminins grâce à <code>WHERE</code>"
   data-comment=""
   data-default-text="SELECT ..."
   data-solution="
@@ -125,7 +125,7 @@ FROM personnages
 WHERE genre='Femme' "
   ></sql-exercise>
 
-Bien, mais ça fait toujours trop de lignes à décortiquer et il faudrait affiner tes recherches. Pour cela, on peut ajouter la condition que la fille a les yeux bleus. En français, on dirait:
+On avance, mais ça fait toujours trop de lignes à décortiquer et il faudrait affiner nos recherches. Pour cela, on peut ajouter la condition que la fille a les yeux bleus. En français, on dirait:
 
 _Selectionne toutes les informations des personnages qui sont des femmes et qui ont les yeux bleus _
 
@@ -163,10 +163,10 @@ AND yeux='Bleus'
 AND patronus='Lièvre'"
   ></sql-exercise>
 
-As tu maintenant trouvé? 
+As-tu maintenant trouvé? 
 
 <input-feedback 
-data-title="Écris le nom de la personne si tu penses que tu as trouvé quel est le nom de l'aimable sorcière qui a aidé la vieille dame."
+data-title="Écris le nom de la personne si tu penses avoir trouvé quel est le nom de l'aimable sorcière qui a aidé la vieille dame."
 data-solution="luna lovegood"
 success-message="Bravo, détective! Tu as retrouvé Luna Lovegood, grâce à toi elle reçevra une belle récompense pour son acte héroique. Tu sais maintenant filtrer les informations de la base de données."
 failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-feedback>
@@ -175,10 +175,10 @@ failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-fe
 
 ## Compter AND Filtrer
 
-Tu te souviens comment on compte? Et bien maintenant que tu sais filtrer avec <code>WHERE</code>, peux compter des choses un peu plus spécifiques.
+Tu te souviens comment on compte ? Et bien maintenant que tu sais filtrer avec <code>WHERE</code>, peux compter des choses un peu plus spécifiques.
 
 <sql-exercise
-  data-question="7. Essaies de compter le nombre de magiciens hommes avec les cheveux Noirs ou Roux ou Bruns en remplissant les trous."
+  data-question="7. Essaie de compter le nombre de magiciens hommes avec les cheveux Noirs ou Roux ou Bruns en remplissant les trous."
   data-comment="Complète les trous manquants"
   data-default-text="SELECT COUNT(*) 
 FROM personnages 
@@ -193,7 +193,7 @@ success-message="Correct!"
   ></sql-exercise>
 
 <div class="sideNote">
-<p>Tu as certainement remarqué qu'on utilise <code class="keyword">OR</code> pour dire <em>ou</em>. Quelle est la différence entre <code>OR</code> et <code>AND</code>?</p>
+<p>Tu as certainement remarqué qu'on utilise <code class="keyword">OR</code> pour dire <em>ou</em>. Quelle est la différence entre <code>OR</code> et <code>AND</code> ?</p>
 </div>
 
 Mais on peut faire mieux! Au lieu de répéter à chaque fois <code>cheveux=...</code> c'est plus simple d'écrire quelque chose comme "il faut que les cheveux soient dans la liste: {'Noirs','Roux','Bruns'}". 
@@ -204,7 +204,7 @@ Mais on peut faire mieux! Au lieu de répéter à chaque fois <code>cheveux=...<
 
 <sql-exercise
   data-question="8. Remplis la requête suivante"
-  data-comment="Compare cette commande avec la précédente. Les résultats sont-ils bien équivalents? Tu peux aussi essayer de compter d'autres choses dans le tableau si tu veux."
+  data-comment="Compare cette commande avec la précédente. Les résultats sont-ils bien équivalents ? Tu peux aussi essayer de compter d'autres choses dans le tableau si tu veux."
   data-default-text="SELECT COUNT(*) 
 FROM ... 
 WHERE genre='Homme'
@@ -215,10 +215,10 @@ WHERE genre='Homme'
 AND (cheveux IN('Noirs','Roux','Bruns'))"
   ></sql-exercise>
 
-Tu as appris un paquet de choses, maintenant essaies d'écrire une commande par toi même.
+Tu as appris un paquet de choses, maintenant essaie d'écrire une commande entière par toi-même.
 
 <sql-exercise
-  data-question="9. Combien de sorciers et sorcières sont nés en 1990,1991,1992 ou 1993?"
+  data-question="9. Combien de sorciers et sorcières sont né.e.s en 1990,1991,1992 ou 1993?"
   data-comment="Utilise COUNT(*). Il y a plusieurs manières de résoudre cet exercice. "
   data-default-text=""
   success-message="Exactement!"
@@ -236,7 +236,7 @@ WHERE naissance < 1994 AND naissance > 1989
   ></sql-exercise>
 
 <div class="sideNote">
-<p> Les signes <code class="keyword"><</code> et <code class="keyword">></code> entre deux nombres veulent dire "est plus petit que" respectivement "est plus grand que". Par exemple: 1 < 2 et 2 > 1.</p>
+<p> Les signes <code class="keyword"><</code> et <code class="keyword">></code> entre deux nombres veulent respectivement dire "est plus petit que", "est plus grand que". Par exemple: 1 < 2 et 2 > 1.</p>
 </div>
 
 <a name="structure"></a>
@@ -244,7 +244,7 @@ WHERE naissance < 1994 AND naissance > 1989
 ## Les différents tableaux
 
 Jusqu'à maintenant, on a toujours accédé aux information dans le tableau _personnages_ en écrivant <code>FROM personnages</code>. Avant de te lancer dans l'énigme finale, Professeure McGonagall te dit qu'il y a deux autres tableaux dans la base de données qui te seront utiles: 
-* _famille_, qui répertorie tous les liens de parenté entre les personnage.
+* _famille_, qui répertorie tous les liens de parenté entre les personnages.
 * _créatures_, qui répertorie toutes les créatures magiques. 
 
 Il est toujours pratique d'avoir un apperçu de la base de donnée du ministère de la magie sous forme de schéma:
@@ -252,7 +252,7 @@ Il est toujours pratique d'avoir un apperçu de la base de donnée du ministère
 <img src="imgs/HarryPotterDB_fr.png"><figcaption>Structure de la base de données. Un tableau est représenté par une case. Chaque ligne dans les cases correspond à un attribut du tableau.</figcaption>
 </figure>
 
-Nous regarderons le tableau créature plus tard. Pour l'instant, dans le tableau _famille_, _premier\_nom_ est le/la _relation_ de _second\_nom_. Par exemple dans le tableau suivant, Lily est la mère de Harry et Harry est le fils de James.
+Nous regarderons le tableau "créatures" plus tard. Pour l'instant, dans le tableau "famille"; le _premier\_nom_ est le/la _relation_ de _second\_nom_. Par exemple dans le tableau suivant, Lily est la mère de Harry et Harry est le fils de James.
 
 <table class="datatable">
 <thead>
@@ -328,10 +328,10 @@ AND relation = 'Grand-mère'"
 
 Finalement, grâce à ces nouveaux tableaux, tu peux aussi croiser les informations. Par exemple, si tu veux savoir quel.le.s sorcier.ères ont une fille et ont les yeux bleus, tu as besoin d'informations qui proviennent de deux tableaux différents. Il faudrait donc réussir à les lier ensemble. Voyons déjà comment trouver les deux informations séparément. 
 
-* D'abord pour trouver le noms des sorcier.ères qui ont une fille, on sélectionne le tableau _famille_ et on filtre les résultats lorsque la relation est égal à "fille".
+* D'abord pour trouver le nom des sorcier.ère.s qui ont une fille, on sélectionne le tableau _famille_ et on filtre les résultats lorsque la relation est égal à "fille".
 
 <sql-exercise
-  data-question="12. Le nom des sorcier.ères qui ont une fille"
+  data-question="12. Le nom des sorcier.ère.s qui ont une fille"
   data-comment="Tu peux essayer toute seule mais n'hésite pas à cliquer sur indice pour t'aider. "
   data-default-text=""
   success-message="Super"
@@ -345,7 +345,7 @@ FROM famille
 WHERE relation='Fille'"
   ></sql-exercise>
 
-* Ensuite, on veut trouver le nom des socier.ères qui ont les yeux bleus.
+* Ensuite, on veut trouver le nom des socier.ère.s qui ont les yeux bleus.
 
 <sql-exercise
   data-question="13. Le nom des sorcier.ères qui ont les yeux bleus"
