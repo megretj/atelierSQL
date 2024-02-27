@@ -69,7 +69,7 @@ failure-message="Ce n'est pas la bonne personne, essaie à nouveau."></input-fee
 
 <sql-exercise
   data-question="Tu as maintenant toutes les informations nécessaires pour trouver le ou la coupable du vol de la coupe de feu!"
-  data-comment="Essaie d'écrire toutes les informations que tu as sur un bout de papier. Puis clique sur \"Indice\" pour vérifier que tu as bien tout trouvé. Essaie finalement d'écrire une requête qui filtre toutes les conditions une par une, puis toutes ensembles."
+  data-comment="Essaie d'écrire toutes les informations que tu as sur un bout de papier. Puis clique sur INDICE pour vérifier que tu as bien tout trouvé. Essaie finalement d'écrire une requête qui filtre toutes les conditions une par une, puis toutes ensembles."
   data-default-text="SELECT ..."
   data-hint="Les informations que tu as pu récolter jusqu'à présent sont: 
   une femme, 
