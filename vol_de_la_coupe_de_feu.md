@@ -97,4 +97,4 @@ data-solution="bellatrix lestrange"
 success-message="Excellent! Tu as trouvé la coupable: Bellatrix Lestrange. Grâce à toi la coupe de feu a pu être récupérée et le tournoi de la coupe de feu pourra avoir lieu, comme prévu à Poudlard."
 failure-message="Ce n'est pas la bonne personne, essaies à nouveau ou demande de l'aide."></input-feedback>
 
-Si tu as envie d'en apprendre un peu plus sur le SQL, tu peux essayer le défi supplémentaire sur la prochaine page.
+Si tu as envie d'en apprendre un peu plus sur le SQL, tu peux essayer les défis supplémentaires sur la prochaine page.
