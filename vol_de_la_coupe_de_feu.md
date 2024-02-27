@@ -36,9 +36,9 @@ L'appel à témoins a bien fonctionné. C'est l'épouse du témoin qui s'est ann
 <input-feedback 
 data-title="Écris le nom du témoin si tu penses l'avoir trouvé."
 data-solution="lucius malefoy"
-success-message="En effet c'est bien Lucius Malefoy ! Tu lui envoies donc un message par chouette expresse pour lui demander des informations sur le vol et il vous répond ceci:
-Chère inspectrice, je me prommenais dans le chemin de traverse avec ma femme Narcissa après minuit lorsque j'ai entendu un bruit fracassant. J'ai dit à ma femme de s'enfuire, mais je voulais rester quelques instants pour comprendre ce qu'il se passait. Comme il faisait nuit, je n'ai pas très bien vu, mais il me semble que j'ai vu deux individus qui se battaient devant la banque Gringotts. Il y avait une femme aux cheveux bruns ou noirs et un homme aux cheveux noirs. Au bout de quelques secondes, la femme s'est envolée avec son balais et des démentors ont continué à se battre avec l'homme. À court de ressources, l'homme a appelé son patronus pour le défendre contre les démentors. C'était une biche. Je me suis ensuite enfuis."
-failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-feedback>
+success-message="En effet c'est bien Lucius Malefoy ! Tu lui envoies donc un message par chouette express pour lui demander des informations sur le vol et il te répond ceci:
+Chère inspectrice, je me promenais dans le chemin de traverse avec ma femme Narcissa après minuit lorsque j'ai entendu un bruit fracassant. J'ai dit à ma femme de s'enfuir, mais je voulais rester quelques instants pour comprendre ce qu'il se passait. Comme il faisait nuit, je n'ai pas très bien vu, mais il me semble que j'ai vu deux individus qui se battaient devant la banque Gringotts. Il y avait une femme aux cheveux bruns ou noirs et un homme aux cheveux noirs. Au bout de quelques secondes, la femme s'est envolée avec son balais et des détraqueurs ont continué à se battre avec l'homme. À court de ressources, l'homme a appelé son patronus pour le défendre contre les détraqueurs. C'était une biche. Je me suis ensuite enfuis."
+failure-message="Ce n'est pas la bonne personne, essaie à nouveau."></input-feedback>
 
 <a name="combattant"></a>
 
@@ -58,10 +58,10 @@ failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-fe
   ></sql-exercise>
 
 <input-feedback 
-data-title="Penses-tu avoir trouvé le nom de la personne présente sur le lieu du crime?"
+data-title="Penses-tu avoir trouvé le nom de la personne présente sur les lieux du crime?"
 data-solution="severus rogue"
 success-message="Oui, c'est bien Severus Rogue! Vous le contactez pour plus d'informations et il vous répond qu'il ne se souvient plus bien de la scène car il a reçu un sort qui lui a fait oublié la plupart des choses. Mais il se souvient que qu'il se battait contre quelqu'un qui avait un aire de famille avec Sirius Black. De plus il ou elle avait certainement l'air d'avoir plus de 40 ans. "
-failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-feedback>
+failure-message="Ce n'est pas la bonne personne, essaie à nouveau."></input-feedback>
 
 <a name="coupable"></a>
 
@@ -69,14 +69,14 @@ failure-message="Ce n'est pas la bonne personne, essaies à nouveau."></input-fe
 
 <sql-exercise
   data-question="Tu as maintenant toutes les informations nécessaires pour trouver le ou la coupable du vol de la coupe de feu!"
-  data-comment="Essaies d'écrire toutes les informations que tu as sur un bout de papier. Puis clique sur indice pour vérifier que tu ais toutes les infos. Puis essaies d'écrire une requête qui filtre toutes les conditions une par une, puis toutes ensembles."
+  data-comment="Essaie d'écrire toutes les informations que tu as sur un bout de papier. Puis clique sur "Indice" pour vérifier que tu ais toutes les infos. Essaie finalement d'écrire une requête qui filtre toutes les conditions une par une, puis toutes ensembles."
   data-default-text="SELECT ..."
   data-hint="Les informations que tu as pu récolter jusqu'à présent sont: 
   une femme, 
-  avec des cheveux noirs, 
+  avec des cheveux noirs ou bruns, 
   elle est de famille avec Sirius Black, 
   elle est née avant 1955 (elle a plus de 40 ans et il est noté au début de l'enquête que nous sommes en 1995). 
-  Essaies de trouver toutes les informations séparément et écris les sur une feuille."
+  N'oublie pas qu'elle doit aussi être encore en vie au moment du vol."
   data-solution="
 Il vaut mieux détacher la commande en plusieurs parties
 mais voici une manière de trouver la coupable en une seule commande.
@@ -92,9 +92,9 @@ AND mort > 1995"
   ></sql-exercise>
 
 <input-feedback 
-data-title="As tu réussi à découvrir qui était le ou la coupable du vol?"
+data-title="As-tu réussi à découvrir qui était le ou la coupable du vol?"
 data-solution="bellatrix lestrange"
 success-message="Excellent! Tu as trouvé la coupable: Bellatrix Lestrange. Grâce à toi la coupe de feu a pu être récupérée et le tournoi de la coupe de feu pourra avoir lieu, comme prévu à Poudlard."
 failure-message="Ce n'est pas la bonne personne, essaies à nouveau ou demande de l'aide."></input-feedback>
 
-Si tu as encore envie d'en apprendre un peu plus sur le SQL, tu peux essayer le défi supplémentaire sur la prochaine page.
+Si tu as envie d'en apprendre un peu plus sur le SQL, tu peux essayer le défi supplémentaire sur la prochaine page.
