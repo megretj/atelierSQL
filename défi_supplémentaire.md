@@ -9,7 +9,7 @@ dbFile: data/harrypotter_fr.db
 
 ## NOT un sondage normal
 
-Le ministère a besoin de toi. Pour un sondage, il faudrait recenser toutes les créatures à poils. En d'autres termes, il faut trouver les créatures où la colone _poils\_créature_ n'est pas \" _?_\". 
+Le ministère a besoin de toi. Pour un sondage, il faudrait recenser toutes les créatures à poils. En d'autres termes, il faut trouver les créatures où la colone _poils\_créature_ n'est pas \" _?_ \". 
 
 <div class="sideNote"><p>Pour filtrer quelque chose qu'on ne veut pas, on peut utiliser la négation: <code class="keyword">NOT</code> ("pas" en français) avant la condition.</p></div>
 
