@@ -1,6 +1,6 @@
 # Accio query
 
-Repo pour l'atelier du coding club des filles pour apprendre le SQL.
+Repo pour l'atelier du coding club des filles pour apprendre le SQL: [Accio Query](https://megretj.github.io/atelierSQL/)
 
 **Service de promotion des sciences de l'EPFL - 2023**
 
